@@ -1,0 +1,12 @@
+default_view:
+  name: Herdevägen 26 B
+  view: yes
+  icon: mdi:home
+  entities:
+    - persistent_notification.update_available
+    - group.indoor
+    - group.outdoor
+    - group.weather
+    - group.people
+    - group.devices
+    - group.speakers

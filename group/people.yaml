@@ -1,0 +1,4 @@
+people:
+  entities:
+    - device_tracker.jakobs_iphone
+    - device_tracker.annas_iphone

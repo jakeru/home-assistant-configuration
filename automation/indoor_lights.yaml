@@ -1,0 +1,43 @@
+- alias: Turn on indoor lights in early morning
+  trigger:
+    platform: time
+    after: '06:00:00'
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - light.livingroom_window_lights
+      - light.livingroom_other_lights
+
+- alias: Turn off indoor lights when sun is up
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    above: 4.0
+  action:
+    service: homeassistant.turn_off
+    entity_id:
+      - light.livingroom_window_lights
+      - light.livingroom_other_lights
+
+- alias: Turn on indoor lights when sun goes down
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 6.0
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - light.livingroom_window_lights
+      - light.livingroom_other_lights
+
+- alias: Turn off lights in the evening
+  trigger:
+    platform: time
+    after: '22:30:00'
+  action:
+    service: homeassistant.turn_off
+    entity_id:
+      - light.livingroom_window_lights
+      - light.livingroom_other_lights

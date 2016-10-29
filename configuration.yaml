@@ -2,15 +2,15 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 59.15
-  longitude: 16.85
+  latitude: !secret latitude
+  longitude: !secret longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 57
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Stockholm
-
+  customize: !include_dir_merge_named customize
 # Enables the frontend
 frontend:
 
@@ -78,10 +78,12 @@ zwave:
   config_path: /usr/local/etc/openzwave
   polling_interval: 60000
 
+group: !include_dir_merge_named group
+
 light:
   platform: rfxtrx
   automatic_add: True
-  signal_repetitions: 3
+  signal_repetitions: 1
   devices:
     0b11000d0085feb601010f70:
       name: livingroom_window_lights
@@ -104,77 +106,7 @@ sensor templates:
     sunset:
       value_template: '{{ states.sun.sun.attributes.next_setting }}'
 
-automation 1:
-  alias: Turn on indoor lights in early morning
-  trigger:
-    platform: time
-    after: '06:00:00'
-  action:
-    service: homeassistant.turn_on
-    entity_id:
-      - light.livingroom_window_lights
-      - light.livingroom_other_lights
-
-automation 2:
-  alias: Turn off indoor lights when sun is up
-  trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    above: 4.0
-  action:
-    service: homeassistant.turn_off
-    entity_id:
-      - light.livingroom_window_lights
-      - light.livingroom_other_lights
-
-automation 3:
-  alias: Turn on indoor lights when sun goes down
-  trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    below: 6.0
-  action:
-    service: homeassistant.turn_on
-    entity_id:
-      - light.livingroom_window_lights
-      - light.livingroom_other_lights
-
-automation 4:
-  alias: Turn off lights in the evening
-  trigger:
-    platform: time
-    after: '22:30:00'
-  action:
-    service: homeassistant.turn_off
-    entity_id:
-      - light.livingroom_window_lights
-      - light.livingroom_other_lights
-
-automation 5:
-  alias: Turn on outdoor lights when sun goes down
-  trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    below: 2.0
-  action:
-    service: homeassistant.turn_on
-    entity_id:
-      - light.outdoor_lights
-
-automation 6:
-  alias: Turn off outdoor lights when the sun goes up
-  trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    above: 4.0
-  action:
-    service: homeassistant.turn_off
-    entity_id:
-      - light.outdoor_lights
+automation: !include_dir_merge_list automation
 
 binary_sensor:
   - platform: template
@@ -182,42 +114,4 @@ binary_sensor:
       playroom_motion:
         value_template: '{{ is_state("sensor.fibaro_system_fgms001_motion_sensor_burglar_3", "8") }}'
 
-automation 7:
-  alias: Turn on lights in playroom on motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.playroom_motion
-    to: 'on'
-  action:
-    service: homeassistant.turn_on
-    entity_id: script.playroom_lights_on
-
-automation 8:
-  alias: Turn off lights in play room after no presense
-  trigger:
-    platform: state
-    entity_id: binary_sensor.playroom_motion
-    to: 'off'
-  action:
-    service: homeassistant.turn_on
-    entity_id: script.playroom_lights_off
-
-script:
-  playroom_lights_on:
-    alias: "Turn on lights in playroom"
-    sequence:
-      - service: script.turn_off
-        data:
-          entity_id: script.playroom_lights_off
-      - service: light.turn_on
-        data:
-          entity_id: light.playroom_lights
-  playroom_lights_off:
-    alias: "Turn off lights in playroom after a while"
-    sequence:
-      - delay:
-          minutes: 10
-      - service: light.turn_off
-        data:
-          entity_id: light.playroom_lights
-
+script: !include_dir_merge_named script

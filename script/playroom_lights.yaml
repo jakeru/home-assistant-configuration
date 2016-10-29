@@ -1,0 +1,17 @@
+playroom_lights_on:
+  alias: "Turn on lights in playroom"
+  sequence:
+    - service: script.turn_off
+      data:
+        entity_id: script.playroom_lights_off
+    - service: light.turn_on
+      data:
+        entity_id: light.playroom_lights
+playroom_lights_off:
+  alias: "Turn off lights in playroom after a while"
+  sequence:
+    - delay:
+        minutes: 10
+    - service: light.turn_off
+      data:
+        entity_id: light.playroom_lights

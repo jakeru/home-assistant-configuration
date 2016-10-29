@@ -1,0 +1,21 @@
+- alias: Turn on outdoor lights when sun goes down
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.0
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - light.outdoor_lights
+
+- alias: Turn off outdoor lights when the sun goes up
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    above: 4.0
+  action:
+    service: homeassistant.turn_off
+    entity_id:
+      - light.outdoor_lights

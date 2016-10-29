@@ -1,0 +1,17 @@
+- alias: Turn on lights in playroom on motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.playroom_motion
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.playroom_lights_on
+
+- alias: Turn off lights in play room after no presense
+  trigger:
+    platform: state
+    entity_id: binary_sensor.playroom_motion
+    to: 'off'
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.playroom_lights_off

@@ -1,0 +1,90 @@
+jakobs_macbookair:
+  name: Jakobs MacBook Air
+  mac: 84:38:35:51:51:94
+  picture: 
+  track: yes
+  hide_if_away: no
+
+appletv3:
+  name: Apple-TV-3
+  mac: 98:D6:BB:26:50:10
+  picture: 
+  track: yes
+  hide_if_away: no
+
+kitchen_speaker:
+  name: Kitchen speaker
+  mac: 00:05:CD:54:0D:22
+  picture: 
+  track: yes
+  hide_if_away: no
+
+livingroom_speaker:
+  name: Livingroom speaker
+  mac: 00:05:CD:53:20:82
+  picture: 
+  track: yes
+  hide_if_away: no
+
+diningroom_speaker:
+  name: Diningroom speaker
+  mac: 00:05:CD:52:96:3C
+  picture: 
+  track: yes
+  hide_if_away: no
+
+raspberrypi:
+  name: raspberrypi
+  mac: B8:27:EB:30:9B:7A
+  picture: 
+  track: yes
+  hide_if_away: no
+
+jakobs_iphone:
+  name: Jakob
+  mac: F0:F6:1C:34:5B:B0
+  picture: 
+  track: yes
+  hide_if_away: no
+
+ipad:
+  name: iPad 2
+  mac: A4:67:06:59:DC:07
+  picture: 
+  track: yes
+  hide_if_away: no
+
+annas_iphone:
+  name: Anna
+  mac: D0:A6:37:02:2F:41
+  picture: 
+  track: yes
+  hide_if_away: no
+
+pf0cruu9:
+  name: Annas jobbdator
+  mac: 4C:34:88:AB:67:BA
+  picture: 
+  track: yes
+  hide_if_away: no
+
+squeezeboxradio:
+  name: SqueezeboxRadio
+  mac: 00:04:20:2C:D5:F9
+  picture: 
+  track: yes
+  hide_if_away: no
+
+0023c11090f8:
+  name: 0023c11090f8
+  mac: 00:23:C1:10:90:F8
+  picture: 
+  track: yes
+  hide_if_away: no
+
+wpn824:
+  name: WPN824
+  mac: 00:14:6C:DB:05:15
+  picture: 
+  track: yes
+  hide_if_away: no

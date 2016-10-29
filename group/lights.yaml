@@ -1,0 +1,9 @@
+outdoor:
+  entities:
+    - light.outdoor_lights
+
+indoor:
+  entities:
+    - light.playroom_lights
+    - light.livingroom_window_lights
+    - light.livingroom_other_lights
