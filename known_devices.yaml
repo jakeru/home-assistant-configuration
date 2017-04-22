@@ -6,35 +6,35 @@ jakobs_macbookair:
   hide_if_away: no
 
 appletv3:
-  name: Apple-TV-3
+  name: Apple-TV vardagsrum
   mac: 98:D6:BB:26:50:10
   picture: 
   track: yes
   hide_if_away: no
 
 kitchen_speaker:
-  name: Kitchen speaker
+  name: Högtalaren i köket
   mac: 00:05:CD:54:0D:22
-  picture: 
+  picture: mdi:music-note
   track: yes
   hide_if_away: no
 
 livingroom_speaker:
-  name: Livingroom speaker
+  name: Högtalare i vardagsrum
   mac: 00:05:CD:53:20:82
-  picture: 
+  picture: mdi:music-note
   track: yes
   hide_if_away: no
 
 diningroom_speaker:
-  name: Diningroom speaker
+  name: Högtalare i matsalen
   mac: 00:05:CD:52:96:3C
-  picture: 
+  picture: mdi:music-note
   track: yes
   hide_if_away: no
 
 raspberrypi:
-  name: raspberrypi
+  name: RaspberryPi i lekrummets aparatskåp
   mac: B8:27:EB:30:9B:7A
   picture: 
   track: yes
@@ -69,7 +69,7 @@ pf0cruu9:
   hide_if_away: no
 
 squeezeboxradio:
-  name: SqueezeboxRadio
+  name: Squeezebox Radio i barnens sovrum
   mac: 00:04:20:2C:D5:F9
   picture: 
   track: yes
@@ -88,3 +88,199 @@ wpn824:
   picture: 
   track: yes
   hide_if_away: no
+
+omp_81:
+  hide_if_away: false
+  mac: BT_42:DD:9B:3B:62:60
+  name: OMP 81
+  picture:
+  track: true
+
+link_neu_287:
+  hide_if_away: false
+  mac: BT_E4:04:39:56:40:A7
+  name: LINK NEU 287
+  picture:
+  track: true
+
+link_oad572_e10_:
+  hide_if_away: false
+  mac: BT_E4:04:39:59:87:5B
+  name: 'LINK OAD572 (E10) '
+  picture:
+  track: true
+
+iphone_2:
+  hide_if_away: false
+  mac: BT_70:EC:E4:2A:CA:88
+  name: iPhone (2)
+  picture:
+  track: true
+
+iphone:
+  hide_if_away: false
+  mac: F0:DB:E2:89:B9:1B
+  name: iPhone
+  picture:
+  track: true
+
+androidddca320e9a696205:
+  hide_if_away: false
+  mac: 20:6E:9C:06:42:2F
+  name: android-ddca320e9a696205
+  picture:
+  track: true
+
+android9d6b87b826befdbf:
+  hide_if_away: false
+  mac: 30:A8:DB:A2:BF:D3
+  name: android-9d6b87b826befdbf
+  picture:
+  track: true
+
+ipad11383:
+  hide_if_away: false
+  mac: 3C:E0:72:11:C0:53
+  name: iPad11383
+  picture:
+  track: true
+
+ipad11383_2:
+  hide_if_away: false
+  mac: BT_3C:E0:72:11:C0:54
+  name: iPad11383
+  picture:
+  track: true
+
+esp_c65b3f:
+  hide_if_away: false
+  mac: 5C:CF:7F:C6:5B:3F
+  name: ESP C65B3F
+  picture:
+  track: true
+
+esp_c3ae0a:
+  hide_if_away: false
+  mac: 5C:CF:7F:C3:AE:0A
+  name: ESP C3AE0A
+  picture:
+  track: true
+
+vw_phone:
+  hide_if_away: false
+  mac: BT_90:03:B7:B7:61:3F
+  name: VW PHONE
+  picture:
+  track: true
+
+le_2:
+  hide_if_away: false
+  mac: BT_B4:EF:FA:58:C0:42
+  name: Le 2
+  picture:
+  track: true
+
+sadrak:
+  hide_if_away: false
+  mac: AC:81:12:63:02:D8
+  name: Sadrak
+  picture:
+  track: true
+
+dcs5000l:
+  hide_if_away: false
+  mac: B0:C5:54:35:BE:15
+  name: DCS-5000L
+  picture:
+  track: true
+
+beiluls_macbook_pro:
+  hide_if_away: false
+  mac: BT_80:E6:50:07:19:C1
+  name: "Beilul\u2019s MacBook Pro"
+  picture:
+  track: true
+
+androidfe21a67d36ee2578:
+  hide_if_away: false
+  mac: B4:EF:FA:59:F8:C2
+  name: android-fe21a67d36ee2578
+  picture:
+  track: true
+
+78a5dd12af87:
+  hide_if_away: false
+  mac: 78:A5:DD:12:AF:87
+  name: 78a5dd12af87
+  picture:
+  track: true
+
+ipc:
+  hide_if_away: false
+  mac: 28:F3:66:79:17:F4
+  name: IPC
+  picture:
+  track: true
+
+kk:
+  hide_if_away: false
+  mac: 00:05:CD:54:0D:23
+  name: K--k
+  picture:
+  track: true
+
+desktopu91f35f:
+  hide_if_away: false
+  mac: A4:34:D9:47:7E:99
+  name: DESKTOP-U91F35F
+  picture:
+  track: true
+
+martinsiphone:
+  hide_if_away: false
+  mac: D4:F4:6F:87:A2:2F
+  name: Martins-iPhone
+  picture:
+  track: true
+
+simons_iphone:
+  hide_if_away: false
+  mac: BT_24:F0:94:C6:D2:ED
+  name: simon's iPhone
+  picture:
+  track: true
+
+sadrak_2:
+  hide_if_away: false
+  mac: 2C:41:38:02:29:A5
+  name: Sadrak
+  picture:
+  track: true
+
+ubnt:
+  hide_if_away: false
+  mac: F0:9F:C2:06:BD:BA
+  name: ubnt
+  picture:
+  track: true
+
+ubnt_2:
+  hide_if_away: false
+  mac: F0:9F:C2:06:BD:BB
+  name: ubnt
+  picture:
+  track: true
+
+jakobruhes_iphone:
+  hide_if_away: false
+  mac: BT_F0:F6:1C:34:5B:B1
+  name: jakob.ruhes iPhone
+  picture:
+  track: true
+
+yunteng:
+  hide_if_away: false
+  mac: BT_AB:90:78:01:53:29
+  name: Yunteng
+  picture:
+  track: true

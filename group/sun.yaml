@@ -1,0 +1,5 @@
+sun:
+  entities:
+    - sensor.solar_angle
+    - sensor.sunrise
+    - sensor.sunset

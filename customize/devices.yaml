@@ -1,0 +1,46 @@
+group.indoor_main:
+  friendly_name: Huvudplan
+group.indoor_basement:
+  friendly_name: Källaren
+group.indoor_attic:
+  friendly_name: Vinden
+group.outdoor:
+  friendly_name: Utomhus
+group.weather:
+  friendly_name: Temperaturer
+group.speakers:
+  friendly_name: Ljudsystem
+group.devices:
+  friendly_name: Enheter
+group.people:
+  friendly_name: Personer
+sensor.outdoor_temperature:
+  friendly_name: Utomhus (entré)
+sensor.th01:
+  friendly_name: Matkällaren
+sensor.th02:
+  friendly_name: Gillestugan
+sensor.th03:
+  friendly_name: Vinden
+sensor.bbq:
+  friendly_name: Grilltermometern
+sensor.playroom_temperature_3_1:
+  friendly_name: Lekrummet
+sensor.playroom_luminance_3_3:
+  friendly_name: Ljusnivå i lekrummet
+light.livingroom_window:
+  friendly_name: Fönsterbelysning i vardagsrum
+light.livingroom_other:
+  friendly_name: Övrig mysbelysning i vardagsrum
+light.outdoor:
+  friendly_name: Belysning utomhus
+switch.outdoor_front:
+  friendly_name: Belysning utomhus framsidan
+light.playroom:
+  friendly_name: Taklampan i lekrummet
+light.hall_level_5_0:
+  friendly_name: Kristallkronan i hallen
+light.attic_window:
+  friendly_name: Fönsterlampan på vinden
+light.basement_box_room:
+  friendly_name: Lampan i fönstret i kartongrummet

@@ -1,9 +1,19 @@
 outdoor:
   entities:
-    - light.outdoor_lights
+    - light.outdoor
+    - switch.outdoor_front
 
-indoor:
+indoor_main:
   entities:
-    - light.playroom_lights
-    - light.livingroom_window_lights
-    - light.livingroom_other_lights
+    - light.playroom
+    - light.livingroom_window
+    - light.livingroom_other
+    - light.hall_level_5_0
+
+indoor_basement:
+  entities:
+    - light.basement_box_room
+
+indoor_attic:
+  entities:
+    - light.attic_window

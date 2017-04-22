@@ -1,0 +1,8 @@
+group.sun:
+  friendly_name: Solen
+sensor.solar_angle:
+  friendly_name: Solvinkel
+sensor.sunrise:
+  friendly_name: Soluppgång
+sensor.sunset:
+  friendly_name: Solnedgång

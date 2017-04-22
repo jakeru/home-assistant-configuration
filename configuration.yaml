@@ -58,20 +58,22 @@ sensor rfxtrx:
         - Temperature
     0a520906690000df2c0179:
       name: th01
+      data_type:
+        - Temperature
+        - Humidity
     0a520904870000a12d0159:
       name: th02
+      data_type:
+        - Temperature
+        - Humidity
     0a5209024b0000d32f0179:
       name: th03
+      data_type:
+        - Temperature
+        - Humidity
 
 device_tracker bluetooth:
   platform: bluetooth_tracker
-
-device_tracker wlan:
-  platform: asuswrt
-  host: 192.168.1.1
-  username: jabbe
-  ssh_key: /home/homeassistant/.ssh/id_rsa
-  interval_seconds: 300
 
 zwave:
   usb_path: /dev/zstick
@@ -86,25 +88,30 @@ light:
   signal_repetitions: 1
   devices:
     0b11000d0085feb601010f70:
-      name: livingroom_window_lights
+      name: livingroom_window
     0b11000f0085feb602010f70:
-      name: livingroom_other_lights
+      name: livingroom_other
+    0b11000f0085feb603010f70:
+      name: livingroom_corner
     0b11000d0085feb605010f70:
-      name: outdoor_lights
+      name: outdoor
     0b11000d0085feb606010f70:
-      name: playroom_lights
+      name: playroom
+    0b11000d0085feb608010f70:
+      name: attic_window
+    0b11000d0085feb609010f70:
+      name: basement_box_room
 
 sensor templates:
   - platform: template
     sensors:
       solar_angle:
         value_template: '{{ "%+.1f" | format(states.sun.sun.attributes.elevation) }}'
-        friendly_name: 'Sun angle'
-        unit_of_measurement: 'degrees'
-    sunrise:
-      value_template: '{{ states.sun.sun.attributes.next_rising }}'
-    sunset:
-      value_template: '{{ states.sun.sun.attributes.next_setting }}'
+        unit_of_measurement: '°'
+      sunrise:
+        value_template: '{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom("%H:%M") }}'
+      sunset:
+        value_template: '{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom("%H:%M") }}'
 
 automation: !include_dir_merge_list automation
 
@@ -112,6 +119,20 @@ binary_sensor:
   - platform: template
     sensors:
       playroom_motion:
-        value_template: '{{ is_state("sensor.fibaro_system_fgms001_motion_sensor_burglar_3", "8") }}'
+        entity_id: sensor.playroom_burglar_3_10
+        value_template: '{{ is_state("sensor.playroom_burglar_3_10", "8") }}'
+
+switch:
+  - platform: template
+    switches:
+      outdoor_front:
+        entity_id: switch.outdoor_front_switch_4_0
+        value_template: '{{ is_state("switch.outdoor_front_switch_4_0", "on") }}'
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.outdoor_front_switch_4_0
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.outdoor_front_switch_4_0
 
 script: !include_dir_merge_named script

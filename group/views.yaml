@@ -4,9 +4,17 @@ default_view:
   icon: mdi:home
   entities:
     - persistent_notification.update_available
-    - group.indoor
+    - group.indoor_main
+    - group.indoor_basement
+    - group.indoor_attic
     - group.outdoor
     - group.weather
+    - group.sun
     - group.people
-    - group.devices
+
+devices_view:
+  name: Enheter
+  view: yes
+  entities:
     - group.speakers
+    - group.devices

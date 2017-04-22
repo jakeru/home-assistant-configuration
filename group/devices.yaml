@@ -3,6 +3,7 @@ devices:
     - device_tracker.appletv3
     - device_tracker.raspberrypi
     - device_tracker.ipad
+    - device_tracker.jakobs_macbookair
 
 speakers:
   entities:
