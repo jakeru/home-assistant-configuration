@@ -5,3 +5,4 @@ weather:
     - sensor.th03
     - sensor.outdoor_temperature
     - sensor.playroom_temperature_3_1
+    - sensor.bbq

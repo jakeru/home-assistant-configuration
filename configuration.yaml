@@ -71,6 +71,10 @@ sensor rfxtrx:
       data_type:
         - Temperature
         - Humidity
+    08500900001100e069:
+      name: bbq
+      data_type:
+        - Temperature
 
 device_tracker bluetooth:
   platform: bluetooth_tracker
