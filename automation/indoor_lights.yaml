@@ -2,6 +2,11 @@
   trigger:
     platform: time
     after: '06:00:00'
+  condition:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.0
   action:
     service: homeassistant.turn_on
     entity_id:
@@ -15,7 +20,7 @@
     platform: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
-    above: 4.0
+    above: 2.0
   action:
     service: homeassistant.turn_off
     entity_id:
@@ -29,7 +34,10 @@
     platform: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
-    below: 6.0
+    below: 4.0
+  condition:
+    platform: time
+    before: '22:30:00'
   action:
     service: homeassistant.turn_on
     entity_id:

@@ -3,7 +3,7 @@
     platform: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
-    below: 2.0
+    below: 0.0
   action:
     service: homeassistant.turn_on
     entity_id:
@@ -15,7 +15,7 @@
     platform: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
-    above: 4.0
+    above: 0.0
   action:
     service: homeassistant.turn_off
     entity_id:
