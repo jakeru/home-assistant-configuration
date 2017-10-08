@@ -46,7 +46,7 @@ logger:
 
 rfxtrx:
   device: /dev/rfxtrx
-  debug: True
+  debug: False
   dummy: False
 
 device_tracker bluetooth:
@@ -121,8 +121,9 @@ sensor:
 
 zwave:
   usb_path: /dev/zstick
-  config_path: /usr/local/etc/openzwave
+  config_path: /home/hass/hass-conf/deps/python_openzwave/ozw_config
   polling_interval: 60000
+  debug: False
 
 group: !include_dir_merge_named group
 
