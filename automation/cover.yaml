@@ -1,0 +1,15 @@
+- alias: Close cover in bedroom at evening
+  trigger:
+    platform: time
+    at: '19:00:00'
+  action:
+    service: cover.close_cover
+    entity_id: cover.qubino_zmnhod1_flush_shutter_dc_switch_6_0
+- alias: Open cover in bedroom at morning
+  trigger:
+    platform: time
+    at: '07:30:00'
+  action:
+    service: cover.open_cover
+    entity_id: cover.qubino_zmnhod1_flush_shutter_dc_switch_6_0
+  

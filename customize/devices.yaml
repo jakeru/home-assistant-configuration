@@ -56,6 +56,9 @@ light.attic_window:
   friendly_name: Fönsterlampan på vinden
 light.basement_box_room:
   friendly_name: Lampan i fönstret i kartongrummet
+cover.qubino_zmnhod1_flush_shutter_dc_switch_6_0:
+  friendly_name: Rullgardin sovrum
+  device_class: window
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
 sensor.soil_moisture1_temperature:
