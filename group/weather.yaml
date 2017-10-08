@@ -1,8 +1,6 @@
 weather:
   entities:
-    - sensor.th01
-    - sensor.th02
-    - sensor.th03
+    - sensor.th01_temperature
+    - sensor.th02_temperature
+    - sensor.th03_temperature
     - sensor.outdoor_temperature
-    - sensor.playroom_temperature_3_1
-    - sensor.bbq

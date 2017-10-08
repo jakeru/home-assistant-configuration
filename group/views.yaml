@@ -7,14 +7,14 @@ default_view:
     - group.indoor_main
     - group.indoor_basement
     - group.indoor_attic
+    - group.objects
     - group.outdoor
-    - group.weather
     - group.sun
-    - group.people
+    - group.garden
 
 devices_view:
   name: Enheter
-  view: yes
+  view: no
   entities:
     - group.speakers
     - group.devices

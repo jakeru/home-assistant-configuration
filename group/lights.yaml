@@ -2,18 +2,40 @@ outdoor:
   entities:
     - light.outdoor
     - switch.outdoor_front
+    - sensor.outdoor_temperature
+
+garden:
+  entities:
+    - sensor.soil_moisture1_temperature
+    - sensor.soil_moisture1_humidity
+    - sensor.soil_moisture2_temperature
+    - sensor.soil_moisture2_humidity
+    - sensor.soil_moisture3_temperature
+    - sensor.soil_moisture3_humidity
 
 indoor_main:
   entities:
     - light.playroom
     - light.livingroom_window
     - light.livingroom_other
-    - light.hall_level_5_0
+    - light.everspring_ad146_in_wall_dimmer_module_level_5_0
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_3_1
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_3_3
+    - cover.qubino_zmnhod1_flush_shutter_dc_switch_6_0
+
+things:
+    - sensor.freezer_temperature
+    - sensor.bbq_temperature
 
 indoor_basement:
   entities:
-    - light.basement_box_room
+    - sensor.th01_temperature
+    - sensor.th01_humidity
+    - sensor.th02_temperature
+    - sensor.th02_humidity
 
 indoor_attic:
   entities:
     - light.attic_window
+    - sensor.th03_temperature
+    - sensor.th03_humidity

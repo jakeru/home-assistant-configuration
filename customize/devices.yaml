@@ -6,6 +6,8 @@ group.indoor_attic:
   friendly_name: Vinden
 group.outdoor:
   friendly_name: Utomhus
+group.garden:
+  friendly_name: Trädgården
 group.weather:
   friendly_name: Temperaturer
 group.speakers:
@@ -14,16 +16,26 @@ group.devices:
   friendly_name: Enheter
 group.people:
   friendly_name: Personer
+group.things:
+  friendly_name: Maskinpark
 sensor.outdoor_temperature:
-  friendly_name: Utomhus (entré)
-sensor.th01:
+  friendly_name: Utomhustemperatur
+sensor.th01_temperature:
   friendly_name: Matkällaren
-sensor.th02:
+sensor.th01_humidity:
+  friendly_name: Matkällaren
+sensor.th02_temperature:
   friendly_name: Gillestugan
-sensor.th03:
+sensor.th02_humidity:
+  friendly_name: Gillestugan
+sensor.th03_temperature:
   friendly_name: Vinden
-sensor.bbq:
-  friendly_name: Grilltermometern
+sensor.th03_humidity:
+  friendly_name: Vinden
+sensor.bbq_temperature:
+  friendly_name: Grillen
+sensor.freezer_temperature:
+  friendly_name: Frysen
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_3_1:
   friendly_name: Temperatur i lekrummet
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_3_3:
@@ -44,3 +56,15 @@ light.attic_window:
   friendly_name: Fönsterlampan på vinden
 light.basement_box_room:
   friendly_name: Lampan i fönstret i kartongrummet
+sensor.soil_moisture1_humidity:
+  friendly_name: Landet 1
+sensor.soil_moisture1_temperature:
+  friendly_name: Landet 1
+sensor.soil_moisture2_humidity:
+  friendly_name: Landet 2
+sensor.soil_moisture2_temperature:
+  friendly_name: Landet 2
+sensor.soil_moisture3_humidity:
+  friendly_name: Landet 3
+sensor.soil_moisture3_temperature:
+  friendly_name: Landet 3
