@@ -152,20 +152,20 @@ binary_sensor:
   - platform: template
     sensors:
       playroom_motion:
-        entity_id: sensor.playroom_burglar_3_10
-        value_template: '{{ is_state("sensor.playroom_burglar_3_10", "8") }}'
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar_3_10
+        value_template: '{{ is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar_3_10", "8") }}'
 
 switch:
   - platform: template
     switches:
       outdoor_front:
-        entity_id: switch.outdoor_front_switch_4_0
-        value_template: '{{ is_state("switch.outdoor_front_switch_4_0", "on") }}'
+        entity_id: switch.everspring_an179_in_wall_onoff_module_switch_4_0
+        value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch_4_0", "on") }}'
         turn_on:
           service: switch.turn_on
-          entity_id: switch.outdoor_front_switch_4_0
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_4_0
         turn_off:
           service: switch.turn_off
-          entity_id: switch.outdoor_front_switch_4_0
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_4_0
 
 script: !include_dir_merge_named script

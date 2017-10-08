@@ -24,9 +24,9 @@ sensor.th03:
   friendly_name: Vinden
 sensor.bbq:
   friendly_name: Grilltermometern
-sensor.playroom_temperature_3_1:
-  friendly_name: Lekrummet
-sensor.playroom_luminance_3_3:
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_3_1:
+  friendly_name: Temperatur i lekrummet
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_3_3:
   friendly_name: Ljusnivå i lekrummet
 light.livingroom_window:
   friendly_name: Fönsterbelysning i vardagsrum
@@ -38,7 +38,7 @@ switch.outdoor_front:
   friendly_name: Belysning utomhus framsidan
 light.playroom:
   friendly_name: Taklampan i lekrummet
-light.hall_level_5_0:
+light.everspring_ad146_in_wall_dimmer_module_level_5_0:
   friendly_name: Kristallkronan i hallen
 light.attic_window:
   friendly_name: Fönsterlampan på vinden
