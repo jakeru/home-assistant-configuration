@@ -128,6 +128,11 @@ panel_iframe:
     url: 'http://192.168.1.225:3000'
 
 
+verisure:
+  username: jakegrabben@hotmail.com
+  password: !secret verisure_password
+  code_digits: 6
+
 zwave:
   usb_path: /dev/zstick
   config_path: /home/hass/hass-conf/deps/python_openzwave/ozw_config
