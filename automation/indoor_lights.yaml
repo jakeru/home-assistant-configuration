@@ -1,9 +1,9 @@
 - alias: Turn on indoor lights in early morning
   trigger:
     platform: time
-    after: '06:00:00'
+    at: '06:00:00'
   condition:
-    platform: numeric_state
+    condition: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
     below: 2.0
@@ -36,7 +36,7 @@
     value_template: '{{ state.attributes.elevation }}'
     below: 4.0
   condition:
-    platform: time
+    condition: time
     before: '22:30:00'
   action:
     service: homeassistant.turn_on
