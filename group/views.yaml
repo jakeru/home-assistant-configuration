@@ -11,6 +11,7 @@ default_view:
     - group.outdoor
     - group.sun
     - group.garden
+    - group.water
 
 devices_view:
   name: Enheter

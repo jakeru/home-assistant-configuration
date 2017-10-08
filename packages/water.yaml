@@ -1,0 +1,83 @@
+switch:
+  - platform: mqtt
+    name: water1
+    state_topic: garden/water/1/state
+    command_topic: garden/water/1/control
+    payload_on: "1"
+    payload_off: "0"
+  - platform: mqtt
+    name: water2
+    state_topic: garden/water/2/state
+    command_topic: garden/water/2/control
+    payload_on: "1"
+    payload_off: "0"
+
+automation:
+  - alias: Turn off water 1 after a while
+    trigger:
+      platform: state
+      entity_id: switch.water1
+      to: 'on'
+    action:
+      service: script.turn_on
+      entity_id: script.water1_timer
+  - alias: Reset script water 1
+    trigger:
+      platform: state
+      entity_id: switch.water1
+      to: 'off'
+    action:
+      service: script.turn_off
+      entity_id: script.water1_timer
+  - alias: Turn off water 2 after a while
+    trigger:
+      platform: state
+      entity_id: switch.water2
+      to: 'on'
+    action:
+      service: script.turn_on
+      entity_id: script.water2_timer
+  - alias: Reset script 2
+    trigger:
+      platform: state
+      entity_id: switch.water2
+      to: 'off'
+    action:
+      service: script.turn_off
+      entity_id: script.water2_timer
+
+script:
+  water1_timer:
+    alias: "Water 1 timer"
+    sequence:
+      - delay: '00:{{ states.input_slider.water1_timer.state | int }}:00'
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.water1
+  water2_timer:
+    alias: "Water 2 timer"
+    sequence:
+      - delay: '00:{{ states.input_slider.water2_timer.state | int }}:00'
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.water2
+
+input_slider:
+  water1_timer:
+    initial: 20
+    min: 1
+    max: 60
+    step: 1
+  water2_timer:
+    initial: 20
+    min: 1
+    max: 60
+    step: 1
+
+group:
+  water:
+    entities:
+      - switch.water1
+      - input_slider.water1_timer
+      - switch.water2
+      - input_slider.water2_timer

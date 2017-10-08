@@ -71,3 +71,14 @@ sensor.soil_moisture3_humidity:
   friendly_name: Landet 3
 sensor.soil_moisture3_temperature:
   friendly_name: Landet 3
+# Package: water
+group.water:
+  friendly_name: Bevattning
+switch.water1:
+  friendly_name: Bevattning landet
+switch.water2:
+  friendly_name: Bevattning häcken
+input_slider.water1_timer:
+  friendly_name: Antal minuter
+input_slider.water2_timer:
+  friendly_name: Antal minuter
