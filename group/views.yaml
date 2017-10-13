@@ -5,27 +5,49 @@ default_view:
   entities:
     - persistent_notification.update_available
     - group.scenes
-    - group.indoor_main
-    - group.indoor_basement
-    - group.indoor_attic
+    - group.hall
+    - group.livingroom
     - group.outdoor
     - group.sun
 
-devices_garden:
-  name: Trädgård
+main_floor_view:
   view: yes
   entities:
+    - group.hall
+    - group.livingroom
+    - group.kitchen
+    - group.bedroom
+    - group.playroom
+
+basement_view:
+  view: yes
+  entities:
+    - group.laundry
+    - group.office
+    - group.butlery
+    - group.gillestugan
+
+attic_view:
+  view: yes
+  entities:
+    - group.attic
+
+garden_view:
+  view: yes
+  entities:
+    - group.outdoor
     - group.garden
     - group.water
 
-devices_objects:
-  name: Prylar
+objects_view:
+  view: yes
   entities:
-    - group.objects
+    - group.things
+    - group.infrastructure
 
 devices_view:
   name: Enheter
-  view: yes
+  view: no
   entities:
     - group.speakers
     - group.devices

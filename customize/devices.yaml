@@ -1,9 +1,13 @@
-group.indoor_main:
+group.main_floor_view:
   friendly_name: Huvudplan
-group.indoor_basement:
+group.basement_view:
   friendly_name: Källaren
-group.indoor_attic:
+group.attic_view:
   friendly_name: Vinden
+group.garden_view:
+  friendly_name: Trädgården
+group.objects_view:
+  friendly_name: Prylar
 group.outdoor:
   friendly_name: Utomhus
 group.garden:
@@ -18,53 +22,89 @@ group.people:
   friendly_name: Personer
 group.things:
   friendly_name: Maskinpark
+group.kitchen:
+  friendly_name: Köket
+group.livingroom:
+  friendly_name: Vardagsrummet
+group.bedroom:
+  friendly_name: Sovrummet
+group.playroom:
+  friendly_name: Lekrummet
+group.hall:
+  friendly_name: Hallen
+group.laundry:
+  friendly_name: Tvättstugan
+group.butlery:
+  friendly_name: Matkällaren
+group.gillestugan:
+  friendly_name: Gillestugan
+group.office:
+  friendly_name: Kontoret
+group.attic:
+  friendly_name: Vinden
+group.infrastructure:
+  friendly_name: IT-infrastruktur
 sensor.outdoor_temperature:
   friendly_name: Utomhustemperatur
 sensor.th01_temperature:
-  friendly_name: Matkällaren
+  friendly_name: Temperatur
 sensor.th01_humidity:
-  friendly_name: Matkällaren
+  friendly_name: Luftfuktighet
 sensor.th02_temperature:
-  friendly_name: Gillestugan
+  friendly_name: Temperatur
 sensor.th02_humidity:
-  friendly_name: Gillestugan
+  friendly_name: Luftfuktighet
 sensor.th03_temperature:
-  friendly_name: Vinden
+  friendly_name: Temperatur
 sensor.th03_humidity:
-  friendly_name: Vinden
+  friendly_name: Luftfuktighet
 sensor.bbq_temperature:
   friendly_name: Grillen
 sensor.freezer_temperature:
   friendly_name: Frysen
+sensor.disk_use_:
+  friendly_name: Diskanvänding
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
-  friendly_name: Temperatur i lekrummet
+  friendly_name: Temperatur
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
-  friendly_name: Ljusnivå i lekrummet
+  friendly_name: Ljusnivå
 light.livingroom_corner:
   friendly_name: Hörnlampan
 light.livingroom_front:
-  friendly_name: Fönsterbelysning mot gårdsplan
-light.livingroom_window:
-  friendly_name: Fönsterbelysning TV-rummet
+  friendly_name: Fönsterbelysning
 light.outdoor:
   friendly_name: Belysning utomhus
 switch.outdoor_front:
   friendly_name: Belysning utomhus framsidan
 light.playroom:
-  friendly_name: Taklampan i lekrummet
+  friendly_name: Belysning
 light.everspring_ad146_in_wall_dimmer_module_level:
-  friendly_name: Kristallkronan i hallen
+  friendly_name: Kristallkronan
 light.attic_window:
-  friendly_name: Fönsterlampan på vinden
-light.basement_box_room:
-  friendly_name: Lampan i fönstret i kartongrummet
+  friendly_name: Fönsterlampan
 cover.qubino_zmnhod1_flush_shutter_dc_switch:
-  friendly_name: Rullgardin sovrum
+  friendly_name: Rullgardin
   device_class: window
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
-  friendly_name: Luftavfuktaren i tvättstugan
+  friendly_name: Luftavfuktare
+switch.belysning_kontoret:
+  friendly_name: Röda fönsterlampan
+sensor.gillestugan_humidity:
+  friendly_name: Luftfuktighet (brandvarnare)
+sensor.gillestugan_temperature:
+  friendly_name: Temperatur (brandvarnare)
+sensor.kok_humidity:
+  friendly_name: Luftfuktighet
+sensor.kok_temperature:
+  friendly_name: Temperatur
+sensor.tvattstuga_humidity:
+  friendly_name: Luftfuktighet
+sensor.tvattstuga_temperature:
+  friendly_name: Temperatur
 sensor.dehumidifier:
-  friendly_name: Luftavfuktaren i tvättstugan
+  friendly_name: Luftavfuktare
+sensor.entre_temperature:
+  friendly_name: Temperatur
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
 sensor.soil_moisture1_temperature:
@@ -96,7 +136,7 @@ switch.water1:
   friendly_name: Bevattning landet
 switch.water2:
   friendly_name: Bevattning häcken
-input_slider.water1_timer:
+input_number.water1_timer:
   friendly_name: Antal minuter
-input_slider.water2_timer:
+input_number.water2_timer:
   friendly_name: Antal minuter

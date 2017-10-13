@@ -21,32 +21,69 @@ garden:
     - sensor.soil_moisture3_temperature
     - sensor.soil_moisture3_humidity
 
-indoor_main:
+kitchen:
+  entities:
+    - sensor.kok_humidity
+    - sensor.kok_temperature
+
+bedroom:
+  entities:
+    - cover.qubino_zmnhod1_flush_shutter_dc_switch
+
+hall:
+  entities:
+    - light.everspring_ad146_in_wall_dimmer_module_level
+    - binary_sensor.entredorr
+    - lock.entredorr
+    - sensor.entre_temperature
+
+playroom:
   entities:
     - light.playroom
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+
+livingroom:
+  entities:
     - light.livingroom_corner
     - light.livingroom_front
     - light.livingroom_window
-    - light.everspring_ad146_in_wall_dimmer_module_level
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-    - cover.qubino_zmnhod1_flush_shutter_dc_switch
+    - binary_sensor.altandorr
 
 things:
+  entities:
     - sensor.freezer_temperature
     - sensor.bbq_temperature
 
-indoor_basement:
+laundry:
+  entities:
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    - sensor.dehumidifier
+    - sensor.tvattstuga_humidity
+    - sensor.tvattstuga_temperature
+
+butlery::
   entities:
     - sensor.th01_temperature
     - sensor.th01_humidity
+
+gillestugan:
+  entities:
     - sensor.th02_temperature
     - sensor.th02_humidity
-    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-    - sensor.dehumidifier
+    - sensor.gillestugan_humidity
+    - sensor.gillestugan_temperature
 
-indoor_attic:
+office:
+  entities:
+    - switch.belysning_kontoret
+
+attic:
   entities:
     - light.attic_window
     - sensor.th03_temperature
     - sensor.th03_humidity
+
+infrastructure:
+  entities:
+    - sensor.disk_use_
