@@ -32,9 +32,8 @@ bedroom:
 
 hall:
   entities:
+    - sensor.main_door
     - light.everspring_ad146_in_wall_dimmer_module_level
-    - binary_sensor.entredorr
-    - lock.entredorr
     - sensor.entre_temperature
 
 playroom:
@@ -48,7 +47,7 @@ livingroom:
     - light.livingroom_corner
     - light.livingroom_front
     - light.livingroom_window
-    - binary_sensor.altandorr
+    - sensor.balcony_door
 
 things:
   entities:

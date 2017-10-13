@@ -105,6 +105,10 @@ sensor.dehumidifier:
   friendly_name: Luftavfuktare
 sensor.entre_temperature:
   friendly_name: Temperatur
+sensor.main_door:
+  friendly_name: Entrédörr
+sensor.balcony_door:
+  friendly_name: Altandörr
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
 sensor.soil_moisture1_temperature:
