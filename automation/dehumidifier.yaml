@@ -1,0 +1,15 @@
+- alias: Disable dehumidifier in the evening
+  trigger:
+    platform: time
+    at: '22:30:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+
+- alias: Enable dehumidifier in the morning
+  trigger:
+    platform: time
+    at: '08:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch

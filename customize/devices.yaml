@@ -61,6 +61,10 @@ light.basement_box_room:
 cover.qubino_zmnhod1_flush_shutter_dc_switch:
   friendly_name: Rullgardin sovrum
   device_class: window
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  friendly_name: Luftavfuktaren i tvättstugan
+sensor.dehumidifier:
+  friendly_name: Luftavfuktaren i tvättstugan
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
 sensor.soil_moisture1_temperature:

@@ -42,6 +42,8 @@ indoor_basement:
     - sensor.th01_humidity
     - sensor.th02_temperature
     - sensor.th02_humidity
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+    - sensor.dehumidifier
 
 indoor_attic:
   entities:

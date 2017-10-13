@@ -122,6 +122,10 @@ sensor:
         value_template: '{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom("%H:%M") }}'
       sunset:
         value_template: '{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom("%H:%M") }}'
+      dehumidifier:
+        entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+        value_template: '{{ states.switch.fibaro_system_fgwpef_wall_plug_gen5_switch.attributes.power_consumption }}'
+        unit_of_measurement: 'W'
   - platform: mqtt
     name: Mail
     state_topic: mail
