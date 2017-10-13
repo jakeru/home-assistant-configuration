@@ -1,5 +1,5 @@
 /.HA_VERSION
-/secrets.yaml
+/secrets*
 /*log*
 /*Log*
 /*sqlite
@@ -7,4 +7,5 @@
 /*.xml
 /deps
 *~
+/.*
 
