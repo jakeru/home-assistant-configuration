@@ -62,7 +62,7 @@ script:
         data:
           entity_id: switch.water2
 
-input_slider:
+input_number:
   water1_timer:
     initial: 20
     min: 1
@@ -78,6 +78,6 @@ group:
   water:
     entities:
       - switch.water1
-      - input_slider.water1_timer
+      - input_number.water1_timer
       - switch.water2
-      - input_slider.water2_timer
+      - input_number.water2_timer

@@ -1,3 +1,11 @@
+scenes:
+  entities:
+    - scene.morning
+    - scene.day
+    - scene.afternoon
+    - scene.evening
+    - scene.night
+
 outdoor:
   entities:
     - light.outdoor
@@ -16,12 +24,13 @@ garden:
 indoor_main:
   entities:
     - light.playroom
+    - light.livingroom_corner
+    - light.livingroom_front
     - light.livingroom_window
-    - light.livingroom_other
-    - light.everspring_ad146_in_wall_dimmer_module_level_5_0
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_3_1
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_3_3
-    - cover.qubino_zmnhod1_flush_shutter_dc_switch_6_0
+    - light.everspring_ad146_in_wall_dimmer_module_level
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+    - cover.qubino_zmnhod1_flush_shutter_dc_switch
 
 things:
     - sensor.freezer_temperature

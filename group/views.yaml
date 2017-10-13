@@ -4,6 +4,7 @@ default_view:
   icon: mdi:home
   entities:
     - persistent_notification.update_available
+    - group.scenes
     - group.indoor_main
     - group.indoor_basement
     - group.indoor_attic

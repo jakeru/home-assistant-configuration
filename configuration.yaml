@@ -153,11 +153,9 @@ light:
   signal_repetitions: 1
   devices:
     0b11000d0085feb601010f70:
-      name: livingroom_window
-    0b11000f0085feb602010f70:
-      name: livingroom_other
-    0b11000f0085feb603010f70:
       name: livingroom_corner
+    0b11000f0085feb602010f70:
+      name: livingroom_front
     0b11000d0085feb605010f70:
       name: outdoor
     0b11000d0085feb606010f70:
@@ -174,19 +172,21 @@ binary_sensor:
     sensors:
       playroom_motion:
         entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar_3_10
-        value_template: '{{ is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar_3_10", "8") }}'
+        value_template: '{{ is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") }}'
 
 switch:
   - platform: template
     switches:
       outdoor_front:
-        entity_id: switch.everspring_an179_in_wall_onoff_module_switch_4_0
-        value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch_4_0", "on") }}'
+        entity_id: switch.everspring_an179_in_wall_onoff_module_switch
+        value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch", "on") }}'
         turn_on:
           service: switch.turn_on
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_4_0
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
         turn_off:
           service: switch.turn_off
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_4_0
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
 
 script: !include_dir_merge_named script
+
+scene: !include_dir_merge_list scenes

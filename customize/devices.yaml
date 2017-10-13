@@ -36,27 +36,29 @@ sensor.bbq_temperature:
   friendly_name: Grillen
 sensor.freezer_temperature:
   friendly_name: Frysen
-sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_3_1:
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: Temperatur i lekrummet
-sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_3_3:
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
   friendly_name: Ljusnivå i lekrummet
+light.livingroom_corner:
+  friendly_name: Hörnlampan
+light.livingroom_front:
+  friendly_name: Fönsterbelysning mot gårdsplan
 light.livingroom_window:
-  friendly_name: Fönsterbelysning i vardagsrum
-light.livingroom_other:
-  friendly_name: Övrig mysbelysning i vardagsrum
+  friendly_name: Fönsterbelysning TV-rummet
 light.outdoor:
   friendly_name: Belysning utomhus
 switch.outdoor_front:
   friendly_name: Belysning utomhus framsidan
 light.playroom:
   friendly_name: Taklampan i lekrummet
-light.everspring_ad146_in_wall_dimmer_module_level_5_0:
+light.everspring_ad146_in_wall_dimmer_module_level:
   friendly_name: Kristallkronan i hallen
 light.attic_window:
   friendly_name: Fönsterlampan på vinden
 light.basement_box_room:
   friendly_name: Lampan i fönstret i kartongrummet
-cover.qubino_zmnhod1_flush_shutter_dc_switch_6_0:
+cover.qubino_zmnhod1_flush_shutter_dc_switch:
   friendly_name: Rullgardin sovrum
   device_class: window
 sensor.soil_moisture1_humidity:
@@ -71,6 +73,18 @@ sensor.soil_moisture3_humidity:
   friendly_name: Landet 3
 sensor.soil_moisture3_temperature:
   friendly_name: Landet 3
+group.scenes:
+  friendly_name: Scener
+scene.morning:
+  friendly_name: Morgon
+scene.day:
+  friendly_name: Dag
+scene.afternoon:
+  friendly_name: Eftermiddag
+scene.evening:
+  friendly_name: Kväll
+scene.night:
+  friendly_name: Natt
 # Package: water
 group.water:
   friendly_name: Bevattning

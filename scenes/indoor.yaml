@@ -1,0 +1,35 @@
+- name: morning
+  entities:
+    light.livingroom_front: on
+    light.livingroom_corner: on
+    light.everspring_ad146_in_wall_dimmer_module_level:
+      state: on
+      brightness_pct: 100
+
+- name: day
+  entities:
+    light.livingroom_front: off
+    light.livingroom_corner: off
+    light.everspring_ad146_in_wall_dimmer_module_level: off
+
+- name: afternoon
+  entities:
+    light.livingroom_front: on
+    light.livingroom_corner: on
+    light.everspring_ad146_in_wall_dimmer_module_level:
+      state: on
+      brightness_pct: 100
+
+- name: evening
+  entities:
+    light.livingroom_front: on
+    light.livingroom_corner: off
+    light.everspring_ad146_in_wall_dimmer_module_level:
+      state: on
+      brightness_pct: 50
+
+- name: night
+  entities:
+    light.livingroom_front: off
+    light.livingroom_corner: off
+    light.everspring_ad146_in_wall_dimmer_module_level: off
