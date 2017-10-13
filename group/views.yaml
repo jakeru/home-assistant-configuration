@@ -8,15 +8,24 @@ default_view:
     - group.indoor_main
     - group.indoor_basement
     - group.indoor_attic
-    - group.objects
     - group.outdoor
     - group.sun
+
+devices_garden:
+  name: Trädgård
+  view: yes
+  entities:
     - group.garden
     - group.water
 
+devices_objects:
+  name: Prylar
+  entities:
+    - group.objects
+
 devices_view:
   name: Enheter
-  view: no
+  view: yes
   entities:
     - group.speakers
     - group.devices
