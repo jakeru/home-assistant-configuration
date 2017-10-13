@@ -46,15 +46,12 @@ influxdb:
   database: hass
 
 logger:
-  default: info
+  default: warning
 
 rfxtrx:
   device: /dev/rfxtrx
   debug: False
   dummy: False
-
-device_tracker bluetooth:
-  platform: bluetooth_tracker
 
 sensor:
   - platform: yr
