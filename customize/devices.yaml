@@ -74,6 +74,10 @@ light.livingroom_front:
   friendly_name: Fönsterbelysning
 light.outdoor:
   friendly_name: Belysning utomhus
+group.guestroom:
+  friendly_name: Gästtoalett
+binary_sensor.guestroom:
+  friendly_name: Närvaro
 switch.outdoor_front:
   friendly_name: Belysning utomhus framsidan
 light.playroom:

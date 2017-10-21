@@ -50,6 +50,10 @@ livingroom:
     - light.livingroom_window
     - sensor.balcony_door
 
+guestroom:
+  entities:
+    - binary_sensor.guestroom
+
 things:
   entities:
     - sensor.freezer_temperature

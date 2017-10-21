@@ -18,6 +18,7 @@ main_floor_view:
     - group.kitchen
     - group.bedroom
     - group.playroom
+    - group.guestroom
 
 basement_view:
   view: yes

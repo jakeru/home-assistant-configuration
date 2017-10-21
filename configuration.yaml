@@ -193,10 +193,17 @@ light:
       name: attic_window
     0b11000d0085feb609010f70:
       name: basement_box_room
+    0b110005007abc960a010f60:
+      name: guestroom
 
 automation: !include_dir_merge_list automation
 
 binary_sensor:
+  - platform: rfxtrx
+    automatic_add: True
+    devices:
+      0b110005007abc960a010f60:
+        name: guestroom
   - platform: template
     sensors:
       playroom_motion:
