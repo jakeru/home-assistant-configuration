@@ -200,7 +200,7 @@ binary_sensor:
   - platform: template
     sensors:
       playroom_motion:
-        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar_3_10
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
         value_template: '{{ is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") }}'
 
 switch:
