@@ -7,8 +7,7 @@
   action:
     service: homeassistant.turn_on
     entity_id:
-      - group.outdoor
-      - light.attic_window
+      - group.outdoor_and_attic_lights
 
 - alias: Turn off outdoor lights when the sun goes up
   trigger:
@@ -19,5 +18,4 @@
   action:
     service: homeassistant.turn_off
     entity_id:
-      - group.outdoor
-      - light.attic_window
+      - group.outdoor_and_attic_lights

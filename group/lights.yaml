@@ -12,6 +12,14 @@ outdoor:
     - switch.outdoor_front
     - sensor.outdoor_temperature
 
+# This group is used for the automation that makes sure
+# the lights are on when the sun is down.
+outdoor_and_attic_lights:
+  entities:
+    - light.outdoor
+    - switch.outdoor_front
+    - light.attic_window
+
 garden:
   entities:
     - sensor.soil_moisture1_temperature
