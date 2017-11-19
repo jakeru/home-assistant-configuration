@@ -154,6 +154,13 @@ sensor:
           {% else %}
             mdi:lock-open
           {% endif %}
+      bathroom_motion:
+        value_template: >-
+          {% if is_state("sensor.aeotec_zw100_multisensor_6_burglar", "8") %}
+            ja
+          {% else %}
+            nej
+          {% endif %}
   - platform: mqtt
     name: Mail
     state_topic: mail

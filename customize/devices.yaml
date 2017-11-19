@@ -44,6 +44,8 @@ group.attic:
   friendly_name: Vinden
 group.infrastructure:
   friendly_name: IT-infrastruktur
+group.bathroom:
+  friendly_name: Badrummet
 sensor.outdoor_temperature:
   friendly_name: Utomhustemperatur
 sensor.th01_temperature:
@@ -86,10 +88,20 @@ group.guestroom:
   friendly_name: Gästtoalett
 binary_sensor.guestroom:
   friendly_name: Närvaro
+sensor.aeotec_zw100_multisensor_6_luminance:
+  friendly_name: Ljusnivå
+sensor.aeotec_zw100_multisensor_6_relative_humidity:
+  friendly_name: Luftfuktighet
+sensor.aeotec_zw100_multisensor_6_temperature:
+  friendly_name: Temperatur
+sensor.bathroom_motion:
+  friendly_name: Närvaro
 switch.outdoor_front:
   friendly_name: Belysning utomhus framsidan
 light.playroom:
   friendly_name: Belysning
+binary_sensor.playroom_motion:
+  friendly_name: Närvaro
 light.everspring_ad146_in_wall_dimmer_module_level:
   friendly_name: Kristallkronan
 light.attic_window:
