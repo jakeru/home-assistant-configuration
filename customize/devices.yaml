@@ -68,6 +68,14 @@ sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: Temperatur
 sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
   friendly_name: Ljusnivå
+sensor.aeotec_zw074_multisensor_gen5_luminance:
+  friendly_name: Ljusnivå
+sensor.aeotec_zw074_multisensor_gen5_relative_humidity:
+  friendly_name: Luftfuktighet
+sensor.aeotec_zw074_multisensor_gen5_temperature:
+  friendly_name: Temperatur garageuppfart
+sensor.aeotec_zw074_multisensor_gen5_burglar:
+  friendly_name: Närvaro garageuppfart
 light.livingroom_corner:
   friendly_name: Hörnlampan
 light.livingroom_front:

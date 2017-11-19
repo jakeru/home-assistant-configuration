@@ -11,6 +11,10 @@ outdoor:
     - light.outdoor
     - switch.outdoor_front
     - sensor.outdoor_temperature
+    - sensor.aeotec_zw074_multisensor_gen5_luminance
+    - sensor.aeotec_zw074_multisensor_gen5_relative_humidity
+    - sensor.aeotec_zw074_multisensor_gen5_temperature
+    - sensor.aeotec_zw074_multisensor_gen5_burglar
 
 # This group is used for the automation that makes sure
 # the lights are on when the sun is down.
