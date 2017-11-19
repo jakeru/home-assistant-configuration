@@ -132,7 +132,9 @@ sensor.tvattstuga_humidity:
 sensor.tvattstuga_temperature:
   friendly_name: Temperatur
 sensor.dehumidifier:
-  friendly_name: Luftavfuktare
+  friendly_name: Luftavfuktare, effektuttag
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  friendly_name: Luftavfuktare, energiåtgång
 sensor.entre_temperature:
   friendly_name: Temperatur
 sensor.main_door:

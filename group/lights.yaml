@@ -82,6 +82,7 @@ laundry:
   entities:
     - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
     - sensor.dehumidifier
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
     - sensor.tvattstuga_humidity
     - sensor.tvattstuga_temperature
 
