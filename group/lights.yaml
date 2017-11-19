@@ -106,6 +106,9 @@ attic:
     - light.attic_window
     - sensor.th03_temperature
     - sensor.th03_humidity
+    - switch.swz002_switch
+    - sensor.swz002_power
+    - sensor.swz002_energy
 
 infrastructure:
   entities:
