@@ -26,6 +26,9 @@ http:
 # Checks for available updates
 updater:
 
+# Enable the iOS component
+ios:
+
 # Discover some devices automatically
 discovery:
 
