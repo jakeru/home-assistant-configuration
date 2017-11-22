@@ -64,14 +64,14 @@ livingroom:
 
 guestroom:
   entities:
-    - binary_sensor.guestroom
+    - sensor.guestroom_status
 
 bathroom:
   entities:
+    - sensor.bathroom_status
     - sensor.aeotec_zw100_multisensor_6_luminance
     - sensor.aeotec_zw100_multisensor_6_relative_humidity
     - sensor.aeotec_zw100_multisensor_6_temperature
-    - sensor.bathroom_motion
 
 things:
   entities:

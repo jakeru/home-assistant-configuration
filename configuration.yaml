@@ -154,12 +154,31 @@ sensor:
           {% else %}
             mdi:lock-open
           {% endif %}
-      bathroom_motion:
+      bathroom_status:
         value_template: >-
           {% if is_state("sensor.aeotec_zw100_multisensor_6_burglar", "8") %}
-            ja
+            upptaget
           {% else %}
-            nej
+            ledigt
+          {% endif %}
+        icon_template: >-
+          {% if is_state("sensor.aeotec_zw100_multisensor_6_burglar", "8") %}
+            mdi:close-circle
+          {% else %}
+            mdi:human-male-female
+          {% endif %}
+      guestroom_status:
+        value_template: >-
+          {% if is_state("binary_sensor.guestroom", "on") %}
+            upptaget
+          {% else %}
+            ledigt
+          {% endif %}
+        icon_template: >-
+          {% if is_state("binary_sensor.guestroom", "on") %}
+            mdi:close-circle
+          {% else %}
+            mdi:human-male-female
           {% endif %}
   - platform: mqtt
     name: Mail
