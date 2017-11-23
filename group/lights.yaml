@@ -50,10 +50,10 @@ hall:
 
 playroom:
   entities:
+    - sensor.playroom_motion
     - light.playroom
     - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
     - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-    - binary_sensor.playroom_motion
 
 livingroom:
   entities:

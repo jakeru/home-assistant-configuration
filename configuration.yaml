@@ -180,6 +180,19 @@ sensor:
           {% else %}
             mdi:human-male-female
           {% endif %}
+      playroom_motion:
+        value_template: >-
+          {% if is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") %}
+            leks för fullt
+          {% else %}
+            ingen aktivitet
+          {% endif %}
+        icon_template: >-
+          {% if is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") %}
+            mdi:snowman
+          {% else %}
+            mdi:radiobox-blank
+          {% endif %}
   - platform: mqtt
     name: Mail
     state_topic: mail

@@ -106,8 +106,8 @@ switch.outdoor_front:
   friendly_name: Belysning utomhus framsidan
 light.playroom:
   friendly_name: Belysning
-binary_sensor.playroom_motion:
-  friendly_name: Närvaro
+sensor.playroom_motion:
+  friendly_name: Lekrummet
 light.everspring_ad146_in_wall_dimmer_module_level:
   friendly_name: Kristallkronan
 light.attic_window:
