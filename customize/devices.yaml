@@ -1,3 +1,5 @@
+group.scenes_view:
+  friendly_name: Scener
 group.main_floor_view:
   friendly_name: Huvudplan
 group.basement_view:
@@ -5,9 +7,11 @@ group.basement_view:
 group.attic_view:
   friendly_name: Vinden
 group.garden_view:
-  friendly_name: Trädgården
+  friendly_name: Utomhus
 group.objects_view:
   friendly_name: Prylar
+group.main:
+  friendly_name: Allmänt
 group.outdoor:
   friendly_name: Utomhus
 group.garden:
@@ -52,14 +56,17 @@ sensor.th01_temperature:
   friendly_name: Temperatur
 sensor.th01_humidity:
   friendly_name: Luftfuktighet
+  icon: mdi:water-percent
 sensor.th02_temperature:
   friendly_name: Temperatur
 sensor.th02_humidity:
   friendly_name: Luftfuktighet
+  icon: mdi:water-percent
 sensor.th03_temperature:
   friendly_name: Temperatur
 sensor.th03_humidity:
   friendly_name: Luftfuktighet
+  icon: mdi:water-percent
 sensor.bbq_temperature:
   friendly_name: Grillen
 sensor.freezer_temperature:
@@ -74,6 +81,7 @@ sensor.aeotec_zw074_multisensor_gen5_luminance:
   friendly_name: Ljusnivå
 sensor.aeotec_zw074_multisensor_gen5_relative_humidity:
   friendly_name: Luftfuktighet
+  icon: mdi:water-percent
 sensor.aeotec_zw074_multisensor_gen5_temperature:
   friendly_name: Temperatur garageuppfart
 sensor.aeotec_zw074_multisensor_gen5_burglar:
@@ -86,22 +94,24 @@ switch.swz002_switch:
   friendly_name: Strömförsörjning värmeslinga
 light.livingroom_corner:
   friendly_name: Hörnlampan
+  icon: mdi:lamp
 light.livingroom_front:
   friendly_name: Fönsterbelysning
 light.outdoor:
   friendly_name: Belysning utomhus
 group.guestroom:
-  friendly_name: Gästtoalett
+  friendly_name: Gästtoaletten
 sensor.guestroom_status:
-  friendly_name: Status
+  friendly_name: Gästtoaletten
 sensor.aeotec_zw100_multisensor_6_luminance:
   friendly_name: Ljusnivå
 sensor.aeotec_zw100_multisensor_6_relative_humidity:
   friendly_name: Luftfuktighet
+  icon: mdi:water-percent
 sensor.aeotec_zw100_multisensor_6_temperature:
   friendly_name: Temperatur
 sensor.bathroom_status:
-  friendly_name: Status
+  friendly_name: Badrummet
 switch.outdoor_front:
   friendly_name: Belysning utomhus framsidan
 light.playroom:
@@ -119,16 +129,20 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
   friendly_name: Luftavfuktare
 switch.belysning_kontoret:
   friendly_name: Röda fönsterlampan
+  icon: mdi:lamp
 sensor.gillestugan_humidity:
   friendly_name: Luftfuktighet (brandvarnare)
+  icon: mdi:water-percent
 sensor.gillestugan_temperature:
   friendly_name: Temperatur (brandvarnare)
 sensor.kok_humidity:
   friendly_name: Luftfuktighet
+  icon: mdi:water-percent
 sensor.kok_temperature:
   friendly_name: Temperatur
 sensor.tvattstuga_humidity:
   friendly_name: Luftfuktighet
+  icon: mdi:water-percent
 sensor.tvattstuga_temperature:
   friendly_name: Temperatur
 sensor.dehumidifier:
@@ -143,14 +157,17 @@ sensor.balcony_door:
   friendly_name: Altandörr
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
+  icon: mdi:water-percent
 sensor.soil_moisture1_temperature:
   friendly_name: Landet 1
 sensor.soil_moisture2_humidity:
   friendly_name: Landet 2
+  icon: mdi:water-percent
 sensor.soil_moisture2_temperature:
   friendly_name: Landet 2
 sensor.soil_moisture3_humidity:
   friendly_name: Landet 3
+  icon: mdi:water-percent
 sensor.soil_moisture3_temperature:
   friendly_name: Landet 3
 group.scenes:

@@ -3,12 +3,12 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - persistent_notification.update_available
+    - group.main
+
+scenes_view:
+  view: yes
+  entities:
     - group.scenes
-    - group.hall
-    - group.livingroom
-    - group.outdoor
-    - group.sun
 
 main_floor_view:
   view: yes
@@ -37,15 +37,16 @@ attic_view:
 garden_view:
   view: yes
   entities:
+    - group.sun
     - group.outdoor
-    - group.garden
-    - group.water
 
 objects_view:
   view: yes
   entities:
     - group.things
     - group.infrastructure
+    - group.garden
+    - group.water
 
 devices_view:
   name: Enheter
