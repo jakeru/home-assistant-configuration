@@ -197,6 +197,15 @@ sensor:
     name: Mail
     state_topic: mail
 
+camera:
+  - platform: local_file
+    name: camera1
+    file_path: /home/camera1/latest.jpg
+  - platform: generic
+    name: weather
+    still_image_url: "https://www.yr.no/place/Sweden/Stockholm/Stockholm/meteogram.svg"
+    content_type: "image/svg+xml"
+
 panel_iframe:
   grafana:
     title: 'Grafer'
