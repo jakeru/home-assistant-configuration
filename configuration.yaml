@@ -241,8 +241,15 @@ sensor:
             mdi:radiobox-blank
           {% endif %}
   - platform: mqtt
-    name: Mail
-    state_topic: mail
+    name: 'laundry_emeter1_energy'
+    state_topic: 'laundry/e-meter/1'
+    unit_of_measurement: 'kWh'
+    value_template: '{{ value_json.energy }}'
+  - platform: mqtt
+    name: 'laundry_emeter1_power'
+    state_topic: 'laundry/e-meter/1'
+    unit_of_measurement: 'W'
+    value_template: '{{ value_json.power }}'
 
 camera:
   - platform: local_file

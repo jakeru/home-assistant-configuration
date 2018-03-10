@@ -97,6 +97,8 @@ laundry:
     - sensor.tvattstuga_humidity
     - sensor.tvattstuga_temperature
     - sensor.laundry_door
+    - sensor.laundry_emeter1_energy
+    - sensor.laundry_emeter1_power
 
 butlery::
   entities:
