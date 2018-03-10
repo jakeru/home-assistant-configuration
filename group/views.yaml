@@ -19,6 +19,7 @@ main_floor_view:
     - group.livingroom
     - group.kitchen
     - group.bedroom
+    - group.bedroom_for_children
     - group.playroom
     - group.guestroom
     - group.bathroom

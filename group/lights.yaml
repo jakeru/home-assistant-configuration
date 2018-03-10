@@ -53,6 +53,10 @@ bedroom:
   entities:
     - cover.qubino_zmnhod1_flush_shutter_dc_switch
 
+bedroom_for_children:
+  entities:
+    - cover.qubino_zmnhod1_flush_shutter_dc_switch_2
+
 hall:
   entities:
     - sensor.main_door

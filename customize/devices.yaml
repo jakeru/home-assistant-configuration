@@ -32,6 +32,8 @@ group.livingroom:
   friendly_name: Vardagsrummet
 group.bedroom:
   friendly_name: Sovrummet
+group.bedroom_for_children:
+  friendly_name: Barnens sovrum
 group.playroom:
   friendly_name: Lekrummet
 group.hall:
@@ -131,6 +133,9 @@ light.everspring_ad146_in_wall_dimmer_module_level:
 light.attic_window:
   friendly_name: Fönsterlampan
 cover.qubino_zmnhod1_flush_shutter_dc_switch:
+  friendly_name: Rullgardin
+  device_class: window
+cover.qubino_zmnhod1_flush_shutter_dc_switch_2:
   friendly_name: Rullgardin
   device_class: window
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
