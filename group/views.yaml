@@ -30,6 +30,7 @@ basement_view:
     - group.office
     - group.butlery
     - group.gillestugan
+    - group.garage
 
 attic_view:
   view: yes

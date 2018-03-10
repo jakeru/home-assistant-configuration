@@ -165,6 +165,8 @@ sensor.balcony_door:
   friendly_name: Altandörr
 sensor.laundry_door:
   friendly_name: Dörr till tvättstugan
+sensor.garage1_door:
+  friendly_name: Garageport G1
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
   icon: mdi:water-percent

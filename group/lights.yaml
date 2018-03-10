@@ -15,6 +15,7 @@ main:
     - sensor.bathroom_status
     - sensor.guestroom_status
     - sensor.laundry_door
+    - sensor.garage1_door
 
 outdoor:
   entities:
@@ -100,6 +101,10 @@ laundry:
     - sensor.laundry_door
     - sensor.laundry_emeter1_energy
     - sensor.laundry_emeter1_power
+
+garage:
+  entities:
+    - sensor.garage1_door
 
 butlery::
   entities:

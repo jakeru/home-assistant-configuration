@@ -240,6 +240,23 @@ sensor:
           {% else %}
             mdi:radiobox-blank
           {% endif %}
+      garage1_door:
+        value_template: >-
+          {% if is_state('sensor.vision_zg8101_garage_door_detector_alarm_level', '0') %}
+            stängd
+          {% elif is_state('sensor.vision_zg8101_garage_door_detector_alarm_level', '255') %}
+            öppen
+          {% else %}
+            okänt
+          {% endif %}
+        icon_template: >-
+          {% if is_state('sensor.vision_zg8101_garage_door_detector_alarm_level', '0') %}
+            mdi:door-closed
+          {% elif is_state('sensor.vision_zg8101_garage_door_detector_alarm_level', '255') %}
+            mdi:door-open
+          {% else %}
+            mdi:dots-horizontal
+          {% endif %}
   - platform: mqtt
     name: 'laundry_emeter1_energy'
     state_topic: 'laundry/e-meter/1'
