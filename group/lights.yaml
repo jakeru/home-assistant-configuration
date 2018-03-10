@@ -74,6 +74,7 @@ livingroom:
 
 guestroom:
   entities:
+    - light.guestroom
     - sensor.guestroom_status
 
 bathroom:

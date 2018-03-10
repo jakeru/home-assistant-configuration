@@ -103,6 +103,8 @@ light.livingroom_corner:
   icon: mdi:lamp
 light.livingroom_front:
   friendly_name: Fönsterbelysning
+light.guestroom:
+  friendly_name: Belysning på gästtoaletten
 light.outdoor:
   friendly_name: Belysning utomhus
 group.guestroom:
