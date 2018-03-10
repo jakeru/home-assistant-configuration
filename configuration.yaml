@@ -210,6 +210,23 @@ sensor:
           {% else %}
             mdi:human-male-female
           {% endif %}
+      laundry_door:
+        value_template: >-
+          {% if is_state("binary_sensor.laundry", "on") %}
+            öppen
+          {% elif is_state("binary_sensor.laundry", "off") %}
+            stängd
+          {% else %}
+            okänd
+          {% endif %}
+        icon_template: >-
+          {% if is_state("binary_sensor.laundry", "on") %}
+            mdi:door-open
+          {% elif is_state("binary_sensor.laundry", "off") %}
+            mdi:door-closed
+          {% else %}
+            mdi:dots-horizontal
+          {% endif %}
       playroom_motion:
         value_template: >-
           {% if is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") %}
@@ -285,6 +302,8 @@ binary_sensor:
     devices:
       0b110005007abc960a010f60:
         name: guestroom
+      0b11002a0023034e0a000070:
+        name: laundry
   - platform: template
     sensors:
       playroom_motion:

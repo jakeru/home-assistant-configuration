@@ -14,6 +14,7 @@ main:
     - light.everspring_ad146_in_wall_dimmer_module_level
     - sensor.bathroom_status
     - sensor.guestroom_status
+    - sensor.laundry_door
 
 outdoor:
   entities:
@@ -94,6 +95,7 @@ laundry:
     - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
     - sensor.tvattstuga_humidity
     - sensor.tvattstuga_temperature
+    - sensor.laundry_door
 
 butlery::
   entities:

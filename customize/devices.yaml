@@ -159,6 +159,8 @@ sensor.main_door:
   friendly_name: Entrédörr
 sensor.balcony_door:
   friendly_name: Altandörr
+sensor.laundry_door:
+  friendly_name: Dörr till tvättstugan
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
   icon: mdi:water-percent
