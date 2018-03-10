@@ -47,6 +47,36 @@ sun:
 influxdb:
   host: localhost
   database: hass
+  include:
+    entities:
+      - alarm_control_panel.herdevagen_26_b_alarm
+      - lock.entredorr
+      - sensor.balcony_door
+      - sensor.bathroom_status
+      - sensor.aeotec_zw100_multisensor_6_temperature
+      - sensor.aeotec_zw100_multisensor_6_relative_humidity
+      - sensor.dehumidifier
+      - sensor.entre_temperature
+      - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
+      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+      - sensor.freezer_temperature
+      - sensor.gillestugan_humidity
+      - sensor.gillestugan_temperature
+      - sensor.guestroom_status
+      - sensor.kok_humidity
+      - sensor.kok_temperature
+      - sensor.laundry_door
+      - sensor.main_door
+      - sensor.swz002_energy
+      - sensor.swz002_power
+      - sensor.th01_humidity
+      - sensor.th01_temperature
+      - sensor.th02_humidity
+      - sensor.th02_temperature
+      - sensor.th03_humidity
+      - sensor.th03_temperature
+      - sensor.tvattstuga_humidity
+      - sensor.tvattstuga_temperature
 
 logger:
   default: warning
