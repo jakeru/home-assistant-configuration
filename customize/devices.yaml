@@ -52,6 +52,8 @@ group.bathroom:
   friendly_name: Badrummet
 camera.camera1:
   friendly_name: Garageuppfarten
+camera.washm:
+  friendly_name: Tvättmaskinen
 camera.weather:
   friendly_name: Väderprognos
 sensor.outdoor_temperature:

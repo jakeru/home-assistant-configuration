@@ -90,6 +90,7 @@ things:
 
 laundry:
   entities:
+    - camera.washm
     - switch.fibaro_system_fgwpef_wall_plug_gen5_switch
     - sensor.dehumidifier
     - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy

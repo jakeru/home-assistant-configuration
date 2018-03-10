@@ -4,6 +4,7 @@ default_view:
   icon: mdi:home
   entities:
     - camera.weather
+    - camera.camera1
     - group.main
 
 scenes_view:
