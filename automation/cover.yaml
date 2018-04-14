@@ -7,10 +7,32 @@
     entity_id:
       - cover.qubino_zmnhod1_flush_shutter_dc_switch
       - cover.qubino_zmnhod1_flush_shutter_dc_switch_2
-- alias: Open cover in bedrooms at morning
+- alias: Open cover in bedrooms at weekdays morning
+  trigger:
+    platform: time
+    at: '07:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    service: cover.open_cover
+    entity_id:
+      - cover.qubino_zmnhod1_flush_shutter_dc_switch
+      - cover.qubino_zmnhod1_flush_shutter_dc_switch_2
+- alias: Open cover in bedrooms on Saturday and Sunday mornings
   trigger:
     platform: time
     at: '07:30:00'
+  condition:
+    - condition: time
+      weekday:
+        - sat
+        - sun
   action:
     service: cover.open_cover
     entity_id:
