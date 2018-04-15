@@ -31,13 +31,13 @@
     below: 5.0
   condition:
     condition: time
-    before: '22:30:00'
+    before: '19:00:00'
   action:
     service: scene.turn_on
     entity_id:
       - scene.afternoon
 
-- alias: Enter evening mode
+- alias: Enter evening mode at 19:00 if sun is down
   trigger:
     platform: time
     at: '19:00:00'
@@ -46,6 +46,24 @@
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
     below: 5.0
+  action:
+    service: scene.turn_on
+    entity_id:
+      - scene.evening
+
+- alias: Enter evening mode when sun goes down
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 5.0
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '19:00:00'
+      - condition: time
+        before: '22:30:00'
   action:
     service: scene.turn_on
     entity_id:
