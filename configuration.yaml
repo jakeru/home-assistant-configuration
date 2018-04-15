@@ -14,7 +14,7 @@ homeassistant:
   packages: !include_dir_named packages
 
 recorder:
-  db_url: mysql://hass:nopassword@localhost/hass?charset=utf8
+  db_url: mysql+pymysql://hass:nopassword@localhost/hass?charset=utf8
 
 # Enables the frontend
 frontend:
