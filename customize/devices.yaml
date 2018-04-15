@@ -46,6 +46,8 @@ group.gillestugan:
   friendly_name: Gillestugan
 group.office:
   friendly_name: Kontoret
+group.garage:
+  friendly_name: Garagen
 group.attic:
   friendly_name: Vinden
 group.infrastructure:
