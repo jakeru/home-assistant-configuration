@@ -212,3 +212,11 @@ input_number.water1_timer:
   friendly_name: Antal minuter
 input_number.water2_timer:
   friendly_name: Antal minuter
+group.sun:
+  friendly_name: Solen
+sensor.solar_angle:
+  friendly_name: Solvinkel
+sensor.sunrise:
+  friendly_name: Soluppgång
+sensor.sunset:
+  friendly_name: Solnedgång
