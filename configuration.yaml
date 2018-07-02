@@ -29,6 +29,9 @@ updater:
 # Enable the iOS component
 ios:
 
+# Enable Home Assistant configuration
+config:
+
 # Discover some devices automatically
 discovery:
 
