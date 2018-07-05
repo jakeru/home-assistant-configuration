@@ -301,7 +301,7 @@ camera:
 panel_iframe:
   grafana:
     title: 'Grafer'
-    url: 'http://atom.home:3000'
+    url: 'https://grafana.jabbe.se:3000'
 
 mqtt:
   broker: localhost
