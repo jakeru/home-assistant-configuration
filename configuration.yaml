@@ -313,7 +313,6 @@ verisure:
 
 zwave:
   usb_path: /dev/zstick
-  config_path: /home/hass/hass-conf/deps/python_openzwave/ozw_config
   polling_interval: 60000
   debug: False
 
