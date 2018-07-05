@@ -43,7 +43,8 @@ garden_view:
   entities:
     - group.sun
     - group.outdoor
-    - camera.camera1
+    - camera.camera2
+    - camera.camera2_latest
 
 objects_view:
   view: yes
