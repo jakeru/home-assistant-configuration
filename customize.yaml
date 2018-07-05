@@ -81,6 +81,8 @@ sensor.bbq_temperature:
   friendly_name: Grillen
 sensor.freezer_temperature:
   friendly_name: Frysen
+sensor.freezer_in_g2_temperature:
+  friendly_name: Frysen i G2
 sensor.disk_use_:
   friendly_name: Diskanvänding
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:

@@ -133,6 +133,10 @@ sensor:
         name: freezer
         data_type:
           - Temperature
+      08500704a70080bd79:
+        name: freezer_in_g2
+        data_type:
+          - Temperature
       0a520c1a000100e6050279:
         name: soil_moisture1
         data_type:
