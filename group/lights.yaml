@@ -92,6 +92,7 @@ bathroom:
 things:
   entities:
     - sensor.freezer_temperature
+    - sensor.freezer_in_g2
     - sensor.bbq_temperature
 
 laundry:

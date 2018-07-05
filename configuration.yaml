@@ -82,9 +82,9 @@ influxdb:
       - sensor.tvattstuga_temperature
 
 logger:
-  default: info
-#  logs:
-#    homeassistant.components.rfxtrx: debug
+  default: warning
+  logs:
+    homeassistant.components.rfxtrx: info
 
 rfxtrx:
   device: /dev/rfxtrx
