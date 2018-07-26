@@ -284,9 +284,10 @@ camera:
   - platform: local_file
     name: camera2_latest
     file_path: /home/camera2/latest.jpg
-  - platform: local_file
+  - platform: generic
     name: washm
-    file_path: /home/hass/hass-conf/washm-example.jpg
+    still_image_url: "http://raspberrypi:8081/washm.jpg"
+    content_type: "image/jpeg"
   - platform: generic
     name: weather
     still_image_url: "https://www.yr.no/place/Sweden/Stockholm/Stockholm/meteogram.svg"
