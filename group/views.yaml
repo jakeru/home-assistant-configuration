@@ -43,6 +43,8 @@ garden_view:
   entities:
     - group.sun
     - group.outdoor
+    - camera.camera1
+    - camera.camera1_latest
     - camera.camera2
     - camera.camera2_latest
 

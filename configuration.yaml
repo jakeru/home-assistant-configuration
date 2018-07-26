@@ -279,7 +279,7 @@ sensor:
 
 camera:
   - platform: local_file
-    name: camera1
+    name: camera1_latest
     file_path: /home/camera1/latest.jpg
   - platform: local_file
     name: camera2_latest
@@ -293,8 +293,14 @@ camera:
     still_image_url: "https://www.yr.no/place/Sweden/Stockholm/Stockholm/meteogram.svg"
     content_type: "image/svg+xml"
   - platform: onvif
-    name: camera2
+    name: camera1
     host: 10.10.0.113
+    username: view
+    password: view
+    profile: 0
+  - platform: onvif
+    name: camera2
+    host: 10.10.0.167
     username: view
     password: view
     profile: 0
