@@ -295,12 +295,14 @@ camera:
   - platform: onvif
     name: camera1
     host: 10.10.0.113
+    port: 49152
     username: view
     password: view
     profile: 0
   - platform: onvif
     name: camera2
-    host: 10.10.0.167
+    host: 10.10.0.166
+    port: 49152
     username: view
     password: view
     profile: 0
