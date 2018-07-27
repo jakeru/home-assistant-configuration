@@ -301,14 +301,14 @@ camera:
     port: 49152
     username: view
     password: view
-    profile: 0
+    profile: 2
   - platform: onvif
     name: camera2
     host: 10.10.0.166
     port: 49152
     username: view
     password: view
-    profile: 0
+    profile: 2
 
 panel_iframe:
   grafana:
