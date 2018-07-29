@@ -81,7 +81,7 @@ influxdb:
 logger:
   default: warning
   logs:
-    homeassistant.components.rfxtrx: info
+    homeassistant.components.rfxtrx: debug
 
 rfxtrx:
   device: /dev/rfxtrx
