@@ -23,9 +23,6 @@ http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_api_password
 
-# Checks for available updates
-updater:
-
 # Enable the iOS component
 ios:
 
