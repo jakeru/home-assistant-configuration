@@ -88,6 +88,12 @@ rfxtrx:
   debug: False
   dummy: False
 
+hue:
+  bridges:
+    - host: 10.10.0.41
+      allow_unreachable: true
+      allow_hue_groups: true
+
 sensor:
   - platform: yr
   - platform: systemmonitor
