@@ -31,6 +31,8 @@ config:
 
 # Discover some devices automatically
 discovery:
+  ignore:
+    - philips_hue
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -91,7 +93,7 @@ rfxtrx:
 hue:
   bridges:
     - host: 10.10.0.41
-      allow_unreachable: true
+      allow_unreachable: false
       allow_hue_groups: true
 
 sensor:
