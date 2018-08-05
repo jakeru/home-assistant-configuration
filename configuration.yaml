@@ -96,7 +96,17 @@ hue:
       allow_unreachable: false
       allow_hue_groups: true
 
+arlo:
+  username: jakobruhe@gmail.com
+  password: !secret arlo_password
+
+alarm_control_panel:
+  - platform: arlo
+    home_mode_name: Avaktiverat
+    away_mode_name: Aktiverat
+
 sensor:
+  - platform: arlo
   - platform: yr
   - platform: systemmonitor
     resources:
@@ -283,6 +293,7 @@ sensor:
     value_template: '{{ value_json.power }}'
 
 camera:
+  - platform: arlo
   - platform: local_file
     name: camera1_latest
     file_path: /home/camera1/latest.jpg
