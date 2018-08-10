@@ -97,7 +97,7 @@ hue:
       allow_hue_groups: true
 
 arlo:
-  username: jakobruhe@gmail.com
+  username: !secret arlo_username
   password: !secret arlo_password
 
 alarm_control_panel:
