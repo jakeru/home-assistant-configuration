@@ -16,6 +16,7 @@ main:
     - sensor.guestroom_status
     - sensor.laundry_door
     - sensor.garage1_door
+    - sensor.garage2_door
 
 outdoor:
   entities:
@@ -72,7 +73,6 @@ playroom:
 
 livingroom:
   entities:
-    - light.livingroom_corner
     - light.aeotec_zw098_led_bulb_level
     - light.livingroom_front
     - sensor.balcony_door
