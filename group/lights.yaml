@@ -110,6 +110,7 @@ laundry:
 garage:
   entities:
     - sensor.garage1_door
+    - sensor.garage2_door
 
 butlery::
   entities:
