@@ -73,8 +73,8 @@ playroom:
 livingroom:
   entities:
     - light.livingroom_corner
+    - light.aeotec_zw098_led_bulb_level
     - light.livingroom_front
-    - light.livingroom_window
     - sensor.balcony_door
 
 guestroom:

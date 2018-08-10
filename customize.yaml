@@ -104,7 +104,7 @@ sensor.swz002_power:
   friendly_name: Momentan effekt värmeslinga
 switch.swz002_switch:
   friendly_name: Strömförsörjning värmeslinga
-light.livingroom_corner:
+light.aeotec_zw098_led_bulb_level:
   friendly_name: Hörnlampan
   icon: mdi:lamp
 light.livingroom_front:
