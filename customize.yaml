@@ -168,9 +168,9 @@ sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
   friendly_name: Luftavfuktare, energiåtgång
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2:
   friendly_name: Växtbelysning
-sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2:
   friendly_name: Växtbelysning, energiåtgång
-switch.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
   friendly_name: Växtbelysning, effektuttag
 sensor.entre_temperature:
   friendly_name: Temperatur
