@@ -1,0 +1,93 @@
+sensor:
+  - platform: mqtt
+    state_topic: heatpump/0005
+    name: "Brine in/Evaporator"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A20
+    name: "Alarm"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A05
+    name: "Pump Heat circuit"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0001
+    name: "Radiator Return"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/000B
+    name: "Hot gas / Compr."
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0003
+    name: "Heat carrier Return"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A04
+    name: "Pump Cold circuit"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/2205
+    name: "Heat set 1, CurveL"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0111
+    name: "Warm water setpoint"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0207
+    name: "Heat set 3, Parallel"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0006
+    name: "Brine out/Condenser"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A07
+    name: "Switch valve 1"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0203
+    name: "Room temp setpoint"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/000A
+    name: "Hot water 2 / Mid"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A02
+    name: "Add heat step 1"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0107
+    name: "Heating setpoint"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A03
+    name: "Add heat step 2"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0007
+    name: "Outdoor"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/2204
+    name: "Room sensor influence"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/3104
+    name: "Add heat status"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A06
+    name: "Pump Radiator"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/0004
+    name: "Heat carrier Forwrd"
+    unit_of_measurement: "Degrees Celcius"
+  - platform: mqtt
+    state_topic: heatpump/1A01
+    name: "Compressor"
+    unit_of_measurement: "Degrees Celcius"
