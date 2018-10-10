@@ -1,0 +1,15 @@
+- alias: Turn on plant lights
+  trigger:
+    platform: time
+    at: '06:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+
+- alias: Turn off plant lights
+  trigger:
+    platform: time
+    at: '09:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2

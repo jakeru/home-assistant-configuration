@@ -111,6 +111,9 @@ garage:
   entities:
     - sensor.garage1_door
     - sensor.garage2_door
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+    - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2
+    - switch.fibaro_system_fgwpef_wall_plug_gen5_power_2
 
 butlery::
   entities:

@@ -142,8 +142,6 @@ cover.qubino_zmnhod1_flush_shutter_dc_switch:
 cover.qubino_zmnhod1_flush_shutter_dc_switch_2:
   friendly_name: Rullgardin
   device_class: window
-switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
-  friendly_name: Luftavfuktare
 switch.belysning_kontoret:
   friendly_name: Röda fönsterlampan
   icon: mdi:lamp
@@ -162,10 +160,18 @@ sensor.tvattstuga_humidity:
   icon: mdi:water-percent
 sensor.tvattstuga_temperature:
   friendly_name: Temperatur
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  friendly_name: Luftavfuktare
 sensor.dehumidifier:
   friendly_name: Luftavfuktare, effektuttag
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
   friendly_name: Luftavfuktare, energiåtgång
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2:
+  friendly_name: Växtbelysning
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  friendly_name: Växtbelysning, energiåtgång
+switch.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  friendly_name: Växtbelysning, effektuttag
 sensor.entre_temperature:
   friendly_name: Temperatur
 sensor.main_door:

@@ -61,6 +61,8 @@ influxdb:
       - sensor.entre_temperature
       - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
       - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+      - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2
+      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2
       - sensor.freezer_temperature
       - sensor.gillestugan_humidity
       - sensor.gillestugan_temperature
