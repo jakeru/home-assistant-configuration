@@ -85,7 +85,7 @@ influxdb:
 logger:
   default: warning
   logs:
-    homeassistant.components.rfxtrx: debug
+    homeassistant.components.rfxtrx: info
 
 rfxtrx:
   device: /dev/rfxtrx
@@ -117,7 +117,7 @@ sensor:
       - type: memory_use_percent
       - type: load_1m
   - platform: rfxtrx
-    automatic_add: False
+    automatic_add: True
     devices:
       085001000401005069:
         name: outdoor
@@ -367,7 +367,6 @@ group: !include_dir_merge_named group
 
 light:
   platform: rfxtrx
-  automatic_add: False
   signal_repetitions: 3
   devices:
     0b11000d0085feb601010f70:
