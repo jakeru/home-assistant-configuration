@@ -2,7 +2,7 @@
   entities:
     light.livingroom_front: on
     light.aeotec_zw098_led_bulb_level: on
-    light.everspring_ad146_in_wall_dimmer_module_level:
+    zwave.everspring_ad146_in_wall_dimmer_module:
       state: on
       brightness_pct: 100
 
@@ -10,13 +10,13 @@
   entities:
     light.livingroom_front: off
     light.aeotec_zw098_led_bulb_level: off
-    light.everspring_ad146_in_wall_dimmer_module_level: off
+    zwave.everspring_ad146_in_wall_dimmer_module: off
 
 - name: afternoon
   entities:
     light.livingroom_front: on
     light.aeotec_zw098_led_bulb_level: on
-    light.everspring_ad146_in_wall_dimmer_module_level:
+    zwave.everspring_ad146_in_wall_dimmer_module:
       state: on
       brightness_pct: 100
 
@@ -24,7 +24,7 @@
   entities:
     light.livingroom_front: on
     light.aeotec_zw098_led_bulb_level: off
-    light.everspring_ad146_in_wall_dimmer_module_level:
+    zwave.everspring_ad146_in_wall_dimmer_module:
       state: on
       brightness_pct: 50
 
@@ -32,4 +32,4 @@
   entities:
     light.livingroom_front: off
     light.aeotec_zw098_led_bulb_level: off
-    light.everspring_ad146_in_wall_dimmer_module_level: off
+    zwave.everspring_ad146_in_wall_dimmer_module: off
