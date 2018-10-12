@@ -47,6 +47,12 @@ garden_view:
     - camera.camera1_latest
     - camera.camera2
     - camera.camera2_latest
+    - camera.a1
+    - sensor.last_a1
+    - camera.a2
+    - sensor.last_a1
+    - camera.a2
+    - sensor.last_a3
 
 objects_view:
   view: yes
