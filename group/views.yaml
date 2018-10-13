@@ -54,6 +54,11 @@ garden_view:
     - camera.a3
     - sensor.last_a3
 
+electricity_heating_view:
+  view: yes
+  entities:
+    - group.heatpump
+
 objects_view:
   view: yes
   entities:

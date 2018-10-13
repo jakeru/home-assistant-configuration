@@ -8,6 +8,8 @@ group.attic_view:
   friendly_name: Vinden
 group.garden_view:
   friendly_name: Utomhus
+group.electricity_heating_view:
+  friendly_name: El & värme
 group.objects_view:
   friendly_name: Prylar
 group.main:
