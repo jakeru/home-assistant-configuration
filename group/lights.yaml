@@ -11,7 +11,7 @@ main:
     - sensor.main_door
     - sensor.balcony_door
     - sensor.outdoor_temperature
-    - light.everspring_ad146_in_wall_dimmer_module_level
+    - light.hall_crystal_light_dimmer
     - sensor.bathroom_status
     - sensor.guestroom_status
     - sensor.laundry_door
@@ -61,7 +61,7 @@ bedroom_for_children:
 hall:
   entities:
     - sensor.main_door
-    - light.everspring_ad146_in_wall_dimmer_module_level
+    - light.hall_crystal_light_dimmer
     - sensor.entre_temperature
 
 playroom:

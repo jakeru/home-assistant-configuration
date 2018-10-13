@@ -134,7 +134,7 @@ light.playroom:
   friendly_name: Belysning
 sensor.playroom_motion:
   friendly_name: Lekrummet
-light.everspring_ad146_in_wall_dimmer_module_level:
+light.hall_crystal_light_dimmer:
   friendly_name: Kristallkronan
 light.attic_window:
   friendly_name: Fönsterlampan
