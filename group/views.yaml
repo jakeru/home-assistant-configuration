@@ -50,8 +50,8 @@ garden_view:
     - camera.a1
     - sensor.last_a1
     - camera.a2
-    - sensor.last_a1
-    - camera.a2
+    - sensor.last_a2
+    - camera.a3
     - sensor.last_a3
 
 objects_view:
