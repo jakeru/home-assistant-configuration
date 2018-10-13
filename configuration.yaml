@@ -20,8 +20,6 @@ recorder:
 frontend:
 
 http:
-  # Uncomment this to add a password (recommended!)
-  api_password: !secret http_api_password
 
 # Enable the iOS component
 ios:
