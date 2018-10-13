@@ -2,6 +2,8 @@
 
 homeassistant:
   customize:
+    group.heatpump:
+      friendly_name: "Bergvärmepumpen"
     sensor.heatpump_0001:
       friendly_name: "Radiator Return"
     sensor.heatpump_0002:
