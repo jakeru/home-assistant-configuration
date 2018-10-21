@@ -386,12 +386,15 @@ automation: !include_dir_merge_list automation
 
 binary_sensor:
   - platform: rfxtrx
-    automatic_add: True
+    automatic_add: False
+    fire_event: True
     devices:
       0b110005007abc960a010f60:
         name: guestroom
       0b11002a0023034e0a000070:
         name: laundry
+      0b11000f0000957a01010f60:
+        name: hall
   - platform: template
     sensors:
       playroom_motion:
