@@ -1,0 +1,27 @@
+- alias: Turn on lights in guestroom on motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.guestroom
+    to: 'on'
+  condition:
+    condition: template
+    value_template: "{{ states.sun.sun.attributes.elevation >= 0 }}"
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.guest_toilet
+      brightness_pct: 100
+
+- alias: Turn on lights in guestroom on motion also in the evening
+  trigger:
+    platform: state
+    entity_id: binary_sensor.guestroom
+    to: 'on'
+  condition:
+    condition: template
+    value_template: "{{ states.sun.sun.attributes.elevation < 0 }}"
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.guest_toilet
+      brightness_pct: 1
