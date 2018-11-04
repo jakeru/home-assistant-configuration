@@ -7,17 +7,6 @@
   action:
     service: scene.turn_on
     entity_id:
-      - scene.evening
-
-- alias: Turn on more lights when turning switch in hallway on again
-  trigger:
-    platform: state
-    entity_id: binary_sensor.hall
-    from: 'on'
-    to: 'on'
-  action:
-    service: scene.turn_on
-    entity_id:
       - scene.afternoon
 
 - alias: Turn off lights when pressing toggle switch in hallway
