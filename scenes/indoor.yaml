@@ -26,7 +26,7 @@
     light.aeotec_zw098_led_bulb_level: off
     light.hall_crystal_light_dimmer:
       state: on
-      brightness_pct: 50
+      brightness_pct: 75
 
 - name: night
   entities:
