@@ -138,6 +138,8 @@ sensor.playroom_motion:
   friendly_name: Lekrummet
 light.hall_crystal_light_dimmer:
   friendly_name: Kristallkronan
+light.hue_ambiance_lamp_1:
+  friendly_name: Hörnlampan i hallen
 light.attic_window:
   friendly_name: Fönsterlampan
 cover.qubino_zmnhod1_flush_shutter_dc_switch:

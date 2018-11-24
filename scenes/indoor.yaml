@@ -1,35 +1,57 @@
 - name: morning
   entities:
-    light.livingroom_front: on
+    light.livingroom_plugs: on
+    light.livingroom_dimmers:
+      state: on
+      brightness_pct: 100
     light.aeotec_zw098_led_bulb_level: on
     light.hall_crystal_light_dimmer:
+      state: on
+      brightness_pct: 100
+    light.hue_ambiance_lamp_1:
       state: on
       brightness_pct: 100
 
 - name: day
   entities:
-    light.livingroom_front: off
+    light.livingroom_plugs: off
+    light.livingroom_dimmers: off
     light.aeotec_zw098_led_bulb_level: off
     light.hall_crystal_light_dimmer: off
+    light.hue_ambiance_lamp_1: off
 
 - name: afternoon
   entities:
-    light.livingroom_front: on
+    light.livingroom_plugs: on
+    light.livingroom_dimmers:
+      state: on
+      brightness_pct: 100
     light.aeotec_zw098_led_bulb_level: on
     light.hall_crystal_light_dimmer:
+      state: on
+      brightness_pct: 100
+    light.hue_ambiance_lamp_1:
       state: on
       brightness_pct: 100
 
 - name: evening
   entities:
-    light.livingroom_front: on
+    light.livingroom_plugs: on
+    light.livingroom_dimmers:
+      state: on
+      brightness_pct: 100
     light.aeotec_zw098_led_bulb_level: off
     light.hall_crystal_light_dimmer:
+      state: on
+      brightness_pct: 75
+    light.hue_ambiance_lamp_1:
       state: on
       brightness_pct: 75
 
 - name: night
   entities:
-    light.livingroom_front: off
+    light.livingroom_plugs: off
+    light.livingroom_dimmers: off
     light.aeotec_zw098_led_bulb_level: off
     light.hall_crystal_light_dimmer: off
+    light.hue_ambiance_lamp_1: off

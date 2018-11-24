@@ -62,6 +62,7 @@ hall:
   entities:
     - sensor.main_door
     - light.hall_crystal_light_dimmer
+    - light.hue_ambiance_lamp_1
     - sensor.entre_temperature
 
 playroom:
@@ -74,7 +75,8 @@ playroom:
 livingroom:
   entities:
     - light.aeotec_zw098_led_bulb_level
-    - light.livingroom_front
+    - light.livingroom_plugs
+    - light.livingroom_dimmers
     - sensor.balcony_door
 
 guestroom:
