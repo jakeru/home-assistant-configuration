@@ -171,11 +171,11 @@ sensor.dehumidifier:
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
   friendly_name: Luftavfuktare, energiåtgång
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2:
-  friendly_name: Växtbelysning
+  friendly_name: Ventilation
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2:
-  friendly_name: Växtbelysning, energiåtgång
+  friendly_name: Ventilation, energiåtgång
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
-  friendly_name: Växtbelysning, effektuttag
+  friendly_name: Ventilation, effektuttag
 sensor.entre_temperature:
   friendly_name: Temperatur
 sensor.main_door:
