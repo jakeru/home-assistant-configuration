@@ -109,8 +109,10 @@ switch.swz002_switch:
 light.aeotec_zw098_led_bulb_level:
   friendly_name: Hörnlampan
   icon: mdi:lamp
-light.livingroom_front:
-  friendly_name: Fönsterbelysning
+light.livingroom_plugs:
+  friendly_name: Fönsterbelysning plugin
+light.livingroom_dimmers:
+  friendly_name: Fönsterbelysning övrig
 light.guestroom:
   friendly_name: Belysning på gästtoaletten
 light.outdoor:
