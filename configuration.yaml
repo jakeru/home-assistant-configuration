@@ -405,9 +405,6 @@ binary_sensor:
 switch:
   - platform: rfxtrx
     signal_repetitions: 3
-    devices:
-      0b11000f0085feb60a010f70:
-        name: plant_lights
   - platform: template
     switches:
       outdoor_front:

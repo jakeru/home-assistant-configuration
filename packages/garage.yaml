@@ -1,0 +1,40 @@
+garage:
+  entities:
+    - sensor.garage1_door
+    - sensor.garage2_door
+    - switch.plant_lights
+
+switch:
+  - platform: rfxtrx
+    devices:
+      0b11000f0085feb60a010f70:
+        name: plant_lights
+
+automation:
+  - alias: Turn on plant lights in the morning
+    trigger:
+      platform: time
+      at: '06:00:00'
+    action:
+      service: switch.turn_on
+      entity_id: switch.plant_lights
+
+  - alias: Turn off plant lights in the evening
+    trigger:
+      platform: time
+      at: '18:00:00'
+    action:
+      service: switch.turn_off
+      entity_id: switch.plant_lights
+
+homeassistant:
+  customize:
+    group.garage:
+      friendly_name: Garagen
+    sensor.garage1_door:
+      friendly_name: Garageport G1
+    sensor.garage2_door:
+      friendly_name: Garageport G2
+    switch.plant_lights:
+      friendly_name: Växtbelysning
+

@@ -48,8 +48,6 @@ group.gillestugan:
   friendly_name: Gillestugan
 group.office:
   friendly_name: Kontoret
-group.garage:
-  friendly_name: Garagen
 group.attic:
   friendly_name: Vinden
 group.infrastructure:
@@ -186,10 +184,6 @@ sensor.balcony_door:
   friendly_name: Altandörr
 sensor.laundry_door:
   friendly_name: Dörr till tvättstugan
-sensor.garage1_door:
-  friendly_name: Garageport G1
-sensor.garage2_door:
-  friendly_name: Garageport G2
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
   icon: mdi:water-percent
