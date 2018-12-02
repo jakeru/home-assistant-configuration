@@ -56,6 +56,7 @@ influxdb:
       - sensor.aeotec_zw100_multisensor_6_temperature
       - sensor.aeotec_zw100_multisensor_6_relative_humidity
       - sensor.dehumidifier
+      - sensor.attic_ventilation
       - sensor.entre_temperature
       - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
       - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
@@ -177,8 +178,10 @@ sensor:
       sunset:
         value_template: '{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom("%H:%M") }}'
       dehumidifier:
-        entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
         value_template: '{{ states.switch.fibaro_system_fgwpef_wall_plug_gen5_switch.attributes.power_consumption }}'
+        unit_of_measurement: 'W'
+      attic_ventilation:
+        value_template: '{{ states.switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2.attributes.power_consumption }}'
         unit_of_measurement: 'W'
       main_door:
         value_template: >-
