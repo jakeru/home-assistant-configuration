@@ -113,6 +113,7 @@ garage:
   entities:
     - sensor.garage1_door
     - sensor.garage2_door
+    - switch.plant_lights
 
 butlery::
   entities:
