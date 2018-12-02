@@ -1,8 +1,9 @@
-garage:
-  entities:
-    - sensor.garage1_door
-    - sensor.garage2_door
-    - switch.plant_lights
+group:
+  garage:
+    entities:
+      - sensor.garage1_door
+      - sensor.garage2_door
+      - switch.plant_lights
 
 switch:
   - platform: rfxtrx
