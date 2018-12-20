@@ -4,7 +4,13 @@
     light.livingroom_dimmers:
       state: on
       brightness_pct: 100
-    light.aeotec_zw098_led_bulb_level: on
+    light.aeotec_zw098_led_bulb_level:
+      state: on
+      brightness_pct: 100
+      data_template:
+        hs_color:
+          - "{{ range(360)|random }}"
+          - "{{ range(80,101)|random }}"
     light.hall_crystal_light_dimmer:
       state: on
       brightness_pct: 100
@@ -26,7 +32,13 @@
     light.livingroom_dimmers:
       state: on
       brightness_pct: 100
-    light.aeotec_zw098_led_bulb_level: on
+    light.aeotec_zw098_led_bulb_level:
+      state: on
+      brightness_pct: 100
+      data_template:
+        hs_color:
+          - "{{ range(360)|random }}"
+          - "{{ range(80,101)|random }}"
     light.hall_crystal_light_dimmer:
       state: on
       brightness_pct: 100
@@ -40,7 +52,13 @@
     light.livingroom_dimmers:
       state: on
       brightness_pct: 100
-    light.aeotec_zw098_led_bulb_level: off
+    light.aeotec_zw098_led_bulb_level:
+      state: on
+      brightness_pct: 75
+      data_template:
+        hs_color:
+          - "{{ range(360)|random }}"
+          - "{{ range(80,101)|random }}"
     light.hall_crystal_light_dimmer:
       state: on
       brightness_pct: 75
