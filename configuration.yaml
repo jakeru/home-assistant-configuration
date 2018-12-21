@@ -32,6 +32,9 @@ discovery:
   ignore:
     - philips_hue
 
+# Enable python scripts from directory python_scripts
+python_script:
+
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
