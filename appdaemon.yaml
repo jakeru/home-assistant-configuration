@@ -1,0 +1,8 @@
+appdaemon:
+  api_key: !secret appdaemon_api_key
+  threads: '10'
+  plugins:
+    HASS:
+      type: hass
+      token: !secret appdeamon_hass_token
+      ha_url: http://localhost:8123
