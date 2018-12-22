@@ -11,7 +11,7 @@ main:
     - sensor.main_door
     - sensor.balcony_door
     - sensor.outdoor_temperature
-    - light.hall_crystal_light_dimmer
+    - light.hue_color_candle_1
     - sensor.bathroom_status
     - sensor.guestroom_status
     - sensor.laundry_door
@@ -61,7 +61,7 @@ bedroom_for_children:
 hall:
   entities:
     - sensor.main_door
-    - light.hall_crystal_light_dimmer
+    - light.hue_color_candle_1
     - light.hue_ambiance_lamp_1
     - sensor.entre_temperature
 

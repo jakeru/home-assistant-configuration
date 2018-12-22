@@ -134,7 +134,7 @@ light.playroom:
   friendly_name: Belysning
 sensor.playroom_motion:
   friendly_name: Lekrummet
-light.hall_crystal_light_dimmer:
+light.hue_color_candle_1:
   friendly_name: Kristallkronan
 light.hue_ambiance_lamp_1:
   friendly_name: Hörnlampan i hallen
