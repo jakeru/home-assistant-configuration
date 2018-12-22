@@ -1,7 +1,7 @@
 - alias: Turn on lights when turning switch in hallway on
   trigger:
     platform: state
-    entity_id: binary_sensor.hall
+    entity_id: switch.hall
     from: 'off'
     to: 'on'
   action:
@@ -12,7 +12,7 @@
 - alias: Turn off lights when pressing toggle switch in hallway
   trigger:
     platform: state
-    entity_id: binary_sensor.hall
+    entity_id: switch.hall
     to: 'off'
   action:
     service: scene.turn_on
