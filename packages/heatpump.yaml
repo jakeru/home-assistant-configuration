@@ -5,61 +5,61 @@ homeassistant:
     group.heatpump:
       friendly_name: "Bergvärmepumpen"
     sensor.heatpump_0001:
-      friendly_name: "Radiator Return"
+      friendly_name: "Radiator Retur GT1" # "Radiator Return"
     sensor.heatpump_0002:
-      friendly_name: "Radiator Forward"
+      friendly_name: "Radiator Ut" # "Radiator Forward"
     sensor.heatpump_0003:
-      friendly_name: "Heat carrier Return"
+      friendly_name: "Värmebärare In GT9" # "Heat carrier Return"
     sensor.heatpump_0004:
-      friendly_name: "Heat carrier Forwrd"
+      friendly_name: "Värmebärare Ut GT8" # "Heat carrier Forwrd"
     sensor.heatpump_0005:
-      friendly_name: "Brine in/Evaporator"
+      friendly_name: "Köldbärare In GT10" # "Brine in/Evaporator"
     sensor.heatpump_0006:
-      friendly_name: "Brine out/Condenser"
+      friendly_name: "Köldbärare Ut GT11" # "Brine out/Condenser"
     sensor.heatpump_0007:
-      friendly_name: "Outdoor"
-    sensor.heatpump_0008:
-      friendly_name: "Indoor"
-    sensor.heatpump_0009:
-      friendly_name: "Hot water 1 / Top"
+      friendly_name: "Utomhustemperatur" # "Outdoor"
+    #sensor.heatpump_0008:
+    #  friendly_name: "Indoor"
+    #sensor.heatpump_0009:
+    #  friendly_name: "Hot water 1 / Top"
     sensor.heatpump_000a:
-      friendly_name: "Hot water 2 / Mid"
+      friendly_name: "Varmvatten GT3" # "Hot water 2 / Mid"
     sensor.heatpump_000b:
-      friendly_name: "Hot gas / Compr."
+      friendly_name: "Kompressor GT6" # "Hot gas / Compr."
     sensor.heatpump_0107:
-      friendly_name: "Heating setpoint"
+      friendly_name: "Börvärde Radiator Retur" # Heating setpoint"
     sensor.heatpump_0111:
-      friendly_name: "Warm water setpoint"
-    sensor.heatpump_0203:
-      friendly_name: "Room temp setpoint"
-    sensor.heatpump_0207:
-      friendly_name: "Heat set 3, Parallel"
+      friendly_name: "Börvärde Varmvatten" # "Warm water setpoint"
+    #sensor.heatpump_0203:
+    #  friendly_name: "Room temp setpoint"
+    #sensor.heatpump_0207:
+    #  friendly_name: "Heat set 3, Parallel"
     sensor.heatpump_1a01:
-      friendly_name: "Compressor"
+      friendly_name: "Kompressor" # "Compressor"
     sensor.heatpump_1a02:
-      friendly_name: "Add heat step 1"
+      friendly_name: "Elkasett 1" # "Add heat step 1"
     sensor.heatpump_1a03:
-      friendly_name: "Add heat step 2"
+      friendly_name: "Elkasett 2" # "Add heat step 2"
     sensor.heatpump_1a04:
-      friendly_name: "Pump Cold circuit"
+      friendly_name: "Köldbärarpump" # "Pump Cold circuit"
     sensor.heatpump_1a05:
-      friendly_name: "Pump Heat circuit"
+      friendly_name: "Värmebärarpump" # "Pump Heat circuit"
     sensor.heatpump_1a06:
-      friendly_name: "Pump Radiator"
+      friendly_name: "Radiatorpump" # "Pump Radiator"
     sensor.heatpump_1a07:
-      friendly_name: "Switch valve 1"
+      friendly_name: "Växelventil (värme/varmvatten)" # "Switch valve 1"
     sensor.heatpump_1a20:
-      friendly_name: "Alarm"
-    sensor.heatpump_2204:
-      friendly_name: "Room sensor influence"
-    sensor.heatpump_2205:
-      friendly_name: "Heat set 1, CurveL"
-    sensor.heatpump_3104:
-      friendly_name: "Add heat status"
-    sensor.heatpump_aff1:
-      friendly_name: "EL-Meter 1"
-    sensor.heatpump_aff2:
-      friendly_name: "EL-Meter 2"
+      friendly_name: "Larm" #"Alarm"
+    #sensor.heatpump_2204:
+    #  friendly_name: "Room sensor influence"
+    #sensor.heatpump_2205:
+    #  friendly_name: "Heat set 1, CurveL"
+    #sensor.heatpump_3104:
+    #  friendly_name: "Add heat status"
+    #sensor.heatpump_aff1:
+    #  friendly_name: "EL-Meter 1"
+    #sensor.heatpump_aff2:
+    #  friendly_name: "EL-Meter 2"
 sensor:
   - platform: mqtt
     state_topic: heatpump/0001
@@ -183,14 +183,14 @@ group:
       - sensor.heatpump_0005
       - sensor.heatpump_0006
       - sensor.heatpump_0007
-      - sensor.heatpump_0008
-      - sensor.heatpump_0009
+      #- sensor.heatpump_0008
+      #- sensor.heatpump_0009
       - sensor.heatpump_000a
       - sensor.heatpump_000b
       - sensor.heatpump_0107
       - sensor.heatpump_0111
-      - sensor.heatpump_0203
-      - sensor.heatpump_0207
+      #- sensor.heatpump_0203
+      #- sensor.heatpump_0207
       - sensor.heatpump_1a01
       - sensor.heatpump_1a02
       - sensor.heatpump_1a03
@@ -199,8 +199,8 @@ group:
       - sensor.heatpump_1a06
       - sensor.heatpump_1a07
       - sensor.heatpump_1a20
-      - sensor.heatpump_2204
-      - sensor.heatpump_2205
-      - sensor.heatpump_3104
-      - sensor.heatpump_aff1
-      - sensor.heatpump_aff2
+      #- sensor.heatpump_2204
+      #- sensor.heatpump_2205
+      #- sensor.heatpump_3104
+      #- sensor.heatpump_aff1
+      #- sensor.heatpump_aff2
