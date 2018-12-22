@@ -425,7 +425,12 @@ script: !include_dir_merge_named script
 
 scene:
   - name: morning
+    entities: []
   - name: day
+    entities: []
   - name: afternoon
+    entities: []
   - name: evening
+    entities: []
   - name: night
+    entities: []
