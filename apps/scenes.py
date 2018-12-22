@@ -1,5 +1,6 @@
 import appdaemon.plugins.hass.hassapi as hass
 import random
+import time
 
 class Entity:
     def __init__(self, api, entity_id):
@@ -54,6 +55,7 @@ class EntityRandomColor(Entity):
 class Scenes(hass.Hass):
     def initialize(self):
         self.current_scene = None
+        self.last_button_pressed = None
         self.entities = [
             Entity(self, 'light.livingroom_plugs'),
             Entity(self, 'light.livingroom_dimmers'),
@@ -62,6 +64,7 @@ class Scenes(hass.Hass):
             EntityDimAtEvening(self, 'light.hue_ambiance_lamp_1'),
         ]
         self.listen_event(self.on_call_service, "call_service")
+        self.listen_event(self.on_button_pressed, "button_pressed")
     def activate(self, scene):
         self.log("Going from scene {} to: {}".format(self.current_scene, scene))
         self.current_scene = scene
@@ -70,4 +73,20 @@ class Scenes(hass.Hass):
     def on_call_service(self, event, data, kwargs):
         if data.get("domain") == "scene":
             scene = data["service_data"]["entity_id"]
+            if isinstance(scene, list):
+                scene = scene[0]
             self.activate(scene.replace("scene.", ""))
+    def on_button_pressed(self, event, data, kwargs):
+        if data["entity_id"] != "switch.hall":
+            return
+        if self.last_button_pressed is not None and time.time() - self.last_button_pressed < 0.1:
+            return
+        self.last_button_pressed = time.time()
+        self.log("on_button_pressed: {}, data: {}, kwargs: {}".format(event, data, kwargs))
+        if data["state"] == "off":
+            scene = "night"
+        elif self.current_scene == "evening":
+            scene = "afternoon"
+        else:
+            scene = "evening"
+        self.activate(scene)
