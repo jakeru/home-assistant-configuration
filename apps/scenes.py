@@ -32,7 +32,15 @@ class Entity:
     def night(self):
         self.turn_off()
 
-class EntityDimAtEvening(Entity):
+class EntityDim(Entity):
+    def morning(self):
+        self.turn_on(brightness_pct=100)
+    def afternoon(self):
+        self.turn_on(brightness_pct=100)
+    def evening(self):
+        self.turn_on(brightness_pct=100)
+
+class EntityDimAtEvening(EntityDim):
     def evening(self):
         self.turn_on(brightness_pct=25)
 
@@ -46,11 +54,11 @@ class EntityDimAtEveningFixedColor(Entity):
 
 class EntityRandomColor(Entity):
     def morning(self):
-        self.turn_on(hs_color=[random.randint(0,359), random.randint(90,100)])
+        self.turn_on(brightness_pct=100, hs_color=[random.randint(0,359), random.randint(90,100)])
     def afternoon(self):
-        self.turn_on(hs_color=[random.randint(0,359), random.randint(90,100)])
+        self.turn_on(brightness_pct=100, hs_color=[random.randint(0,359), random.randint(90,100)])
     def evening(self):
-        self.turn_on(hs_color=[random.randint(0,359), random.randint(90,100)])
+        self.turn_on(brightness_pct=25, hs_color=[random.randint(0,359), random.randint(90,100)])
 
 class Scenes(hass.Hass):
     def initialize(self):
@@ -58,7 +66,7 @@ class Scenes(hass.Hass):
         self.last_button_pressed = None
         self.entities = [
             Entity(self, 'light.livingroom_plugs'),
-            Entity(self, 'light.livingroom_dimmers'),
+            EntityDim(self, 'light.livingroom_dimmers'),
             EntityRandomColor(self, 'light.aeotec_zw098_led_bulb_level'),
             EntityDimAtEveningFixedColor(self, 'light.hue_color_candle_1'),
             EntityDimAtEvening(self, 'light.hue_ambiance_lamp_1'),
@@ -77,16 +85,18 @@ class Scenes(hass.Hass):
                 scene = scene[0]
             self.activate(scene.replace("scene.", ""))
     def on_button_pressed(self, event, data, kwargs):
+        self.log("on_button_pressed: {}, data: {}, kwargs: {}".format(event, data, kwargs))
         if data["entity_id"] != "switch.hall":
             return
         if self.last_button_pressed is not None and time.time() - self.last_button_pressed < 0.1:
             return
         self.last_button_pressed = time.time()
-        self.log("on_button_pressed: {}, data: {}, kwargs: {}".format(event, data, kwargs))
         if data["state"] == "off":
             scene = "night"
         elif self.current_scene == "evening":
             scene = "afternoon"
+        elif self.current_scene == "afternoon":
+            scene = "morning"
         else:
             scene = "evening"
         self.activate(scene)
