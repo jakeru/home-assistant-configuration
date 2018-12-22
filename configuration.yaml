@@ -420,17 +420,29 @@ switch:
         turn_off:
           service: switch.turn_off
           entity_id: switch.everspring_an179_in_wall_onoff_module_switch
+  - platform: command_line
+    switches:
+      dummy:
+        command_on: echo I am on
+        command_off: echo I am off
 
 script: !include_dir_merge_named script
 
+# Scenes are handled by a AppDaemon script listening for the
+# scene.turn_on service_call.
 scene:
   - name: morning
-    entities: []
+    entities:
+      switch.dummy: true
   - name: day
-    entities: []
+    entities:
+      switch.dummy: true
   - name: afternoon
-    entities: []
+    entities:
+      switch.dummy: true
   - name: evening
-    entities: []
+    entities:
+      switch.dummy: true
   - name: night
-    entities: []
+    entities:
+      switch.dummy: true
