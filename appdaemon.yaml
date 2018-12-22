@@ -1,5 +1,4 @@
 appdaemon:
-  api_key: !secret appdaemon_api_key
   threads: '10'
   plugins:
     HASS:

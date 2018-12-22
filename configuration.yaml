@@ -422,4 +422,9 @@ switch:
 
 script: !include_dir_merge_named script
 
-scene: !include_dir_merge_list scenes
+scene:
+  - name: morning
+  - name: day
+  - name: afternoon
+  - name: evening
+  - name: night
