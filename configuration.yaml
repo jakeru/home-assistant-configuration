@@ -431,8 +431,8 @@ switch:
   - platform: command_line
     switches:
       dummy:
-        command_on: echo I am on
-        command_off: echo I am off
+        command_on:
+        command_off:
 
 script: !include_dir_merge_named script
 
