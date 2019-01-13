@@ -108,6 +108,8 @@ laundry:
     - sensor.laundry_door
     - sensor.laundry_emeter1_energy
     - sensor.laundry_emeter1_power
+    - sensor.telldus_tzwp102_plugin_switch_energy
+    - sensor.telldus_tzwp102_plugin_switch_power
 
 butlery::
   entities:
@@ -133,6 +135,9 @@ attic:
     - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
     - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2
     - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2
+    - switch.telldus_tzwp102_plugin_switch_switch_2
+    - sensor.telldus_tzwp102_plugin_switch_energy_2
+    - sensor.telldus_tzwp102_plugin_switch_power_2
 
 infrastructure:
   entities:

@@ -176,6 +176,16 @@ sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2:
   friendly_name: Ventilation, energiåtgång
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
   friendly_name: Ventilation, effektuttag
+switch.telldus_tzwp102_plugin_switch_switch_2:
+  friendly_name: Värmekabel
+sensor.telldus_tzwp102_plugin_switch_energy_2:
+  friendly_name: Värmekabel, energiåtgång
+sensor.telldus_tzwp102_plugin_switch_power_2:
+  friendly_name: Värmekabel, effektuttag
+sensor.telldus_tzwp102_plugin_switch_energy:
+  friendly_name: Tvättmaskin, energiåtgång
+sensor.telldus_tzwp102_plugin_switch_power:
+  friendly_name: Tvättmaskin, effektuttag
 sensor.entre_temperature:
   friendly_name: Temperatur
 sensor.main_door:
