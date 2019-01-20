@@ -20,7 +20,7 @@ main:
 
 outdoor:
   entities:
-    - light.outdoor
+    - switch.everspring_an179_in_wall_onoff_module_switch_2
     - switch.outdoor_front
     - sensor.outdoor_temperature
     - sensor.aeotec_zw074_multisensor_gen5_luminance
@@ -32,7 +32,7 @@ outdoor:
 # the lights are on when the sun is down.
 outdoor_and_attic_lights:
   entities:
-    - light.outdoor
+    - switch.everspring_an179_in_wall_onoff_module_switch_2
     - switch.outdoor_front
     - light.attic_window
 

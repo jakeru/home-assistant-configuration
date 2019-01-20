@@ -113,7 +113,7 @@ light.livingroom_dimmers:
   friendly_name: Fönsterbelysning övrig
 light.guestroom:
   friendly_name: Belysning på gästtoaletten
-light.outdoor:
+switch.everspring_an179_in_wall_onoff_module_switch_2:
   friendly_name: Belysning utomhus
 group.guestroom:
   friendly_name: Gästtoaletten
