@@ -4,8 +4,6 @@ group.main_floor_view:
   friendly_name: Huvudplan
 group.basement_view:
   friendly_name: Källaren
-group.attic_view:
-  friendly_name: Vinden
 group.garden_view:
   friendly_name: Utomhus
 group.electricity_heating_view:
@@ -14,8 +12,6 @@ group.objects_view:
   friendly_name: Prylar
 group.main:
   friendly_name: Allmänt
-group.outdoor:
-  friendly_name: Utomhus
 group.garden:
   friendly_name: Trädgården
 group.weather:
@@ -48,8 +44,6 @@ group.gillestugan:
   friendly_name: Gillestugan
 group.office:
   friendly_name: Kontoret
-group.attic:
-  friendly_name: Vinden
 group.infrastructure:
   friendly_name: IT-infrastruktur
 group.bathroom:
@@ -98,12 +92,6 @@ sensor.aeotec_zw074_multisensor_gen5_temperature:
   friendly_name: Temperatur garageuppfart
 sensor.aeotec_zw074_multisensor_gen5_burglar:
   friendly_name: Närvaro garageuppfart
-sensor.swz002_energy:
-  friendly_name: Energiåtgång värmeslinga
-sensor.swz002_power:
-  friendly_name: Momentan effekt värmeslinga
-switch.swz002_switch:
-  friendly_name: Strömförsörjning värmeslinga
 light.aeotec_zw098_led_bulb_level:
   friendly_name: Hörnlampan
   icon: mdi:lamp
@@ -113,8 +101,6 @@ light.livingroom_dimmers:
   friendly_name: Fönsterbelysning övrig
 light.guestroom:
   friendly_name: Belysning på gästtoaletten
-switch.everspring_an179_in_wall_onoff_module_switch_2:
-  friendly_name: Belysning utomhus
 group.guestroom:
   friendly_name: Gästtoaletten
 sensor.guestroom_status:
@@ -128,8 +114,6 @@ sensor.aeotec_zw100_multisensor_6_temperature:
   friendly_name: Temperatur
 sensor.bathroom_status:
   friendly_name: Badrummet
-switch.outdoor_front:
-  friendly_name: Belysning utomhus framsidan
 light.playroom:
   friendly_name: Belysning
 sensor.playroom_motion:
@@ -138,8 +122,6 @@ light.hue_color_candle_1:
   friendly_name: Kristallkronan
 light.hue_ambiance_lamp_1:
   friendly_name: Hörnlampan i hallen
-light.attic_window:
-  friendly_name: Fönsterlampan
 cover.qubino_zmnhod1_flush_shutter_dc_switch:
   friendly_name: Rullgardin
   device_class: window
@@ -170,18 +152,6 @@ sensor.dehumidifier:
   friendly_name: Luftavfuktare, effektuttag
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
   friendly_name: Luftavfuktare, energiåtgång
-switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2:
-  friendly_name: Ventilation
-sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2:
-  friendly_name: Ventilation, energiåtgång
-sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
-  friendly_name: Ventilation, effektuttag
-switch.telldus_tzwp102_plugin_switch_switch_2:
-  friendly_name: Värmekabel
-sensor.telldus_tzwp102_plugin_switch_energy_2:
-  friendly_name: Värmekabel, energiåtgång
-sensor.telldus_tzwp102_plugin_switch_power_2:
-  friendly_name: Värmekabel, effektuttag
 sensor.telldus_tzwp102_plugin_switch_energy:
   friendly_name: Tvättmaskin, energiåtgång
 sensor.telldus_tzwp102_plugin_switch_power:

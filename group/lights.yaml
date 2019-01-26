@@ -18,24 +18,6 @@ main:
     - sensor.garage1_door
     - sensor.garage2_door
 
-outdoor:
-  entities:
-    - switch.everspring_an179_in_wall_onoff_module_switch_2
-    - switch.outdoor_front
-    - sensor.outdoor_temperature
-    - sensor.aeotec_zw074_multisensor_gen5_luminance
-    - sensor.aeotec_zw074_multisensor_gen5_relative_humidity
-    - sensor.aeotec_zw074_multisensor_gen5_temperature
-    - sensor.aeotec_zw074_multisensor_gen5_burglar
-
-# This group is used for the automation that makes sure
-# the lights are on when the sun is down.
-outdoor_and_attic_lights:
-  entities:
-    - switch.everspring_an179_in_wall_onoff_module_switch_2
-    - switch.outdoor_front
-    - light.attic_window
-
 garden:
   entities:
     - sensor.soil_moisture1_temperature
@@ -126,18 +108,6 @@ gillestugan:
 office:
   entities:
     - switch.belysning_kontoret
-
-attic:
-  entities:
-    - light.attic_window
-    - sensor.th03_temperature
-    - sensor.th03_humidity
-    - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
-    - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2
-    - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2
-    - switch.telldus_tzwp102_plugin_switch_switch_2
-    - sensor.telldus_tzwp102_plugin_switch_energy_2
-    - sensor.telldus_tzwp102_plugin_switch_power_2
 
 infrastructure:
   entities:

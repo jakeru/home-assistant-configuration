@@ -143,11 +143,6 @@ sensor:
         data_type:
           - Temperature
           - Humidity
-      0a5209024b0000d32f0179:
-        name: th03
-        data_type:
-          - Temperature
-          - Humidity
       0850096500ab019269:
         name: bbq
         data_type:
@@ -190,9 +185,6 @@ sensor:
         value_template: '{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom("%H:%M") }}'
       dehumidifier:
         value_template: '{{ states.switch.fibaro_system_fgwpef_wall_plug_gen5_switch.attributes.power_consumption }}'
-        unit_of_measurement: 'W'
-      attic_ventilation:
-        value_template: '{{ states.switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2.attributes.power_consumption }}'
         unit_of_measurement: 'W'
       main_door:
         value_template: >-
@@ -383,14 +375,10 @@ light:
   devices:
     0b11000f0085feb602010f70:
       name: livingroom_dimmers
-    0b11000d0085feb605010f70:
-      name: outdoor
     0b11000d0085feb606010f70:
       name: playroom
     0b11000d0085feb607010f70:
       name: guestroom
-    0b11000d0085feb608010f70:
-      name: attic_window
     0b11000f0085feb609010f70:
       name: livingroom_plugs
 
@@ -417,17 +405,6 @@ switch:
       0b11000f0000957a01010f60:
         name: hall
         fire_event: True
-  - platform: template
-    switches:
-      outdoor_front:
-        entity_id: switch.everspring_an179_in_wall_onoff_module_switch
-        value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch", "on") }}'
-        turn_on:
-          service: switch.turn_on
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
-        turn_off:
-          service: switch.turn_off
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
   - platform: command_line
     switches:
       dummy:

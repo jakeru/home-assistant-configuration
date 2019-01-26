@@ -1,0 +1,63 @@
+light:
+  platform: rfxtrx
+  devices:
+    0b11000d0085feb605010f70:
+      name: outdoor_back
+  - platform: template
+    lights:
+      outdoor_front:
+        value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch", "on") }}'
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
+      outdoor_driveway:
+        value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch_2", "on") }}'
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_2
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_2
+
+automation:
+  - alias: Turn on outdoor lights when sun goes down
+    trigger:
+      platform: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: 0.0
+    action:
+      service: homeassistant.turn_on
+      entity_id:
+        - group.outdoor_lights
+  - alias: Turn off outdoor lights when the sun goes up
+    trigger:
+      platform: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      above: 0.0
+    action:
+      service: homeassistant.turn_off
+      entity_id:
+        - group.outdoor_lights
+
+group:
+  outdoor_lights:
+    entities:
+      - light.outdoor_driveway
+      - light.outdoor_front
+      - light.outdoor_back
+
+homeassistant:
+  customize:
+    group.outdoor_lights:
+      friendly_name: Utomhusbelysning
+    light.outdoor_driveway:
+      friendly_name: Belysning garageuppfart
+    light.outdoor_front:
+      friendly_name: Belysning framsidan
+    light.outdoor_back:
+      friendly_name: Belysning baksidan

@@ -1,0 +1,108 @@
+light:
+  devices:
+    platform: rfxtrx
+      0b11000d0085feb608010f70:
+        name: attic_window
+
+sensor:
+  - platform: rfxtrx
+    devices:
+      0a5209024b0000d32f0179:
+        name: attic_th03
+        data_type:
+          - Temperature
+          - Humidity
+  - platform: template
+    sensors:
+      attic_heating_cable_power:
+        value_template: '{{ sensor.telldus_tzwp102_plugin_switch_power_2 }}'
+        unit_of_measurement: 'W'
+      attic_heating_cable_energy:
+        value_template: '{{ sensor.telldus_tzwp102_plugin_switch_energy_2 }}'
+        unit_of_measurement: 'Wh'
+      attic_ventilation_power:
+        value_template: '{{ sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2 }}'
+        unit_of_measurement: 'W'
+      attic_ventilation_energy:
+        value_template: '{{ sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2 }}'
+        unit_of_measurement: 'Wh'
+
+switch:
+  - platform: template
+    switches:
+      attic_heating_cable:
+        value_template: '{{ is_state("switch.telldus_tzwp102_plugin_switch_switch_2", "on") }}'
+        turn_on:
+          service: switch.turn_on
+          data:
+            entity_id: switch.telldus_tzwp102_plugin_switch_switch_2
+        turn_off:
+          service: switch.turn_off
+          data:
+            entity_id: switch.telldus_tzwp102_plugin_switch_switch_2
+      attic_ventilation:
+        value_template: '{{ is_state("switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2", "on") }}'
+        turn_on:
+          service: switch.turn_on
+          data:
+            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+        turn_off:
+          service: switch.turn_off
+          data:
+            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+
+automation:
+  - alias: Turn on attic lights when sun goes down
+    trigger:
+      platform: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      below: 0.0
+    action:
+      service: homeassistant.turn_on
+      entity_id:
+        - light.attic_window
+  - alias: Turn off attic lights when the sun goes up
+    trigger:
+      platform: numeric_state
+      entity_id: sun.sun
+      value_template: '{{ state.attributes.elevation }}'
+      above: 0.0
+    action:
+      service: homeassistant.turn_off
+      entity_id:
+        - light.attic_window
+
+group:
+  attic:
+    entities:
+      - light.attic_window
+      - sensor.attic_th03_temperature
+      - sensor.attic_th03_humidity
+      - switch.attic_heating_cable
+      - sensor.attic_heating_cable_power
+      - sensor.attic_heating_cable_energy
+      - switch.attic_ventilation
+      - sensor.attic_ventilation_power
+      - sensor.attic_ventilation_energy
+
+homeassistant:
+  customize:
+    group.attic_view:
+      friendly_name: Vinden
+    group.attic:
+      friendly_name: Vinden
+    light.attic_window:
+      friendly_name: Fönsterlampan
+    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2:
+      friendly_name: Ventilation
+    sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2:
+      friendly_name: Ventilation, energiåtgång
+    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+      friendly_name: Ventilation, effektuttag
+    switch.telldus_tzwp102_plugin_switch_switch_2:
+      friendly_name: Värmekabel
+    sensor.telldus_tzwp102_plugin_switch_energy_2:
+      friendly_name: Värmekabel, energiåtgång
+    sensor.telldus_tzwp102_plugin_switch_power_2:
+      friendly_name: Värmekabel, effektuttag
