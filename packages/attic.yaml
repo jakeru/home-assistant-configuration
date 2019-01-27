@@ -1,6 +1,6 @@
 light:
-  devices:
-    platform: rfxtrx
+  - platform: rfxtrx
+    devices:
       0b11000d0085feb608010f70:
         name: attic_window
 

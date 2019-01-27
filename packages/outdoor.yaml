@@ -1,8 +1,8 @@
 light:
-  platform: rfxtrx
-  devices:
-    0b11000d0085feb605010f70:
-      name: outdoor_back
+  - platform: rfxtrx
+    devices:
+      0b11000d0085feb605010f70:
+        name: outdoor_back_and_plugin
   - platform: template
     lights:
       outdoor_front:
@@ -49,7 +49,7 @@ group:
     entities:
       - light.outdoor_driveway
       - light.outdoor_front
-      - light.outdoor_back
+      - light.outdoor_back_and_plugin
 
 homeassistant:
   customize:
@@ -59,5 +59,5 @@ homeassistant:
       friendly_name: Belysning garageuppfart
     light.outdoor_front:
       friendly_name: Belysning framsidan
-    light.outdoor_back:
-      friendly_name: Belysning baksidan
+    light.outdoor_back_and_plugin:
+      friendly_name: Belysning baksidan och plugin
