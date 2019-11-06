@@ -32,6 +32,19 @@ class Entity:
     def night(self):
         self.turn_off()
 
+class EntityOffAtNight(Entity):
+    """ Turn off the entity at night. No other actions taken. """
+    def morning(self):
+        pass
+    def day(self):
+        pass
+    def afternoon(self):
+        pass
+    def evening(self):
+        pass
+    def night(self):
+        self.turn_off()
+
 class EntityDim(Entity):
     def morning(self):
         self.turn_on(brightness_pct=100)
@@ -42,15 +55,15 @@ class EntityDim(Entity):
 
 class EntityDimAtEvening(EntityDim):
     def evening(self):
-        self.turn_on(brightness_pct=25)
+        self.turn_on(brightness_pct=50)
 
 class EntityDimAtEveningFixedColor(Entity):
     def morning(self):
-        self.turn_on(brightness_pct=100, hs_color=[197,77])
+        self.turn_on(brightness_pct=100, hs_color=[29,71])
     def afternoon(self):
-        self.turn_on(brightness_pct=100, hs_color=[255,100])
+        self.turn_on(brightness_pct=100, hs_color=[29,71])
     def evening(self):
-        self.turn_on(brightness_pct=25, hs_color=[285, 84])
+        self.turn_on(brightness_pct=50, hs_color=[29, 71])
 
 class EntityRandomColor(Entity):
     def morning(self):
@@ -67,9 +80,10 @@ class Scenes(hass.Hass):
         self.entities = [
             Entity(self, 'light.livingroom_plugs'),
             EntityDim(self, 'light.livingroom_dimmers'),
-            EntityRandomColor(self, 'light.aeotec_zw098_led_bulb_level'),
+            EntityDimAtEveningFixedColor(self, 'light.aeotec_zw098_led_bulb_level'),
             EntityDimAtEveningFixedColor(self, 'light.hue_color_candle_1'),
             EntityDimAtEvening(self, 'light.hue_ambiance_lamp_1'),
+            EntityOffAtNight(self, 'light.playroom'),
         ]
         self.listen_event(self.on_call_service, "call_service")
         self.listen_event(self.on_button_pressed, "button_pressed")

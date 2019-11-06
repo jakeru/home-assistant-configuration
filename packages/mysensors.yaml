@@ -1,0 +1,10 @@
+mysensors:
+  persistence: true
+  version: 2.2
+  gateways:
+    - device: '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A505C8S6-if00-port0'
+      # Must use an absolute path here unfortunately.
+      persistence_file: '/srv/hass/conf/mysensors.json'
+      nodes:
+        1:
+          name: 'emeter_main'

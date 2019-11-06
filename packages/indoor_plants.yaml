@@ -1,0 +1,77 @@
+switch:
+  - platform: rfxtrx
+    devices:
+      0b11000f0085feb60a010f70:
+        name: plant_lights
+
+sensor:
+  - platform: mqtt
+    name: 'garage_sm04_temperature'
+    state_topic: 'homeassistant/sensor/garage_sm04/state'
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.temperature }}'
+  - platform: mqtt
+    name: 'garage_sm04_conductivity'
+    state_topic: 'homeassistant/sensor/garage_sm04/state'
+    unit_of_measurement: 'µS/cm'
+    value_template: '{{ value_json.conductivity }}'
+  - platform: mqtt
+    name: 'garage_sm04_moisture'
+    state_topic: 'homeassistant/sensor/garage_sm04/state'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.moisture }}'
+  - platform: mqtt
+    name: 'garage_sm04_light'
+    state_topic: 'homeassistant/sensor/garage_sm04/state'
+    unit_of_measurement: 'lux'
+    value_template: '{{ value_json.light }}'
+  - platform: mqtt
+    name: 'garage_sm04_battery'
+    state_topic: 'homeassistant/sensor/garage_sm04/state'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.battery }}'
+
+automation:
+  - alias: Turn on plant lights in the morning
+    trigger:
+      platform: time
+      at: '06:00:00'
+    action:
+      service: switch.turn_on
+      data:
+        entity_id: switch.plant_lights
+  - alias: Turn off plant lights in the evening
+    trigger:
+      platform: time
+      at: '18:00:00'
+    action:
+      service: switch.turn_off
+      data:
+        entity_id: switch.plant_lights
+
+group:
+  garage_plants:
+    entities:
+      - switch.plant_lights
+      - sensor.garage_sm04_temperature
+      - sensor.garage_sm04_conductivity
+      - sensor.garage_sm04_moisture
+      - sensor.garage_sm04_light
+      - sensor.garage_sm04_battery
+
+homeassistant:
+  customize:
+    group.garage_plants:
+      friendly_name: Plantering i G2
+    switch.plant_lights:
+      friendly_name: Växtbelysning
+    sensor.garage_sm04_temperature:
+      friendly_name: Temperatur
+    sensor.garage_sm04_conductivity:
+      friendly_name: Jordens ledningsförmåga
+    sensor.garage_sm04_moisture:
+      friendly_name: Jordfuktighet
+    sensor.garage_sm04_light:
+      friendly_name: Ljus
+    sensor.garage_sm04_battery:
+      friendly_name: Batterinivå

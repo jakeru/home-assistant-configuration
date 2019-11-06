@@ -1,7 +1,11 @@
-hello_world:
-  module: hello
-  class: HelloWorld
-
 scenes:
   module: scenes
   class: Scenes
+
+washm:
+  module: washm
+  class: WashingMachine
+
+guestroom:
+  module: guestroom
+  class: Guestroom

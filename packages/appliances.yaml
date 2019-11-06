@@ -1,0 +1,33 @@
+sensor:
+  - platform: rfxtrx
+    devices:
+      08500703b700006769:
+        name: refrigerator
+        data_type:
+          - Temperature
+      0a520907970000ba1e0259:
+        name: freezer
+        data_type:
+          - Temperature
+      08500704a70080bd79:
+        name: freezer_in_g2
+        data_type:
+          - Temperature
+
+group:
+  appliances:
+    entities:
+      - sensor.refrigerator_temperature
+      - sensor.freezer_temperature
+      - sensor.freezer_in_g2_temperature
+
+homeassistant:
+  customize:
+    group.appliances:
+      friendly_name: Vitvaror
+    sensor.refrigerator_temperature:
+      friendly_name: Kylskåpet
+    sensor.freezer_temperature:
+      friendly_name: Frysen
+    sensor.freezer_in_g2_temperature:
+      friendly_name: Frysen i G2

@@ -1,0 +1,59 @@
+binary_sensor:
+  - platform: template
+    sensors:
+      bathroom_motion:
+        entity_id: sensor.aeotec_zw100_multisensor_6_burglar
+        value_template: '{{ is_state("sensor.aeotec_zw100_multisensor_6_burglar", "8") }}'
+        device_class: motion
+
+sensor:
+  - platform: template
+    sensors:
+      bathroom_status:
+        value_template: >-
+          {% if is_state("binary_sensor.bathroom_motion", "on") %}
+            upptaget
+          {% else %}
+            ledigt
+          {% endif %}
+        icon_template: >-
+          {% if is_state("binary_sensor.bathroom_motion", "on") %}
+            mdi:close-circle
+          {% else %}
+            mdi:human-male-female
+          {% endif %}
+      bathroom_luminance:
+        value_template: "{{ states('sensor.aeotec_zw100_multisensor_6_luminance') }}"
+        unit_of_measurement: 'lux'
+      bathroom_relative_humidity:
+        value_template: "{{ states('sensor.aeotec_zw100_multisensor_6_relative_humidity') }}"
+        unit_of_measurement: '%'
+      bathroom_temperature:
+        value_template: "{{ states('sensor.aeotec_zw100_multisensor_6_temperature') }}"
+        unit_of_measurement: '°C'
+      bathroom_battery:
+        value_template: "{{ state_attr('zwave.aeotec_zw100_multisensor_6', 'battery_level') }}"
+        unit_of_measurement: '%'
+
+group:
+  bathroom:
+    - sensor.bathroom_status
+    - sensor.bathroom_luminance
+    - sensor.bathroom_temperature
+    - sensor.bathroom_relative_humidity
+
+homeassistant:
+  customize:
+    group.bathroom:
+      friendly_name: Badrummet
+    sensor.bathroom_status:
+      friendly_name: Badrummet
+    sensor.bathroom_luminance:
+      friendly_name: Ljusnivå
+    sensor.bathroom_relative_humidity:
+      friendly_name: Luftfuktighet
+      icon: mdi:water-percent
+    sensor.bathroom_temperature:
+      friendly_name: Temperatur
+    sensor.bathroom_battery:
+      friendly_name: Närvarosensor Badrum

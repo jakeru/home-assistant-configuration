@@ -1,41 +1,60 @@
+binary_sensor:
+  - platform: template
+    sensors:
+      garage1_door:
+        value_template: '{{ states("binary_sensor.vision_zg8101_garage_door_detector_sensor") }}'
+      garage2_door:
+        value_template: '{{ states("binary_sensor.vision_zg8101_garage_door_detector_sensor_2") }}'
+
+sensor:
+  - platform: template
+    sensors:
+      garage1_door_ui:
+        value_template: >-
+          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'off') %}
+            stängd
+          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'on') %}
+            öppen
+          {% else %}
+            okänt
+          {% endif %}
+        icon_template: >-
+          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'off') %}
+            mdi:door-closed
+          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'on') %}
+            mdi:door-open
+          {% else %}
+            mdi:dots-horizontal
+          {% endif %}
+      garage2_door_ui:
+        value_template: >-
+          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'off') %}
+            stängd
+          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'on') %}
+            öppen
+          {% else %}
+            okänt
+          {% endif %}
+        icon_template: >-
+          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'off') %}
+            mdi:door-closed
+          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'on') %}
+            mdi:door-open
+          {% else %}
+            mdi:dots-horizontal
+          {% endif %}
+
 group:
   garage:
     entities:
-      - sensor.garage1_door
-      - sensor.garage2_door
-      - switch.plant_lights
-
-switch:
-  - platform: rfxtrx
-    devices:
-      0b11000f0085feb60a010f70:
-        name: plant_lights
-
-automation:
-  - alias: Turn on plant lights in the morning
-    trigger:
-      platform: time
-      at: '06:00:00'
-    action:
-      service: switch.turn_on
-      entity_id: switch.plant_lights
-
-  - alias: Turn off plant lights in the evening
-    trigger:
-      platform: time
-      at: '18:00:00'
-    action:
-      service: switch.turn_off
-      entity_id: switch.plant_lights
+      - sensor.garage1_door_ui
+      - sensor.garage2_door_ui
 
 homeassistant:
   customize:
     group.garage:
       friendly_name: Garagen
-    sensor.garage1_door:
+    sensor.garage1_door_ui:
       friendly_name: Garageport G1
-    sensor.garage2_door:
+    sensor.garage2_door_ui:
       friendly_name: Garageport G2
-    switch.plant_lights:
-      friendly_name: Växtbelysning
-

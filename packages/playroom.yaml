@@ -1,0 +1,76 @@
+binary_sensor:
+  - platform: template
+    sensors:
+      playroom_motion:
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+        value_template: '{{ is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") }}'
+
+sensor:
+  - platform: template
+    sensors:
+      playroom_temperature:
+        value_template: '{{ states("sensor.fibaro_system_fgms001zw5_motion_sensor_temperature") }}'
+        unit_of_measurement: '°C'
+        device_class: temperature
+      playroom_luminance:
+        value_template: '{{ states("sensor.fibaro_system_fgms001zw5_motion_sensor_luminance") }}'
+        unit_of_measurement: 'lux'
+        device_class: illuminance
+      playroom_motion_ui:
+        value_template: >-
+          {% if is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") %}
+            leks för fullt
+          {% else %}
+            ingen aktivitet
+          {% endif %}
+        icon_template: >-
+          {% if is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") %}
+            mdi:snowman
+          {% else %}
+            mdi:radiobox-blank
+          {% endif %}
+
+light:
+  platform: rfxtrx
+  devices:
+    0b11000d0085feb606010f70:
+      name: playroom
+
+automation:
+  - alias: Turn on lights in playroom on motion
+    trigger:
+      platform: state
+      entity_id: binary_sensor.playroom_motion
+      to: 'on'
+    action:
+      service: homeassistant.turn_on
+      entity_id: script.light_playroom_on
+  - alias: Turn off lights in play room after no presense
+    trigger:
+      platform: state
+      entity_id: binary_sensor.playroom_motion
+      to: 'off'
+    action:
+      service: homeassistant.turn_on
+      entity_id: script.light_playroom_off
+
+group:
+  playroom:
+    entities:
+      - sensor.playroom_motion_ui
+      - light.playroom
+      - sensor.playroom_temperature
+      - sensor.playroom_luminance
+
+homeassistant:
+  customize:
+    group.playroom:
+      friendly_name: Lekrummet
+    light.playroom:
+      friendly_name: Belysning
+    sensor.playroom_motion_ui:
+      friendly_name: Närvaro
+    sensor.playroom_temperature:
+      friendly_name: Temperatur
+    sensor.playroom_luminance:
+      friendly_name: Ljusnivå

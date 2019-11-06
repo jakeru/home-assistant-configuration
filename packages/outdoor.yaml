@@ -9,18 +9,49 @@ light:
         value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch", "on") }}'
         turn_on:
           service: switch.turn_on
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
+          data:
+            entity_id: switch.everspring_an179_in_wall_onoff_module_switch
         turn_off:
           service: switch.turn_off
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch
+          data:
+            entity_id: switch.everspring_an179_in_wall_onoff_module_switch
       outdoor_driveway:
         value_template: '{{ is_state("switch.everspring_an179_in_wall_onoff_module_switch_2", "on") }}'
         turn_on:
           service: switch.turn_on
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_2
+          data:
+            entity_id: switch.everspring_an179_in_wall_onoff_module_switch_2
         turn_off:
           service: switch.turn_off
-          entity_id: switch.everspring_an179_in_wall_onoff_module_switch_2
+          data:
+            entity_id: switch.everspring_an179_in_wall_onoff_module_switch_2
+  - platform: mqtt
+    name: outdoor_ledstrip_default
+    availability_topic: "outdoor_ledstrip/status"
+    command_topic: "outdoor_ledstrip/light/switch"
+    state_topic: "outdoor_ledstrip/light/status"
+    rgb_state_topic: "outdoor_ledstrip/rgb/status"
+    rgb_command_topic: "outdoor_ledstrip/rgb/set"
+    white_value_command_topic: "outdoor_ledstrip/white/set"
+    white_value_state_topic: "outdoor_ledstrip/white/status"
+    effect_command_topic: "outdoor_ledstrip/effect/set"
+    effect_state_topic: "outdoor_ledstrip/effect/status"
+    effect_list:
+      - none
+      - rainbow
+  - platform: mqtt
+    name: outdoor_ledstrip
+    schema: json
+    retain: yes
+    command_topic: "outdoor_ledstrip/light/set"
+    state_topic: "outdoor_ledstrip/light"
+    availability_topic: "outdoor_ledstrip/status"
+    effect: yes
+    effect_list:
+      - none
+      - rainbow
+    rgb: yes
+    white_value: yes
 
 automation:
   - alias: Turn on outdoor lights when sun goes down
@@ -30,9 +61,10 @@ automation:
       value_template: '{{ state.attributes.elevation }}'
       below: 0.0
     action:
-      service: homeassistant.turn_on
-      entity_id:
-        - group.outdoor_lights
+      service: scene.turn_on
+      data:
+        entity_id:
+          - scene.outdoor_lights_on
   - alias: Turn off outdoor lights when the sun goes up
     trigger:
       platform: numeric_state
@@ -40,9 +72,23 @@ automation:
       value_template: '{{ state.attributes.elevation }}'
       above: 0.0
     action:
-      service: homeassistant.turn_off
-      entity_id:
-        - group.outdoor_lights
+      service: scene.turn_on
+      data:
+        entity_id:
+          - group.outdoor_lights_off
+
+scene:
+  - name: outdoor_lights_on
+    entities:
+      light.outdoor_driveway: on
+      light.outdoor_front: on
+      light.outdoor_back_and_plugin: on
+      light.outdoor_ledstrip:
+        state: on
+        effect: rainbow
+  - name: outdoor_lights_off
+    entities:
+      group.outdoor_lights: off
 
 group:
   outdoor_lights:
@@ -50,6 +96,7 @@ group:
       - light.outdoor_driveway
       - light.outdoor_front
       - light.outdoor_back_and_plugin
+      - light.outdoor_ledstrip
 
 homeassistant:
   customize:
@@ -61,3 +108,5 @@ homeassistant:
       friendly_name: Belysning framsidan
     light.outdoor_back_and_plugin:
       friendly_name: Belysning baksidan och plugin
+    light.outdoor_ledstrip:
+      friendly_name: LED-list vid entrén

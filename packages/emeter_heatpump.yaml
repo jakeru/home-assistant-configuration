@@ -1,0 +1,74 @@
+sensor:
+  - platform: mqtt
+    state_topic: "pizero/emeter_heatpump"
+    name: emeter_heatpump_power
+    unit_of_measurement: "W"
+    value_template: "{{ value_json.power_w }}"
+    json_attributes_topic: "pizero/emeter_heatpump"
+  - platform: template
+    sensors:
+      emeter_heatpump_time:
+        entity_id: sensor.emeter_heatpump_power
+        value_template: "{{ as_timestamp(state_attr('sensor.emeter_heatpump_power', 'time')) | timestamp_local }}"
+      emeter_heatpump_energy_total:
+        entity_id: sensor.emeter_heatpump_power
+        value_template: "{{ state_attr('sensor.emeter_heatpump_power', 'energy_total_wh') }}"
+        unit_of_measurement: "Wh"
+      emeter_heatpump_energy_last:
+        entity_id: sensor.emeter_heatpump_power
+        value_template: "{{ state_attr('sensor.emeter_heatpump_power', 'energy_wh') }}"
+        unit_of_measurement: "Wh"
+      emeter_heatpump_pulses_total:
+        entity_id: sensor.emeter_heatpump_power
+        value_template: "{{ state_attr('sensor.emeter_heatpump_power', 'pulses_total') }}"
+      emeter_heatpump_pulses_last:
+        entity_id: sensor.emeter_heatpump_power
+        value_template: "{{ state_attr('sensor.emeter_heatpump_power', 'pulses') }}"
+      emeter_heatpump_pulses_period:
+        entity_id: sensor.emeter_heatpump_power
+        value_template: "{{ state_attr('sensor.emeter_heatpump_power', 'period_msec') }}"
+        unit_of_measurement: "ms"
+
+utility_meter:
+  emeter_heatpump_energy_hourly:
+    source: sensor.emeter_heatpump_energy_total
+    cycle: hourly
+  emeter_heatpump_energy_daily:
+    source: sensor.emeter_heatpump_energy_total
+    cycle: daily
+
+group:
+  emeter_heatpump:
+    entities:
+      - sensor.emeter_heatpump_time
+      - sensor.emeter_heatpump_power
+      - sensor.emeter_heatpump_energy_total
+      - sensor.emeter_heatpump_energy_last
+      - sensor.emeter_heatpump_pulses_total
+      - sensor.emeter_heatpump_pulses_last
+      - sensor.emeter_heatpump_pulses_period
+      - sensor.emeter_heatpump_energy_hourly
+      - sensor.emeter_heatpump_energy_daily
+
+homeassistant:
+  customize:
+    group.emeter_heatpump:
+      friendly_name: "Elförbrukning"
+    sensor.emeter_heatpump_time:
+      friendly_name: "Senaste avläsningen"
+    sensor.emeter_heatpump_power:
+      friendly_name: "Elförbrukning - effekt"
+    sensor.emeter_heatpump_energy_total:
+      friendly_name: "Elförbrukning - totalt"
+    sensor.emeter_heatpump_energy_hourly:
+      friendly_name: "Elförbrukning - per timme"
+    sensor.emeter_heatpump_energy_daily:
+      friendly_name: "Elförbrukning - per dag"
+    sensor.emeter_heatpump_energy_last:
+      friendly_name: "Elförbrukning senast"
+    sensor.emeter_heatpump_pulses_total:
+      friendly_name: "Antal pulser totalt"
+    sensor.emeter_heatpump_pulses_last:
+      friendly_name: "Antal pulser senast"
+    sensor.emeter_heatpump_pulses_period:
+      friendly_name: "Tid mellan pulser senast"

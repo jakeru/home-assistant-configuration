@@ -55,47 +55,131 @@ logbook:
 # Track the sun
 sun:
 
+# Enable ffmpeg plugin which is needed for onvif
+ffmpeg:
+
+#edgeos:
+#  host: 10.10.0.1
+#  #Supports SSL (true/false) - should be true
+#  ssl: true
+#  #Username of EdgeOS
+#  username: !secret edgeos_username
+#  #Password of EdgeOS
+#  password: !secret edgeos_password
+#  #Path to the certificate (full-chain)
+#  #cert_file: !secret ssl_certificate
+#  #List of interfaces
+#  monitored_interfaces:
+#      - eth0
+#  #List of network devices to monitor
+#  monitored_devices:
+#      - PC1
+#      - PC2
+#  #Optional - Allowed values:
+#  #  '' - represents bytes
+#  #  'K' - represents Kilobytes
+#  #  'M' - represents Megabytes
+#  unit: 'M'
+
+# Connect to my Ubiquiti Edge Router X in order to track
+# connected devices.
+#device_tracker:
+#  - platform: edgeos
+
+system_health:
+
 influxdb:
   host: localhost
   database: hass
   include:
     entities:
+      # outdoor
+      - sensor.outdoor_temperature
+      # entrance
       - alarm_control_panel.herdevagen_26_b_alarm
-      - lock.entredorr
-      - sensor.balcony_door
-      - sensor.bathroom_status
-      - sensor.aeotec_zw100_multisensor_6_temperature
-      - sensor.aeotec_zw100_multisensor_6_relative_humidity
-      - sensor.dehumidifier
-      - sensor.attic_ventilation
-      - sensor.entre_temperature
-      - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
-      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
-      - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2
-      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2
-      - sensor.freezer_temperature
-      - sensor.gillestugan_humidity
-      - sensor.gillestugan_temperature
-      - sensor.guestroom_status
-      - sensor.kok_humidity
-      - sensor.kok_temperature
-      - sensor.laundry_door
       - sensor.main_door
-      - sensor.swz002_energy
-      - sensor.swz002_power
-      - sensor.th01_humidity
-      - sensor.th01_temperature
+      - sensor.entrance_temperature
+      # livingroom
+      - sensor.balcony_door
+      # kitchen
+      - sensor.kitchen_humidity
+      - sensor.kitchen_temperature
+      # bathroom
+      - binary_sensor.bathroom_status
+      - sensor.bathroom_luminance
+      - sensor.bathroom_relative_humidity
+      - sensor.bathroom_temperature
+      # guestroom
+      - binary_sensor.guestroom_status
+      - sensor.guestroom_temperature
+      # playroom
+      - sensor.playroom_temperature
+      # gillestugan
       - sensor.th02_humidity
       - sensor.th02_temperature
-      - sensor.th03_humidity
-      - sensor.th03_temperature
-      - sensor.tvattstuga_humidity
-      - sensor.tvattstuga_temperature
+      - sensor.gillestugan_humidity
+      - sensor.gillestugan_temperature
+      # garage 1
+      - binary_sensor.garage1_door
+      # garage 2
+      - binary_sensor.garage2_door
+      - switch.plant_lights
+      # laundry
+      - sensor.laundry_door
+      - sensor.laundry_humidity
+      - sensor.laundry_temperature
+      - switch.laundry_dehumidifier
+      - sensor.laundry_dehumidifier_power
+      - sensor.laundry_dehumidifier_energy
+      - sensor.laundry_washing_machine_power
+      - sensor.laundry_washing_machine_energy
+      # butlery (matkällaren)
+      - sensor.th01_humidity
+      - sensor.th01_temperature
+      # attic
+      - sensor.attic_heating_cable_energy
+      - sensor.attic_heating_cable_power
+      - sensor.attic_ventilation_power
+      - sensor.attic_ventilation_energy
+      - sensor.attic_th03_temperature
+      - sensor.attic_th03_humidity
+      - sensor.attic_th04_temperature
+      - sensor.attic_th04_humidity
+      # appliances
+      - sensor.freezer_temperature
+      - sensor.refrigerator_temperature
+      - sensor.freezer_in_g2_temperature
+      # heatpump
+      - sensor.heatpump_0001 # "Radiator Retur GT1" # "Radiator Return"
+      - sensor.heatpump_0003 # "Värmebärare In GT9" # "Heat carrier Return"
+      - sensor.heatpump_0004 # "Värmebärare Ut GT8" # "Heat carrier Forwrd"
+      - sensor.heatpump_0005 # "Köldbärare In GT10" # "Brine in/Evaporator"
+      - sensor.heatpump_0006 # "Köldbärare Ut GT11" # "Brine out/Condenser"
+      - sensor.heatpump_0007 # "Utomhustemperatur" # "Outdoor"
+      - sensor.heatpump_000a # "Varmvatten GT3" # "Hot water 2 / Mid"
+      - sensor.heatpump_000b # "Kompressor GT6" # "Hot gas / Compr."
+      - sensor.heatpump_0107 # "Börvärde Radiator Retur" # Heating setpoint"
+      - sensor.heatpump_0111 # "Börvärde Varmvatten" # "Warm water setpoint"
+      - sensor.heatpump_1a01 # "Kompressor" # "Compressor"
+      - sensor.heatpump_1a02 # "Elkasett 1" # "Add heat step 1"
+      - sensor.heatpump_1a03 # "Elkasett 2" # "Add heat step 2"
+      - sensor.heatpump_1a04 # "Köldbärarpump" # "Pump Cold circuit"
+      - sensor.heatpump_1a05 # "Värmebärarpump" # "Pump Heat circuit"
+      - sensor.heatpump_1a06 # "Radiatorpump" # "Pump Radiator"
+      - sensor.heatpump_1a07 # "Växelventil (värme/varmvatten)" # "Switch valve 1"
+      # emeter_heatpump
+      - sensor.emeter_heatpump_power
+      # watermeter
+      - sensor.watermeter_volume
 
 logger:
   default: warning
   logs:
     homeassistant.components.rfxtrx: info
+    #homeassistant.components.heos: debug
+    #pyheos: debug
+    #mysensors: debug
+    #homeassistant.components.mysensors: debug
 
 rfxtrx:
   device: /dev/rfxtrx
@@ -117,6 +201,9 @@ alarm_control_panel:
     home_mode_name: Avaktiverat
     away_mode_name: Aktiverat
 
+ifttt:
+  key: !secret ifttt_key
+
 sensor:
   - platform: arlo
   - platform: yr
@@ -129,10 +216,15 @@ sensor:
   - platform: rfxtrx
     automatic_add: True
     devices:
-      085001000401005069:
+      085001040201002069:
         name: outdoor
         data_type:
           - Temperature
+      0a52091df90000d7220279:
+        name: outdoor_th05
+        data_type:
+          - Temperature
+          - Humidity
       0a520906690000df2c0179:
         name: th01
         data_type:
@@ -149,14 +241,6 @@ sensor:
           - Temperature
       08500900001100e069:
         name: bbq_old
-        data_type:
-          - Temperature
-      0a520907970000ba1e0259:
-        name: freezer
-        data_type:
-          - Temperature
-      08500704a70080bd79:
-        name: freezer_in_g2
         data_type:
           - Temperature
       0a520c1a000100e6050279:
@@ -183,9 +267,6 @@ sensor:
         value_template: '{{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom("%H:%M") }}'
       sunset:
         value_template: '{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom("%H:%M") }}'
-      dehumidifier:
-        value_template: '{{ states.switch.fibaro_system_fgwpef_wall_plug_gen5_switch.attributes.power_consumption }}'
-        unit_of_measurement: 'W'
       main_door:
         value_template: >-
           {% if is_state('lock.entredorr', 'locked') %}
@@ -214,109 +295,43 @@ sensor:
           {% else %}
             mdi:lock-open
           {% endif %}
-      bathroom_status:
+      alarm_status_ui:
         value_template: >-
-          {% if is_state("sensor.aeotec_zw100_multisensor_6_burglar", "8") %}
-            upptaget
-          {% else %}
-            ledigt
-          {% endif %}
-        icon_template: >-
-          {% if is_state("sensor.aeotec_zw100_multisensor_6_burglar", "8") %}
-            mdi:close-circle
-          {% else %}
-            mdi:human-male-female
-          {% endif %}
-      guestroom_status:
-        value_template: >-
-          {% if is_state("binary_sensor.guestroom", "on") %}
-            upptaget
-          {% else %}
-            ledigt
-          {% endif %}
-        icon_template: >-
-          {% if is_state("binary_sensor.guestroom", "on") %}
-            mdi:close-circle
-          {% else %}
-            mdi:human-male-female
-          {% endif %}
-      laundry_door:
-        value_template: >-
-          {% if is_state("binary_sensor.laundry", "on") %}
-            öppen
-          {% elif is_state("binary_sensor.laundry", "off") %}
-            stängd
-          {% else %}
-            okänd
-          {% endif %}
-        icon_template: >-
-          {% if is_state("binary_sensor.laundry", "on") %}
-            mdi:door-open
-          {% elif is_state("binary_sensor.laundry", "off") %}
-            mdi:door-closed
-          {% else %}
-            mdi:dots-horizontal
-          {% endif %}
-      playroom_motion:
-        value_template: >-
-          {% if is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") %}
-            leks för fullt
-          {% else %}
-            ingen aktivitet
-          {% endif %}
-        icon_template: >-
-          {% if is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") %}
-            mdi:snowman
-          {% else %}
-            mdi:radiobox-blank
-          {% endif %}
-      garage1_door:
-        value_template: >-
-          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'off') %}
-            stängd
-          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'on') %}
-            öppen
+          {% if is_state("alarm_control_panel.herdevagen_26_b_alarm", "armed_away") %}
+            larmat i bortaläge
+          {% elif is_state("alarm_control_panel.herdevagen_26_b_alarm", "armed_home") %}
+            larmat i hemmaläge (skalskydd)
+          {% elif is_state("alarm_control_panel.herdevagen_26_b_alarm", "disarmed") %}
+            avlarmat
           {% else %}
             okänt
           {% endif %}
         icon_template: >-
-          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'off') %}
-            mdi:door-closed
-          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor', 'on') %}
-            mdi:door-open
+          {% if is_state("alarm_control_panel.herdevagen_26_b_alarm", "armed_away") %}
+            mdi:run
+          {% elif is_state("alarm_control_panel.herdevagen_26_b_alarm", "disarmed") %}
+            mdi:home
           {% else %}
-            mdi:dots-horizontal
+            mdi:minus
           {% endif %}
-      garage2_door:
-        value_template: >-
-          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'off') %}
-            stängd
-          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'on') %}
-            öppen
-          {% else %}
-            okänt
-          {% endif %}
-        icon_template: >-
-          {% if is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'off') %}
-            mdi:door-closed
-          {% elif is_state('binary_sensor.vision_zg8101_garage_door_detector_sensor_2', 'on') %}
-            mdi:door-open
-          {% else %}
-            mdi:dots-horizontal
-          {% endif %}
-  - platform: mqtt
-    name: 'laundry_emeter1_energy'
-    state_topic: 'laundry/e-meter/1'
-    unit_of_measurement: 'kWh'
-    value_template: '{{ value_json.energy }}'
-  - platform: mqtt
-    name: 'laundry_emeter1_power'
-    state_topic: 'laundry/e-meter/1'
-    unit_of_measurement: 'W'
-    value_template: '{{ value_json.power }}'
+
+#  - platform: mqtt
+#    name: 'laundry_emeter1_energy'
+#    state_topic: 'laundry/e-meter/1'
+#    unit_of_measurement: 'kWh'
+#    value_template: '{{ value_json.energy }}'
+#  - platform: mqtt
+#    name: 'laundry_emeter1_power'
+#    state_topic: 'laundry/e-meter/1'
+#    unit_of_measurement: 'W'
+#    value_template: '{{ value_json.power }}'
 
 camera:
   - platform: arlo
+  - platform: uvc
+    nvr: localhost
+    port: 7080
+    key: !secret uvc_key
   - platform: local_file
     name: camera1_latest
     file_path: /home/camera1/latest.jpg
@@ -343,16 +358,31 @@ camera:
     profile: 2
   - platform: onvif
     name: camera2
-    host: 10.10.0.166
+    host: 10.10.0.102
     port: 49152
     username: view
     password: view
     profile: 2
+  - platform: ffmpeg
+    name: camera1_live
+    input: rtsp://view:view@10.10.0.113:554/live/ch2
+  - platform: ffmpeg
+    name: camera2_live
+    input: rtsp://view:view@10.10.0.102:554/live/ch2
+
+heos:
+  host: heos_livingroom
+
+#media_player:
+#  - platform: heos
+#    hostname: heos_livingroom
+#    name: HEOS Sound System
 
 panel_iframe:
   grafana:
     title: 'Grafer'
-    url: 'https://grafana.jabbe.se:3000'
+    url: 'https://grafana.jabbe.se'
+    icon: mdi:chart-line
 
 mqtt:
   broker: localhost
@@ -375,28 +405,17 @@ light:
   devices:
     0b11000f0085feb602010f70:
       name: livingroom_dimmers
-    0b11000d0085feb606010f70:
-      name: playroom
-    0b11000d0085feb607010f70:
-      name: guestroom
     0b11000f0085feb609010f70:
       name: livingroom_plugs
 
 automation: !include_dir_merge_list automation
 
-binary_sensor:
-  - platform: rfxtrx
-    automatic_add: False
-    devices:
-      0b110005007abc960a010f60:
-        name: guestroom
-      0b11002a0023034e0a000070:
-        name: laundry
-  - platform: template
-    sensors:
-      playroom_motion:
-        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-        value_template: '{{ is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") }}'
+#binary_sensor:
+#  - platform: rfxtrx
+#    automatic_add: False
+#    devices:
+#      0b110005007abc960a010f60:
+#        name: guestroom
 
 switch:
   - platform: rfxtrx

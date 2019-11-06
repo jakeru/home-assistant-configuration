@@ -1,6 +1,0 @@
-weather:
-  entities:
-    - sensor.th01_temperature
-    - sensor.th02_temperature
-    - sensor.th03_temperature
-    - sensor.outdoor_temperature

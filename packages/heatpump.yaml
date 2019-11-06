@@ -3,7 +3,9 @@
 homeassistant:
   customize:
     group.heatpump:
-      friendly_name: "Bergvärmepumpen"
+      friendly_name: "Bergvärmepumpen, 1/2"
+    group.heatpump_part2:
+      friendly_name: "Bergvärmepumpen, 2/2"
     sensor.heatpump_0001:
       friendly_name: "Radiator Retur GT1" # "Radiator Return"
     sensor.heatpump_0002:
@@ -64,63 +66,63 @@ sensor:
   - platform: mqtt
     state_topic: heatpump/0001
     name: heatpump_0001
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0002
     name: heatpump_0002
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0003
     name: heatpump_0003
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0004
     name: heatpump_0004
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0005
     name: heatpump_0005
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0006
     name: heatpump_0006
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0007
     name: heatpump_0007
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0008
     name: heatpump_0008
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0009
     name: heatpump_0009
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/000a
     name: heatpump_000a
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/000b
     name: heatpump_000b
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0107
     name: heatpump_0107
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0111
     name: heatpump_0111
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0203
     name: heatpump_0203
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/0207
     name: heatpump_0207
-    unit_of_measurement: "Degrees Celcius"
+    unit_of_measurement: "°C"
   - platform: mqtt
     state_topic: heatpump/1a01
     name: heatpump_1a01
@@ -177,7 +179,7 @@ group:
   heatpump:
     entities:
       - sensor.heatpump_0001
-      - sensor.heatpump_0002
+      #- sensor.heatpump_0002
       - sensor.heatpump_0003
       - sensor.heatpump_0004
       - sensor.heatpump_0005
@@ -187,6 +189,8 @@ group:
       #- sensor.heatpump_0009
       - sensor.heatpump_000a
       - sensor.heatpump_000b
+  heatpump_part2:
+    entities:
       - sensor.heatpump_0107
       - sensor.heatpump_0111
       #- sensor.heatpump_0203

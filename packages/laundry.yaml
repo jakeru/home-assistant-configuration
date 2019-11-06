@@ -1,0 +1,104 @@
+binary_sensor:
+  - platform: rfxtrx
+    devices:
+      0b11002a0023034e0a000070:
+        name: laundry_door
+
+sensor:
+  - platform: template
+    sensors:
+      laundry_dehumidifier_power:
+        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_power") }}'
+        unit_of_measurement: 'W'
+      laundry_dehumidifier_energy:
+        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_energy") }}'
+        unit_of_measurement: 'kWh'
+      laundry_washing_machine_power:
+        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2") }}'
+        unit_of_measurement: 'W'
+      laundry_washing_machine_energy:
+        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2") }}'
+        unit_of_measurement: 'kWh'
+      laundry_door_ui:
+        value_template: >-
+          {% if is_state("binary_sensor.laundry_door", "on") %}
+            öppen
+          {% elif is_state("binary_sensor.laundry_door", "off") %}
+            stängd
+          {% else %}
+            okänd
+          {% endif %}
+        icon_template: >-
+          {% if is_state("binary_sensor.laundry_door", "on") %}
+            mdi:door-open
+          {% elif is_state("binary_sensor.laundry_door", "off") %}
+            mdi:door-closed
+          {% else %}
+            mdi:dots-horizontal
+          {% endif %}
+
+switch:
+  - platform: template
+    switches:
+      laundry_dehumidifier:
+        value_template: '{{ is_state("switch.fibaro_system_fgwpef_wall_plug_gen5_switch", "on") }}'
+        turn_on:
+          service: switch.turn_on
+          data:
+            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+        turn_off:
+          service: switch.turn_off
+          data:
+            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+
+automation:
+  - alias: Disable dehumidifier in the evening
+    trigger:
+      platform: time
+      at: '22:30:00'
+    action:
+      service: switch.turn_off
+      entity_id: switch.laundry_dehumidifier
+  - alias: Enable dehumidifier in the morning
+    trigger:
+      platform: time
+      at: '08:00:00'
+    action:
+      service: switch.turn_on
+      entity_id: switch.laundry_dehumidifier
+
+group:
+  laundry:
+    entities:
+      - sensor.laundry_door_ui
+      - sensor.laundry_humidity
+      - sensor.laundry_temperature
+      - switch.laundry_dehumidifier
+      - sensor.laundry_dehumidifier_power
+      - sensor.laundry_dehumidifier_energy
+      - sensor.laundry_washing_machine_power
+      - sensor.laundry_washing_machine_energy
+
+homeassistant:
+  customize:
+    group.laundry:
+      friendly_name: Tvättstugan
+    camera.washm:
+      friendly_name: Tvättmaskinen
+    sensor.laundry_door_ui:
+      friendly_name: Dörr till tvättstugan
+    sensor.laundry_humidity:
+      friendly_name: Luftfuktighet (brandvarnare)
+      icon: mdi:water-percent
+    sensor.laundry_temperature:
+      friendly_name: Temperatur (brandvarnare)
+    switch.laundry_dehumidifier:
+      friendly_name: Luftavfuktare
+    sensor.laundry_dehumidifier_power:
+      friendly_name: Luftavfuktare, effektuttag
+    sensor.laundry_dehumidifier_energy:
+      friendly_name: Luftavfuktare, energiåtgång
+    sensor.laundry_washing_machine_power:
+      friendly_name: Tvättmaskin, effektuttag
+    sensor.laundry_washing_machine_energy:
+      friendly_name: Tvättmaskin, energiåtgång

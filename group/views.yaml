@@ -7,6 +7,18 @@ default_view:
     - camera.camera2_latest
     - group.main
 
+main:
+  entities:
+    - sensor.alarm_status_ui
+    - sensor.main_door
+    - sensor.balcony_door
+    - sensor.heatpump_0007
+    - sensor.bathroom_status
+    - sensor.guestroom_status
+    - sensor.laundry_door_ui
+    - sensor.garage1_door_ui
+    - sensor.garage2_door_ui
+
 scenes_view:
   view: yes
   entities:
@@ -19,7 +31,7 @@ main_floor_view:
     - group.livingroom
     - group.kitchen
     - group.bedroom
-    - group.bedroom_for_children
+    - group.children_bedroom
     - group.playroom
     - group.guestroom
     - group.bathroom
@@ -38,38 +50,55 @@ attic_view:
   entities:
     - group.attic
 
-garden_view:
+outdoor_view:
   view: yes
   entities:
     - group.sun
     - group.outdoor_lights
-    - camera.camera1
+    - sensor.outdoor
     - camera.camera1_latest
-    - camera.camera2
+    # - camera.camera1_live
     - camera.camera2_latest
-    - camera.a1
-    - sensor.last_a1
+    # - camera.camera2_live
+    #- camera.a1
+    #- sensor.last_a1
     - camera.a2
-    - sensor.last_a2
+    #- sensor.last_a2
     - camera.a3
-    - sensor.last_a3
+    #- sensor.last_a3
 
-electricity_heating_view:
+garden_view:
+  view: yes
+  entities:
+    - group.lawnmower
+
+indoor_plants_view:
+  view: yes
+  entities:
+    - group.garage_plants
+    #- group.kitchen_plants
+
+heating_view:
   view: yes
   entities:
     - group.heatpump
+    - group.heatpump_part2
+    - group.emeter_heatpump
+
+water_view:
+  view: yes
+  entities:
+    - group.watermeter
 
 objects_view:
   view: yes
   entities:
+    - group.appliances
     - group.things
-    - group.infrastructure
-    - group.garden
-    - group.water
-
-devices_view:
-  name: Enheter
-  view: no
-  entities:
     - group.speakers
     - group.devices
+    - group.infrastructure
+    - group.laptops_and_ipads
+    - group.phones
+    #- group.garden
+    #- group.water

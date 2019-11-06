@@ -1,0 +1,7 @@
+scenes:
+  entities:
+    - scene.morning
+    - scene.day
+    - scene.afternoon
+    - scene.evening
+    - scene.night

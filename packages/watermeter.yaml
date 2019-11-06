@@ -1,0 +1,56 @@
+sensor:
+  - platform: mqtt
+    state_topic: "watermeter/volume"
+    name: watermeter_volume
+    unit_of_measurement: "dl"
+    value_template: "{{ value_json.value }}"
+    json_attributes_topic: "watermeter/volume"
+  - platform: template
+    sensors:
+      watermeter_volume_time:
+        entity_id: sensor.watermeter_volume
+        value_template: "{{ as_timestamp(state_attr('sensor.watermeter_volume', 'time')) | timestamp_local }}"
+
+utility_meter:
+  watermeter_hourly:
+    source: sensor.watermeter_volume
+    cycle: hourly
+  watermeter_dayly:
+    source: sensor.watermeter_volume
+    cycle: daily
+  watermeter_weekly:
+    source: sensor.watermeter_volume
+    cycle: weekly
+  watermeter_monthly:
+    source: sensor.watermeter_volume
+    cycle: monthly
+  watermeter_yearly:
+    source: sensor.watermeter_volume
+    cycle: yearly
+
+group:
+  watermeter:
+    entities:
+      - sensor.watermeter_volume
+      - sensor.watermeter_volume_time
+      - sensor.watermeter_hourly
+      - sensor.watermeter_daily
+      - sensor.watermeter_weekly
+      - sensor.watermeter_monthly
+
+homeassistant:
+  customize:
+    group.watermeter:
+      friendly_name: "Vattenförbrukning"
+    sensor.watermeter_volume:
+      friendly_name: "Förbrukad volym"
+    sensor.watermeter_volume_time:
+      friendly_name: "Senaste avläsning"
+    sensor.watermeter_hourly:
+      friendly_name: "Vattenförbrukning per timme"
+    sensor.watermeter_daily:
+      friendly_name: "Vattenförbrukning per dag"
+    sensor.watermeter_weekly:
+      friendly_name: "Vattenförbrukning per vecka"
+    sensor.watermeter_monthly:
+      friendly_name: "Vattenförbrukning per månad"

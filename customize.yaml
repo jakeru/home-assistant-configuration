@@ -4,10 +4,16 @@ group.main_floor_view:
   friendly_name: Huvudplan
 group.basement_view:
   friendly_name: Källaren
-group.garden_view:
+group.outdoor_view:
   friendly_name: Utomhus
-group.electricity_heating_view:
-  friendly_name: El & värme
+group.garden_view:
+  friendly_name: Trädgård
+group.indoor_plants_view:
+  friendly_name: Inomhusväxter
+group.heating_view:
+  friendly_name: Värme
+group.water_view:
+  friendly_name: Vatten
 group.objects_view:
   friendly_name: Prylar
 group.main:
@@ -30,14 +36,8 @@ group.livingroom:
   friendly_name: Vardagsrummet
 group.bedroom:
   friendly_name: Sovrummet
-group.bedroom_for_children:
-  friendly_name: Barnens sovrum
-group.playroom:
-  friendly_name: Lekrummet
 group.hall:
   friendly_name: Hallen
-group.laundry:
-  friendly_name: Tvättstugan
 group.butlery:
   friendly_name: Matkällaren
 group.gillestugan:
@@ -46,14 +46,16 @@ group.office:
   friendly_name: Kontoret
 group.infrastructure:
   friendly_name: IT-infrastruktur
-group.bathroom:
-  friendly_name: Badrummet
+group.laptops_and_ipads:
+  friendly_name: Bärbart
+group.phones:
+  friendly_name: Telefoner
 camera.camera1:
   friendly_name: Garageuppfarten
-camera.washm:
-  friendly_name: Tvättmaskinen
 camera.weather:
   friendly_name: Väderprognos
+sensor.alarm_status_ui:
+  friendly_name: Larm
 sensor.outdoor_temperature:
   friendly_name: Utomhustemperatur
 sensor.th01_temperature:
@@ -66,23 +68,10 @@ sensor.th02_temperature:
 sensor.th02_humidity:
   friendly_name: Luftfuktighet
   icon: mdi:water-percent
-sensor.th03_temperature:
-  friendly_name: Temperatur
-sensor.th03_humidity:
-  friendly_name: Luftfuktighet
-  icon: mdi:water-percent
 sensor.bbq_temperature:
   friendly_name: Grillen
-sensor.freezer_temperature:
-  friendly_name: Frysen
-sensor.freezer_in_g2_temperature:
-  friendly_name: Frysen i G2
-sensor.disk_use_:
+sensor.disk_use:
   friendly_name: Diskanvänding
-sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
-  friendly_name: Temperatur
-sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
-  friendly_name: Ljusnivå
 sensor.aeotec_zw074_multisensor_gen5_luminance:
   friendly_name: Ljusnivå
 sensor.aeotec_zw074_multisensor_gen5_relative_humidity:
@@ -99,33 +88,11 @@ light.livingroom_plugs:
   friendly_name: Fönsterbelysning plugin
 light.livingroom_dimmers:
   friendly_name: Fönsterbelysning övrig
-light.guestroom:
-  friendly_name: Belysning på gästtoaletten
-group.guestroom:
-  friendly_name: Gästtoaletten
-sensor.guestroom_status:
-  friendly_name: Gästtoaletten
-sensor.aeotec_zw100_multisensor_6_luminance:
-  friendly_name: Ljusnivå
-sensor.aeotec_zw100_multisensor_6_relative_humidity:
-  friendly_name: Luftfuktighet
-  icon: mdi:water-percent
-sensor.aeotec_zw100_multisensor_6_temperature:
-  friendly_name: Temperatur
-sensor.bathroom_status:
-  friendly_name: Badrummet
-light.playroom:
-  friendly_name: Belysning
-sensor.playroom_motion:
-  friendly_name: Lekrummet
 light.hue_color_candle_1:
   friendly_name: Kristallkronan
 light.hue_ambiance_lamp_1:
   friendly_name: Hörnlampan i hallen
 cover.qubino_zmnhod1_flush_shutter_dc_switch:
-  friendly_name: Rullgardin
-  device_class: window
-cover.qubino_zmnhod1_flush_shutter_dc_switch_2:
   friendly_name: Rullgardin
   device_class: window
 switch.belysning_kontoret:
@@ -136,34 +103,17 @@ sensor.gillestugan_humidity:
   icon: mdi:water-percent
 sensor.gillestugan_temperature:
   friendly_name: Temperatur (brandvarnare)
-sensor.kok_humidity:
+sensor.kitchen_humidity:
   friendly_name: Luftfuktighet
   icon: mdi:water-percent
-sensor.kok_temperature:
+sensor.kitchen_temperature:
   friendly_name: Temperatur
-sensor.tvattstuga_humidity:
-  friendly_name: Luftfuktighet
-  icon: mdi:water-percent
-sensor.tvattstuga_temperature:
-  friendly_name: Temperatur
-switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
-  friendly_name: Luftavfuktare
-sensor.dehumidifier:
-  friendly_name: Luftavfuktare, effektuttag
-sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
-  friendly_name: Luftavfuktare, energiåtgång
-sensor.telldus_tzwp102_plugin_switch_energy:
-  friendly_name: Tvättmaskin, energiåtgång
-sensor.telldus_tzwp102_plugin_switch_power:
-  friendly_name: Tvättmaskin, effektuttag
-sensor.entre_temperature:
+sensor.entrance_temperature:
   friendly_name: Temperatur
 sensor.main_door:
   friendly_name: Entrédörr
 sensor.balcony_door:
   friendly_name: Altandörr
-sensor.laundry_door:
-  friendly_name: Dörr till tvättstugan
 sensor.soil_moisture1_humidity:
   friendly_name: Landet 1
   icon: mdi:water-percent

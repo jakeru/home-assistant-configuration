@@ -12,20 +12,25 @@ sensor:
         data_type:
           - Temperature
           - Humidity
+      0a52093dc10000c8220279:
+        name: attic_th04
+        data_type:
+          - Temperature
+          - Humidity
   - platform: template
     sensors:
       attic_heating_cable_power:
-        value_template: '{{ sensor.telldus_tzwp102_plugin_switch_power_2 }}'
+        value_template: '{{ states("sensor.telldus_tzwp102_plugin_switch_power_2") }}'
         unit_of_measurement: 'W'
       attic_heating_cable_energy:
-        value_template: '{{ sensor.telldus_tzwp102_plugin_switch_energy_2 }}'
-        unit_of_measurement: 'Wh'
+        value_template: '{{ states("sensor.telldus_tzwp102_plugin_switch_energy_2") }}'
+        unit_of_measurement: 'kWh'
       attic_ventilation_power:
-        value_template: '{{ sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2 }}'
+        value_template: '{{ states("sensor.telldus_tzwp102_plugin_switch_power") }}'
         unit_of_measurement: 'W'
       attic_ventilation_energy:
-        value_template: '{{ sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2 }}'
-        unit_of_measurement: 'Wh'
+        value_template: '{{ states("sensor.telldus_tzwp102_plugin_switch_energy") }}'
+        unit_of_measurement: 'kWh'
 
 switch:
   - platform: template
@@ -41,15 +46,15 @@ switch:
           data:
             entity_id: switch.telldus_tzwp102_plugin_switch_switch_2
       attic_ventilation:
-        value_template: '{{ is_state("switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2", "on") }}'
+        value_template: '{{ is_state("switch.telldus_tzwp102_plugin_switch_switch", "on") }}'
         turn_on:
           service: switch.turn_on
           data:
-            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+            entity_id: switch.telldus_tzwp102_plugin_switch_switch
         turn_off:
           service: switch.turn_off
           data:
-            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2
+            entity_id: switch.telldus_tzwp102_plugin_switch_switch
 
 automation:
   - alias: Turn on attic lights when sun goes down
@@ -60,8 +65,9 @@ automation:
       below: 0.0
     action:
       service: homeassistant.turn_on
-      entity_id:
-        - light.attic_window
+      data:
+        entity_id:
+          - light.attic_window
   - alias: Turn off attic lights when the sun goes up
     trigger:
       platform: numeric_state
@@ -70,8 +76,9 @@ automation:
       above: 0.0
     action:
       service: homeassistant.turn_off
-      entity_id:
-        - light.attic_window
+      data:
+        entity_id:
+          - light.attic_window
 
 group:
   attic:
@@ -79,6 +86,8 @@ group:
       - light.attic_window
       - sensor.attic_th03_temperature
       - sensor.attic_th03_humidity
+      - sensor.attic_th04_temperature
+      - sensor.attic_th04_humidity
       - switch.attic_heating_cable
       - sensor.attic_heating_cable_power
       - sensor.attic_heating_cable_energy
@@ -92,17 +101,25 @@ homeassistant:
       friendly_name: Vinden
     group.attic:
       friendly_name: Vinden
+    sensor.attic_th03_temperature:
+      friendly_name: Temperatur norrsidan
+    sensor.attic_th03_humidity:
+      friendly_name: Luftfuktighet norrsidan
+    sensor.attic_th04_temperature:
+      friendly_name: Temperatur sydsidan
+    sensor.attic_th04_humidity:
+      friendly_name: Luftfuktighet sydsidan
     light.attic_window:
       friendly_name: Fönsterlampan
-    switch.fibaro_system_fgwpef_wall_plug_gen5_switch_2:
+    switch.attic_ventilation:
       friendly_name: Ventilation
-    sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2:
+    sensor.attic_ventilation_energy:
       friendly_name: Ventilation, energiåtgång
-    sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+    sensor.attic_ventilation_power:
       friendly_name: Ventilation, effektuttag
-    switch.telldus_tzwp102_plugin_switch_switch_2:
+    switch.attic_heating_cable:
       friendly_name: Värmekabel
-    sensor.telldus_tzwp102_plugin_switch_energy_2:
+    sensor.attic_heating_cable_energy:
       friendly_name: Värmekabel, energiåtgång
-    sensor.telldus_tzwp102_plugin_switch_power_2:
+    sensor.attic_heating_cable_power:
       friendly_name: Värmekabel, effektuttag

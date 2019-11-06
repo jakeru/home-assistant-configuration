@@ -1,0 +1,9 @@
+group:
+  garden:
+    entities:
+      - sensor.soil_moisture1_temperature
+      - sensor.soil_moisture1_humidity
+      - sensor.soil_moisture2_temperature
+      - sensor.soil_moisture2_humidity
+      - sensor.soil_moisture3_temperature
+      - sensor.soil_moisture3_humidity

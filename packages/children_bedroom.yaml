@@ -1,0 +1,37 @@
+switch:
+  - platform: rfxtrx
+    devices:
+      0b11000f0085feb608010f70:
+        name: children_bedroom_lavalamp_plugin
+
+automation:
+  - alias: Turn on lava lamp in the evening
+    trigger:
+      platform: time
+      at: '19:00:00'
+    action:
+      service: switch.turn_on
+      entity_id: switch.children_bedroom_lavalamp_plugin
+  - alias: Turn off lava lamp late evening
+    trigger:
+      platform: time
+      at: '22:30:00'
+    action:
+      service: switch.turn_off
+      entity_id: switch.children_bedroom_lavalamp_plugin
+
+group:
+  children_bedroom:
+    entities:
+      - cover.qubino_zmnhod1_flush_shutter_dc_switch_2
+      - switch.children_bedroom_lavalamp_plugin
+
+homeassistant:
+  customize:
+    group.children_bedroom:
+      friendly_name: Barnens sovrum
+    switch.children_bedroom_lavalamp_plugin:
+      friendly_name: Lavalampan
+    cover.qubino_zmnhod1_flush_shutter_dc_switch_2:
+      friendly_name: Rullgardin
+      device_class: window

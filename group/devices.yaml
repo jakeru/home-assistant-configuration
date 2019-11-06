@@ -1,13 +1,37 @@
 devices:
   entities:
-    - device_tracker.appletv3
+    - device_tracker.apple_tv3
     - device_tracker.raspberrypi
-    - device_tracker.ipad
-    - device_tracker.jakobs_macbookair
+    - device_tracker.atom
+    - device_tracker.laptop_jakeair
+
+laptops_and_ipads:
+  entities:
+    - media_player.apple_tv
+    - device_tracker.ipad5
+    - sensor.jakobs_ipad_battery_level
+    - sensor.jakobs_ipad_battery_state
+
+phones:
+  entities:
+    - device_tracker.phone_jakob_iphone5s
+    - sensor.jakobruhes_iphone_battery_level
+    - sensor.jakobruhes_iphone_battery_state
+    - device_tracker.phone_anna
+    - device_tracker.phone_anna_ebab
 
 speakers:
   entities:
-    - device_tracker.kitchen_speaker
-    - device_tracker.livingroom_speaker
-    - device_tracker.diningroom_speaker
+    - device_tracker.heos_kitchen
+    - device_tracker.heos_livingroom
+    - device_tracker.heos_diningroom
 
+infrastructure:
+  entities:
+    - sensor.memory_use_percent
+    - sensor.disk_use_percent
+    - sensor.load_1m
+
+things:
+  entities:
+    - sensor.bbq_temperature

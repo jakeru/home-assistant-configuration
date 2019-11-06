@@ -1,0 +1,16 @@
+zone:
+  - name: Home
+    latitude: 59.374288
+    longitude: 17.913283
+    radius: 100
+    icon: mdi:home
+  - name: Tritech HQ
+    latitude: 59.360933
+    longitude: 17.97344
+    radius: 100
+    icon: mdi:office-building
+  - name: Electrolux HQ
+    latitude: 59.335986
+    longitude: 18.016602
+    radius: 200
+    icon: mdi:office-building

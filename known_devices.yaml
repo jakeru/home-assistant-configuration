@@ -1,286 +1,248 @@
-jakobs_macbookair:
-  name: Jakobs MacBook Air
-  mac: 84:38:35:51:51:94
-  picture: 
-  track: yes
-  hide_if_away: no
 
-appletv3:
-  name: Apple-TV vardagsrum
-  mac: 98:D6:BB:26:50:10
-  picture: 
-  track: yes
-  hide_if_away: no
+router_asus_rtac87u:
+  hide_if_away: false
+  icon:
+  mac: 30:5A:3A:6D:9B:F0
+  name: Asus RT-AC87U
+  picture:
+  track: true
 
-kitchen_speaker:
-  name: Högtalaren i köket
+unifi_ap_playroom:
+  hide_if_away: false
+  icon:
+  mac: 80:2A:A8:C6:B8:E3
+  name: Unifi AC-AP-Pro i Lekrummet
+  picture:
+  track: true
+
+camera1:
+  hide_if_away: false
+  icon:
+  mac: 28:F3:66:6B:01:2F
+  name: Kamera 1, huset
+  picture:
+  track: true
+
+verisure_bridge_2:
+  hide_if_away: false
+  icon:
+  mac: 00:23:C1:10:90:F8
+  name: Verisure bridge 2
+  picture:
+  track: true
+
+b8_27_eb_71_e4_db:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:71:E4:DB
+  name: b8 27 eb 71 e4 db
+  picture:
+  track: true
+
+5c_cf_7f_c3_ae_0a:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:C3:AE:0A
+  name: 5c cf 7f c3 ae 0a
+  picture:
+  track: true
+
+squeezebox_radio:
+  hide_if_away: false
+  icon:
+  mac: 00:04:20:2C:D5:F9
+  name: Squeezebox radio
+  picture:
+  track: true
+
+heos_kitchen:
+  hide_if_away: false
+  icon:
   mac: 00:05:CD:54:0D:22
-  picture: mdi:music-note
-  track: yes
-  hide_if_away: no
+  name: Högtalare i köket
+  picture:
+  track: true
 
-livingroom_speaker:
-  name: Högtalare i vardagsrum
-  mac: 00:05:CD:53:20:82
-  picture: mdi:music-note
-  track: yes
-  hide_if_away: no
+camera_uvc_g3_micro-a651:
+  hide_if_away: false
+  icon:
+  mac: F0:9F:C2:C1:A6:51
+  name: Kamera Ubiqiti UVC G3 Micro
+  picture:
+  track: true
 
-diningroom_speaker:
-  name: Högtalare i matsalen
-  mac: 00:05:CD:52:96:3C
-  picture: mdi:music-note
-  track: yes
-  hide_if_away: no
+00_c1_64_00_d8_e7:
+  hide_if_away: false
+  icon:
+  mac: 00:C1:64:00:D8:E7
+  name: 00 c1 64 00 d8 e7
+  picture:
+  track: true
+
+laptop_jakeair:
+  hide_if_away: false
+  icon:
+  mac: 84:38:35:51:51:94
+  name: Jakobs MacBook Air
+  picture:
+  track: true
 
 raspberrypi:
-  name: RaspberryPi i lekrummets aparatskåp
-  mac: B8:27:EB:30:9B:7A
-  picture: 
-  track: yes
-  hide_if_away: no
-
-jakobs_iphone:
-  name: Jakob
-  mac: F0:F6:1C:34:5B:B0
-  picture: 
-  track: yes
-  hide_if_away: no
-
-ipad:
-  name: iPad 2
-  mac: A4:67:06:59:DC:07
-  picture: 
-  track: yes
-  hide_if_away: no
-
-annas_iphone:
-  name: Anna
-  mac: D0:A6:37:02:2F:41
-  picture: 
-  track: yes
-  hide_if_away: no
-
-pf0cruu9:
-  name: Annas jobbdator
-  mac: 4C:34:88:AB:67:BA
-  picture: 
-  track: yes
-  hide_if_away: no
-
-squeezeboxradio:
-  name: Squeezebox Radio i barnens sovrum
-  mac: 00:04:20:2C:D5:F9
-  picture: 
-  track: yes
-  hide_if_away: no
-
-0023c11090f8:
-  name: 0023c11090f8
-  mac: 00:23:C1:10:90:F8
-  picture: 
-  track: yes
-  hide_if_away: no
-
-wpn824:
-  name: WPN824
-  mac: 00:14:6C:DB:05:15
-  picture: 
-  track: yes
-  hide_if_away: no
-
-omp_81:
   hide_if_away: false
-  mac: BT_42:DD:9B:3B:62:60
-  name: OMP 81
+  icon:
+  mac: B8:27:EB:65:CE:2F
+  name: Raspberry Pi i tvättstugan
   picture:
   track: true
 
-link_neu_287:
+f4_b8_5e_f3_e1_37:
   hide_if_away: false
-  mac: BT_E4:04:39:56:40:A7
-  name: LINK NEU 287
+  icon:
+  mac: F4:B8:5E:F3:E1:37
+  name: f4 b8 5e f3 e1 37
   picture:
   track: true
 
-link_oad572_e10_:
+phone_felicia:
   hide_if_away: false
-  mac: BT_E4:04:39:59:87:5B
-  name: 'LINK OAD572 (E10) '
+  icon:
+  mac: AC:29:3A:AD:84:9B
+  name: Felicias iPhone
   picture:
   track: true
 
-iphone_2:
+unifi_ap_ac_lr:
   hide_if_away: false
-  mac: BT_70:EC:E4:2A:CA:88
-  name: iPhone (2)
+  icon:
+  mac: F0:9F:C2:A3:C3:EB
+  name: Unifi AC-AP-LR i kontoret
   picture:
   track: true
 
-iphone:
+verisure_bridge:
   hide_if_away: false
-  mac: F0:DB:E2:89:B9:1B
-  name: iPhone
+  icon:
+  mac: 00:23:C1:13:5E:19
+  name: Verisure bridge 1
   picture:
   track: true
 
-androidddca320e9a696205:
+philips_hue_bridge:
   hide_if_away: false
-  mac: 20:6E:9C:06:42:2F
-  name: android-ddca320e9a696205
+  icon:
+  mac: 00:17:88:29:B7:66
+  name: Philips Hue bridge i Lekrummet
   picture:
   track: true
 
-android9d6b87b826befdbf:
+apple_tv3:
   hide_if_away: false
-  mac: 30:A8:DB:A2:BF:D3
-  name: android-9d6b87b826befdbf
+  icon:
+  mac: 98:D6:BB:26:50:10
+  name: Apple TV i vardagsrummet
   picture:
   track: true
 
-ipad11383:
+atom:
   hide_if_away: false
+  icon:
+  mac: 40:61:86:E1:F5:64
+  name: Atom i Lekrummet
+  picture:
+  track: true
+
+heos_diningroom:
+  hide_if_away: false
+  icon:
+  mac: 00:05:CD:52:96:3C
+  name: Högtalare i matrummet
+  picture:
+  track: true
+
+3c_e0_72_11_c0_53:
+  hide_if_away: false
+  icon:
   mac: 3C:E0:72:11:C0:53
-  name: iPad11383
+  name: 3c e0 72 11 c0 53
   picture:
   track: true
 
-ipad11383_2:
+phone_anna:
   hide_if_away: false
-  mac: BT_3C:E0:72:11:C0:54
-  name: iPad11383
+  icon:
+  mac: BC:E1:43:93:E5:0E
+  name: Annas telefon
   picture:
   track: true
 
-esp_c65b3f:
+f8_16_54_21_fe_80:
   hide_if_away: false
-  mac: 5C:CF:7F:C6:5B:3F
-  name: ESP C65B3F
+  icon:
+  mac: F8:16:54:21:FE:80
+  name: f8 16 54 21 fe 80
   picture:
   track: true
 
-esp_c3ae0a:
+ipad5:
   hide_if_away: false
-  mac: 5C:CF:7F:C3:AE:0A
-  name: ESP C3AE0A
+  icon:
+  mac: C4:84:66:A9:8D:1C
+  name: Apple iPad 9.7in 5th gen
   picture:
   track: true
 
-vw_phone:
+phone_nemo:
   hide_if_away: false
-  mac: BT_90:03:B7:B7:61:3F
-  name: VW PHONE
+  icon:
+  mac: 1C:91:48:4E:16:A6
+  name: Nemos telefon
   picture:
   track: true
 
-le_2:
+unifiswitch:
   hide_if_away: false
-  mac: BT_B4:EF:FA:58:C0:42
-  name: Le 2
+  icon:
+  mac: FC:EC:DA:D1:DB:C8
+  name: Ubiquiti UniFi Switch 8 POE-60W i Lekrummet
   picture:
   track: true
 
-sadrak:
+heos_livingroom:
   hide_if_away: false
-  mac: AC:81:12:63:02:D8
-  name: Sadrak
+  icon:
+  mac: 00:05:CD:53:20:82
+  name: Högtalare i vardagsrummet
   picture:
   track: true
 
-dcs5000l:
+phone_jakob_iphone5s:
   hide_if_away: false
-  mac: B0:C5:54:35:BE:15
-  name: DCS-5000L
+  icon:
+  mac: E0:5F:45:D4:3B:75
+  name: Jakobs iPhone 5S
   picture:
   track: true
 
-beiluls_macbook_pro:
+camera2:
   hide_if_away: false
-  mac: BT_80:E6:50:07:19:C1
-  name: "Beilul\u2019s MacBook Pro"
+  icon:
+  mac: 28:F3:66:6E:E4:44
+  name: Kamera 2, garageuppfarten
   picture:
   track: true
 
-androidfe21a67d36ee2578:
+arlo_basestation:
   hide_if_away: false
-  mac: B4:EF:FA:59:F8:C2
-  name: android-fe21a67d36ee2578
+  icon:
+  mac: A0:40:A0:94:97:D5
+  name: Arlo basstation
   picture:
   track: true
 
-78a5dd12af87:
+phone_anna_ebab:
   hide_if_away: false
-  mac: 78:A5:DD:12:AF:87
-  name: 78a5dd12af87
-  picture:
-  track: true
-
-ipc:
-  hide_if_away: false
-  mac: 28:F3:66:79:17:F4
-  name: IPC
-  picture:
-  track: true
-
-kk:
-  hide_if_away: false
-  mac: 00:05:CD:54:0D:23
-  name: K--k
-  picture:
-  track: true
-
-desktopu91f35f:
-  hide_if_away: false
-  mac: A4:34:D9:47:7E:99
-  name: DESKTOP-U91F35F
-  picture:
-  track: true
-
-martinsiphone:
-  hide_if_away: false
-  mac: D4:F4:6F:87:A2:2F
-  name: Martins-iPhone
-  picture:
-  track: true
-
-simons_iphone:
-  hide_if_away: false
-  mac: BT_24:F0:94:C6:D2:ED
-  name: simon's iPhone
-  picture:
-  track: true
-
-sadrak_2:
-  hide_if_away: false
-  mac: 2C:41:38:02:29:A5
-  name: Sadrak
-  picture:
-  track: true
-
-ubnt:
-  hide_if_away: false
-  mac: F0:9F:C2:06:BD:BA
-  name: ubnt
-  picture:
-  track: true
-
-ubnt_2:
-  hide_if_away: false
-  mac: F0:9F:C2:06:BD:BB
-  name: ubnt
-  picture:
-  track: true
-
-jakobruhes_iphone:
-  hide_if_away: false
-  mac: BT_F0:F6:1C:34:5B:B1
-  name: jakob.ruhes iPhone
-  picture:
-  track: true
-
-yunteng:
-  hide_if_away: false
-  mac: BT_AB:90:78:01:53:29
-  name: Yunteng
+  icon:
+  mac: 74:9E:AF:11:3D:1B
+  name: Annas jobbtelefon
   picture:
   track: true

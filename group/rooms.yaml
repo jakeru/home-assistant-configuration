@@ -1,0 +1,38 @@
+kitchen:
+  entities:
+    - sensor.kitchen_humidity
+    - sensor.kitchen_temperature
+
+bedroom:
+  entities:
+    - cover.qubino_zmnhod1_flush_shutter_dc_switch
+
+hall:
+  entities:
+    - sensor.main_door
+    - light.hue_color_candle_1
+    - light.hue_ambiance_lamp_1
+    - sensor.entrance_temperature
+
+livingroom:
+  entities:
+    - light.aeotec_zw098_led_bulb_level
+    - light.livingroom_plugs
+    - light.livingroom_dimmers
+    - sensor.balcony_door
+
+gillestugan:
+  entities:
+    - sensor.th02_temperature
+    - sensor.th02_humidity
+    - sensor.gillestugan_humidity
+    - sensor.gillestugan_temperature
+
+office:
+  entities:
+    - switch.belysning_kontoret
+
+butlery:
+  entities:
+    - sensor.th01_temperature
+    - sensor.th01_humidity

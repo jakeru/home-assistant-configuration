@@ -1,0 +1,25 @@
+#camera:
+#  - platform: generic
+#    name: lawnmower
+#    still_image_url: http://pimower:8080/stream/snapshot.jpeg?delay_s=0
+#    stream_source: http://pimower:8080/stream/video.h264
+
+device_tracker:
+  - platform: mqtt_json
+    devices:
+      lawnmower: location/lawnmower
+
+group:
+  lawnmower:
+    entities:
+#      - camera.lawnmower
+      - device_tracker.lawnmower
+
+homeassistant:
+  customize:
+    group.lawnmower:
+      friendly_name: Robotgräsklipparen
+    device_tracker.lawnmower:
+      friendly_name: Robotgräsklipparen
+    camera.lawnmower:
+      friendly_name: Medföljande kamera
