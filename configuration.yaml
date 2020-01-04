@@ -32,6 +32,9 @@ http:
 # Enable the iOS component
 ios:
 
+# Enable mobile apps
+mobile_app:
+
 # Enable Home Assistant configuration
 config:
 
