@@ -342,11 +342,6 @@ camera:
     name: camera2_latest
     file_path: /home/camera2/latest.jpg
   - platform: generic
-    name: washm
-    # Fetch only one time per minute.
-    still_image_url: "http://raspberrypi:8081/washm-{{as_timestamp(now())|timestamp_custom('%Y-%m-%d_%H%M') }}.jpg"
-    limit_refetch_to_url_change: true
-  - platform: generic
     name: weather
     # Fetch only one time per minute
     still_image_url: "https://www.yr.no/place/Sweden/Stockholm/Stockholm/meteogram.svg?dummy={{as_timestamp(now())|timestamp_custom('%Y-%m-%d_%H%M') }}"
