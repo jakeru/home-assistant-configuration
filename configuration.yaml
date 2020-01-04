@@ -398,13 +398,16 @@ zwave:
 group: !include_dir_merge_named group
 
 light:
-  platform: rfxtrx
-  signal_repetitions: 3
-  devices:
-    0b11000f0085feb602010f70:
-      name: livingroom_dimmers
-    0b11000f0085feb609010f70:
-      name: livingroom_plugs
+  - platform: rfxtrx
+    signal_repetitions: 3
+    devices:
+      0b11000f0085feb602010f70:
+        name: livingroom_dimmers
+      0b11000f0085feb609010f70:
+        name: livingroom_plugs
+  - platform: twinkly
+    host: Twinkly_D57321
+    name: twinkly_lights
 
 automation: !include_dir_merge_list automation
 
