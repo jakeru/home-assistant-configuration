@@ -53,6 +53,7 @@ attic_view:
 outdoor_view:
   view: yes
   entities:
+    - group.outdoor_sensors
     - group.sun
     - group.outdoor_lights
     - sensor.outdoor

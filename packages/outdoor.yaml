@@ -75,7 +75,28 @@ automation:
       service: scene.turn_on
       data:
         entity_id:
-          - group.outdoor_lights_off
+          - scene.outdoor_lights_off
+
+
+sensor:
+  - platform: template
+    sensors:
+      outdoor_driveway_luminance:
+        value_template: '{{ states("sensor.aeon_labs_zw074_multisensor_gen5_luminance_3") }}'
+        unit_of_measurement: 'lux'
+        device_class: illuminance
+      outdoor_driveway_humidity:
+        value_template: '{{ states("sensor.aeon_labs_zw074_multisensor_gen5_relative_humidity_3") }}'
+        unit_of_measurement: '%'
+        device_class: humidity
+      outdoor_driveway_temperature:
+        value_template: '{{ states("sensor.aeon_labs_zw074_multisensor_gen5_temperature_3") }}'
+        unit_of_measurement: '°C'
+        device_class: temperature
+      outdoor_driveway_battery:
+        value_template: '{{ states("sensor.aeon_labs_zw074_multisensor_gen5_battery_level_3") }}'
+        unit_of_measurement: '%'
+        device_class: battery
 
 scene:
   - name: outdoor_lights_on
@@ -83,6 +104,7 @@ scene:
       light.outdoor_driveway: on
       light.outdoor_front: on
       light.outdoor_back_and_plugin: on
+      light.twinkly_lights: on
       light.outdoor_ledstrip:
         state: on
         effect: rainbow
@@ -97,6 +119,13 @@ group:
       - light.outdoor_front
       - light.outdoor_back_and_plugin
       - light.outdoor_ledstrip
+      - light.twinkly_lights
+  outdoor_sensors:
+    entities:
+      - sensor.outdoor_driveway_luminance
+      - sensor.outdoor_driveway_humidity
+      - sensor.outdoor_driveway_temperature
+      - sensor.outdoor_driveway_battery
 
 homeassistant:
   customize:
@@ -110,3 +139,15 @@ homeassistant:
       friendly_name: Belysning baksidan och plugin
     light.outdoor_ledstrip:
       friendly_name: LED-list vid entrén
+    group.outdoor_sensors:
+      friendly_name: Utomhussensorer
+    sensor.outdoor_driveway_luminance:
+      friendly_name: Ljusnivå
+    sensor.outdoor_driveway_humidity:
+      friendly_name: Luftfuktighet
+    sensor.outdoor_driveway_temperature:
+      friendly_name: Temperatur
+    sensor.outdoor_driveway_battery:
+      friendly_name: Batteri Multisensor uteförråd
+    light.twinkly_lights:
+      friendly_name: Julbelysning uteförråd
