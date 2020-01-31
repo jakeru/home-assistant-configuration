@@ -98,6 +98,10 @@ influxdb:
     entities:
       # outdoor
       - sensor.outdoor_temperature
+      - sensor.outdoor_driveway_luminance
+      - outdoor_driveway_humidity
+      - outdoor_driveway_temperature
+      - outdoor_driveway_battery
       # entrance
       - alarm_control_panel.herdevagen_26_b_alarm
       - sensor.main_door
