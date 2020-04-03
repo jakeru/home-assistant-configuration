@@ -106,6 +106,8 @@ scene:
       light.outdoor_back_and_plugin: on
       # Twinkly lights are a bit too much Christmas like.
       # light.twinkly_lights: on
+      light.hue_white_lamp_1: on
+      light.hue_white_lamp_2: on
       light.outdoor_ledstrip:
         state: on
         effect: rainbow
@@ -119,6 +121,8 @@ group:
       - light.outdoor_driveway
       - light.outdoor_front
       - light.outdoor_back_and_plugin
+      - light.hue_white_lamp_1
+      - light.hue_white_lamp_2
       - light.outdoor_ledstrip
       - light.twinkly_lights
   outdoor_sensors:
@@ -140,6 +144,10 @@ homeassistant:
       friendly_name: Belysning baksidan och plugin
     light.outdoor_ledstrip:
       friendly_name: LED-list vid entrén
+    light.hue_white_lamp_1:
+      friendly_name: Lampa utanför garage 1
+    light.hue_white_lamp_2:
+      friendly_name: Lampa utanför garage 2
     group.outdoor_sensors:
       friendly_name: Utomhussensorer
     sensor.outdoor_driveway_luminance:
