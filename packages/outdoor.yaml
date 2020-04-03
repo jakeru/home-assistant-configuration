@@ -104,7 +104,8 @@ scene:
       light.outdoor_driveway: on
       light.outdoor_front: on
       light.outdoor_back_and_plugin: on
-      light.twinkly_lights: on
+      # Twinkly lights are a bit too much Christmas like.
+      # light.twinkly_lights: on
       light.outdoor_ledstrip:
         state: on
         effect: rainbow
