@@ -15,7 +15,7 @@ utility_meter:
   watermeter_hourly:
     source: sensor.watermeter_volume
     cycle: hourly
-  watermeter_dayly:
+  watermeter_daily:
     source: sensor.watermeter_volume
     cycle: daily
   watermeter_weekly:
@@ -37,6 +37,11 @@ group:
       - sensor.watermeter_daily
       - sensor.watermeter_weekly
       - sensor.watermeter_monthly
+
+camera:
+  - platform: local_file
+    file_path: /srv/watermeter/images/latest.jpg
+    name: watermeter
 
 homeassistant:
   customize:

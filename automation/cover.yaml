@@ -1,7 +1,7 @@
 - alias: Close cover in bedrooms at evening
   trigger:
     platform: time
-    at: '19:00:00'
+    at: '20:15:00'
   action:
     service: cover.close_cover
     entity_id:
@@ -27,7 +27,7 @@
 - alias: Open cover in bedrooms on Saturday and Sunday mornings
   trigger:
     platform: time
-    at: '07:30:00'
+    at: '08:00:00'
   condition:
     - condition: time
       weekday:

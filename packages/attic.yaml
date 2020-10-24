@@ -1,22 +1,20 @@
-light:
-  - platform: rfxtrx
-    devices:
-      0b11000d0085feb608010f70:
-        name: attic_window
+rfxtrx:
+  devices:
+    0b11000d0085feb608010f70:
+      # name: attic_window
+      signal_repetitions: 3
+    0a5209024b0000d32f0179:
+        # name: attic_th03
+        # data_type:
+        #   - Temperature
+        #   - Humidity
+    0a52093dc10000c8220279:
+        # name: attic_th04
+        # data_type:
+        #   - Temperature
+        #   - Humidity
 
 sensor:
-  - platform: rfxtrx
-    devices:
-      0a5209024b0000d32f0179:
-        name: attic_th03
-        data_type:
-          - Temperature
-          - Humidity
-      0a52093dc10000c8220279:
-        name: attic_th04
-        data_type:
-          - Temperature
-          - Humidity
   - platform: template
     sensors:
       attic_heating_cable_power:
@@ -67,7 +65,7 @@ automation:
       service: homeassistant.turn_on
       data:
         entity_id:
-          - light.attic_window
+          - switch.attic_window_lights
   - alias: Turn off attic lights when the sun goes up
     trigger:
       platform: numeric_state
@@ -78,7 +76,7 @@ automation:
       service: homeassistant.turn_off
       data:
         entity_id:
-          - light.attic_window
+          - switch.attic_window_lights
 
 group:
   attic:
@@ -109,7 +107,7 @@ homeassistant:
       friendly_name: Temperatur sydsidan
     sensor.attic_th04_humidity:
       friendly_name: Luftfuktighet sydsidan
-    light.attic_window:
+    switch.attic_window_lights:
       friendly_name: Fönsterlampan
     switch.attic_ventilation:
       friendly_name: Ventilation

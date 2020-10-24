@@ -1,3 +1,5 @@
+global_modules: config
+
 scenes:
   module: scenes
   class: Scenes
@@ -9,3 +11,25 @@ washm:
 guestroom:
   module: guestroom
   class: Guestroom
+
+# lawnmower:
+#     module: lawnmower
+#     class: LawnMower
+
+# freezer:
+#     module: freezer
+#     class: Freezer
+#     entity: sensor.freezer_temperature
+#     max_value: -5
+#     max_time: 20
+#     friendly_name: Frysen
+#     global_dependencies: config
+
+# freezer_in_g2:
+#     module: freezer
+#     class: Freezer
+#     entity: sensor.freezer_in_g2_temperature
+#     max_value: -10
+#     max_time: 5
+#     friendly_name: Frysen
+#     global_dependencies: config

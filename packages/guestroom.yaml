@@ -1,16 +1,9 @@
-# Replaced by Hue light
-#light:
-#  - platform: rfxtrx
-#    devices:
-#      0b11000d0085feb607010f70:
-#        name: guestroom
-
 binary_sensor:
   - platform: template
     sensors:
       guestroom_motion:
-        entity_id: sensor.fibaro_system_fgms001_zw5_motion_sensor_burglar
-        value_template: '{{ is_state("sensor.fibaro_system_fgms001_zw5_motion_sensor_burglar", "8") }}'
+        entity_id: sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+        value_template: '{{ is_state("sensor.fibaro_system_fgms001zw5_motion_sensor_burglar", "8") }}'
         device_class: motion
 
 sensor:
@@ -30,18 +23,18 @@ sensor:
             mdi:human-male-female
           {% endif %}
       guestroom_luminance:
-        value_template: "{{ states('sensor.fibaro_system_fgms001_zw5_motion_sensor_luminance') }}"
+        value_template: "{{ states('sensor.fibaro_system_fgms001zw5_motion_sensor_luminance') }}"
         unit_of_measurement: 'lux'
       guestroom_temperature:
-        value_template: "{{ states('sensor.fibaro_system_fgms001_zw5_motion_sensor_temperature') }}"
+        value_template: "{{ states('sensor.fibaro_system_fgms001zw5_motion_sensor_temperature') }}"
         unit_of_measurement: '°C'
       guestroom_battery:
-        value_template: "{{ state_attr('zwave.fibaro_system_fgms001_zw5_motion_sensor', 'battery_level') }}"
+        value_template: "{{ state_attr('zwave.fibaro_system_fgms001zw5_motion_sensor', 'battery_level') }}"
         unit_of_measurement: '%'
 
 group:
   guestroom:
-    - light.guestroom
+    - light.guest_toilet
     - sensor.guestroom_status
     - sensor.guestroom_luminance
     - sensor.guestroom_temperature
@@ -50,7 +43,7 @@ homeassistant:
   customize:
     group.guestroom:
       friendly_name: Gästtoaletten
-    light.guestroom:
+    light.guest_toilet:
       friendly_name: Belysning
     sensor.guestroom_status:
       friendly_name: Gästtoaletten

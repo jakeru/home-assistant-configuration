@@ -1,3 +1,12 @@
+rfxtrx:
+  devices:
+    0a520c1a000100e6050279:
+      # name: soil_moisture1
+    0a52090bc70000fb2c0159:
+      # name: soil_moisture2
+    0a520c02000300dc500359:
+      # name: soil_moisture3
+
 group:
   garden:
     entities:

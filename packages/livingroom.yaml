@@ -1,0 +1,9 @@
+rfxtrx:
+  devices:
+    # 0b11000f0085feb602010f70:
+    0b11000f0085feb602020000:
+      signal_repetitions: 3
+      # name: livingroom_dimmers
+    0b11000f0085feb609010f70:
+      signal_repetitions: 3
+      # name: livingroom_plugs

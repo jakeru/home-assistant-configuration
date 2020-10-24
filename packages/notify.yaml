@@ -1,0 +1,6 @@
+notify:
+  - name: family
+    platform: group
+    services:
+      - service: mobile_app_jabbe
+      - service: mobile_app_annas_privata_mobil

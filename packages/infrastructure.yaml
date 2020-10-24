@@ -1,0 +1,9 @@
+sensor:
+  - platform: mqtt
+    state_topic: "pi4/temp"
+    name: Pi4 Temperature
+    device_class: temperature
+    expire_after: 600
+    force_update: true
+    unit_of_measurement: "°C"
+    value_template: "{{ float(value)/1000|round(1) }}"

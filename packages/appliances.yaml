@@ -1,18 +1,55 @@
-sensor:
-  - platform: rfxtrx
-    devices:
-      08500703b700006769:
-        name: refrigerator
-        data_type:
-          - Temperature
-      0a520907970000ba1e0259:
-        name: freezer
-        data_type:
-          - Temperature
-      08500704a70080bd79:
-        name: freezer_in_g2
-        data_type:
-          - Temperature
+rfxtrx:
+  devices:
+    08500703b700006769:
+      # name: refrigerator
+      # data_type:
+      #  - temperature
+    0a520907970000ba1e0259:
+      # name: freezer
+      # data_type:
+      #   - temperature
+    08500704a70080bd79:
+      # name: freezer_in_g2
+      # data_type:
+      #   - temperature
+
+binary_sensor:
+  - platform: template
+    sensors:
+      freezer_temp_ok:
+        value_template: >-
+          {{ states('sensor.freezer')|float < -5.0 }}
+        entity_id: sensor.freezer
+      freezer_in_g2_temp_ok:
+        value_template: >-
+          {{ states('sensor.freezer_in_g2')|float < -10.0 }}
+        entity_id: sensor.freezer_in_g2
+
+alert:
+  freezer:
+    name: Freezer high temp
+    entity_id: binary_sensor.freezer_temp_ok
+    state: false
+    repeat:
+      - 20
+      - 60
+    skip_first: true
+    message: "Frysens temperatur hög"
+    done_message: "Frysens temperatur normal"
+    notifiers:
+      - family
+  freezer_in_g2:
+    name: Freezer in g2 high temp
+    entity_id: binary_sensor.freezer_in_g2_temp_ok
+    state: false
+    repeat:
+      - 5
+      - 60
+    skip_first: true
+    message: "Frysen i G2: temperatur hög"
+    done_message: "Frysen i G2: temperatur normal"
+    notifiers:
+      - family
 
 group:
   appliances:

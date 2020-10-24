@@ -31,7 +31,7 @@ STATE_NOT_EMPTIED = "not-emptied"
 NUM_SAME_STATE_MIN = 10
 
 # List of services to notify.
-NOTIFY = ["notify/ios_jakobs_iphone_8", "notify/ios_annas_privata_mobil"]
+NOTIFY = ["notify/family"]
 
 class WashingMachine(hass.Hass):
     def initialize(self):
@@ -42,6 +42,7 @@ class WashingMachine(hass.Hass):
         self.energy_at_start = None
         self.finished_at = None
         self.state = None
+        self.set_state("sensor.washing_machine", state="unknown", attributes={"friendly_name":"Tvättmaskinen"})
         self.run_every(self.on_periodic_check, datetime.datetime.now(), 10)
         self.listen_state(self.on_power_change, POWER)
     def on_power_change(self, entity, attribute, old, new, kwargs):
@@ -71,6 +72,7 @@ class WashingMachine(hass.Hass):
     def enter_new_state(self, state):
         prev_state = self.state
         self.log("Going from state {} to {}".format(prev_state, state))
+        self.set_state("sensor.washing_machine", state=state)
         self.state = state
         if state == STATE_WASHING:
             self.started_at = datetime.datetime.now()

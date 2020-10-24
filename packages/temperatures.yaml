@@ -1,0 +1,10 @@
+rfxtrx:
+  devices:
+    085001040201002069:
+      # name: outdoor
+    0a52091df90000d7220279:
+      #  name: outdoor_th05
+    0a520906690000df2c0179:
+      # name: th01
+    0a520904870000a12d0159:
+      # name: th02

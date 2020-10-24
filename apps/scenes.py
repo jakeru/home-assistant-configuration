@@ -78,15 +78,15 @@ class Scenes(hass.Hass):
         self.current_scene = None
         self.last_button_pressed = None
         self.entities = [
-            Entity(self, 'light.livingroom_plugs'),
+            Entity(self, 'switch.livingroom_plugs'),
             EntityDim(self, 'light.livingroom_dimmers'),
-            EntityDimAtEveningFixedColor(self, 'light.aeotec_zw098_led_bulb_level'),
+            # EntityDimAtEveningFixedColor(self, 'light.aeotec_zw098_led_bulb_level'),
             EntityDimAtEveningFixedColor(self, 'light.hue_color_candle_1'),
             EntityDimAtEvening(self, 'light.hue_ambiance_lamp_1'),
-            EntityOffAtNight(self, 'light.playroom'),
+            # EntityOffAtNight(self, 'light.ida'),
         ]
         self.listen_event(self.on_call_service, "call_service")
-        self.listen_event(self.on_button_pressed, "button_pressed")
+        self.listen_event(self.on_rfxtrx_event, "rfxtrx_event")
     def activate(self, scene):
         self.log("Going from scene {} to: {}".format(self.current_scene, scene))
         self.current_scene = scene
@@ -98,14 +98,14 @@ class Scenes(hass.Hass):
             if isinstance(scene, list):
                 scene = scene[0]
             self.activate(scene.replace("scene.", ""))
-    def on_button_pressed(self, event, data, kwargs):
-        self.log("on_button_pressed: {}, data: {}, kwargs: {}".format(event, data, kwargs))
-        if data["entity_id"] != "switch.hall":
+    def on_rfxtrx_event(self, event, data, kwargs):
+        self.log("on_rfxtrx_event: {}, data: {}, kwargs: {}".format(event, data, kwargs))
+        if data["id_string"] != "000957a:1":
             return
         if self.last_button_pressed is not None and time.time() - self.last_button_pressed < 0.1:
             return
         self.last_button_pressed = time.time()
-        if data["state"] == "off":
+        if data["values"]["Command"] == "Off":
             scene = "night"
         elif self.current_scene == "evening":
             scene = "afternoon"

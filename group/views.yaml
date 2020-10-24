@@ -1,6 +1,5 @@
 default_view:
   name: Herdevägen 26 B
-  view: yes
   icon: mdi:home
   entities:
     - camera.weather
@@ -20,12 +19,10 @@ main:
     - sensor.garage2_door_ui
 
 scenes_view:
-  view: yes
   entities:
     - group.scenes
 
 main_floor_view:
-  view: yes
   entities:
     - group.hall
     - group.livingroom
@@ -37,7 +34,6 @@ main_floor_view:
     - group.bathroom
 
 basement_view:
-  view: yes
   entities:
     - group.laundry
     - group.office
@@ -46,12 +42,10 @@ basement_view:
     - group.garage
 
 attic_view:
-  view: yes
   entities:
     - group.attic
 
 outdoor_view:
-  view: yes
   entities:
     - group.outdoor_sensors
     - group.sun
@@ -69,30 +63,25 @@ outdoor_view:
     #- sensor.last_a3
 
 garden_view:
-  view: yes
   entities:
     - group.lawnmower
 
 indoor_plants_view:
-  view: yes
   entities:
     - group.garage_plants
     #- group.kitchen_plants
 
 heating_view:
-  view: yes
   entities:
     - group.heatpump
     - group.heatpump_part2
     - group.emeter_heatpump
 
 water_view:
-  view: yes
   entities:
     - group.watermeter
 
 objects_view:
-  view: yes
   entities:
     - group.appliances
     - group.things

@@ -14,7 +14,7 @@ homeassistant:
   packages: !include_dir_named packages
 
 recorder:
-  db_url: mysql+pymysql://hass:nopassword@localhost/hass?charset=utf8
+#  db_url: mysql://hass:nopassword@localhost/hass?charset=utf8
 
 # Enables the frontend
 frontend:
@@ -40,8 +40,8 @@ config:
 
 # Discover some devices automatically
 discovery:
-  ignore:
-    - philips_hue
+  # ignore:
+  #   - philips_hue
 
 # Enable python scripts from directory python_scripts
 python_script:
@@ -178,26 +178,38 @@ influxdb:
       - sensor.emeter_heatpump_power
       # watermeter
       - sensor.watermeter_volume
+      # lawnmower gardena sileno
+      - vacuum.sileno
+      # pool
+      - binary_sensor.pool_status
+      - sensor.pool_daily_energy
+      - sensor.pool_power
+      - switch.pool
 
 logger:
-  default: warning
+  default: info
   logs:
-    homeassistant.components.rfxtrx: info
-    #homeassistant.components.heos: debug
-    #pyheos: debug
-    #mysensors: debug
-    #homeassistant.components.mysensors: debug
+    # homeassistant.components.rfxtrx: debug
+    # homeassistant.components.rfxtrx.binary_sensor: debug
+    # homeassistant.components.rfxtrx.cover: debug
+    # homeassistant.components.rfxtrx.light: debug
+    # homeassistant.components.rfxtrx.sensor: debug
+    # homeassistant.components.rfxtrx.switch: debug
+    # homeassistant.components.heos: debug
+    # homeassistant.components.mysensors: debug
+    # openzwave: debug
+    pyarlo: debug
 
 rfxtrx:
   device: /dev/rfxtrx
   debug: False
-  dummy: False
+  automatic_add: True
 
-hue:
-  bridges:
-    - host: 10.10.0.41
-      allow_unreachable: false
-      allow_hue_groups: true
+# hue:
+#   bridges:
+#     - host: 10.10.0.41
+#       allow_unreachable: false
+#       allow_hue_groups: true
 
 arlo:
   username: !secret arlo_username
@@ -220,51 +232,6 @@ sensor:
         arg: /
       - type: memory_use_percent
       - type: load_1m
-  - platform: rfxtrx
-    automatic_add: True
-    devices:
-      085001040201002069:
-        name: outdoor
-        data_type:
-          - Temperature
-      0a52091df90000d7220279:
-        name: outdoor_th05
-        data_type:
-          - Temperature
-          - Humidity
-      0a520906690000df2c0179:
-        name: th01
-        data_type:
-          - Temperature
-          - Humidity
-      0a520904870000a12d0159:
-        name: th02
-        data_type:
-          - Temperature
-          - Humidity
-      0850096500ab019269:
-        name: bbq
-        data_type:
-          - Temperature
-      08500900001100e069:
-        name: bbq_old
-        data_type:
-          - Temperature
-      0a520c1a000100e6050279:
-        name: soil_moisture1
-        data_type:
-          - Temperature
-          - Humidity
-      0a52090bc70000fb2c0159:
-        name: soil_moisture2
-        data_type:
-          - Temperature
-          - Humidity
-      0a520c02000300dc500359:
-        name: soil_moisture3
-        data_type:
-          - Temperature
-          - Humidity
   - platform: template
     sensors:
       solar_angle:
@@ -334,43 +301,43 @@ sensor:
 #    value_template: '{{ value_json.power }}'
 
 camera:
-  - platform: arlo
-  - platform: uvc
-    nvr: localhost
-    port: 7080
-    key: !secret uvc_key
-  - platform: local_file
-    name: camera1_latest
-    file_path: /home/camera1/latest.jpg
-  - platform: local_file
-    name: camera2_latest
-    file_path: /home/camera2/latest.jpg
+#  - platform: arlo
+#  - platform: uvc
+#    nvr: localhost
+#    port: 7080
+#    key: !secret uvc_key
+#  - platform: local_file
+#    name: camera1_latest
+#    file_path: /home/camera1/latest.jpg
+#  - platform: local_file
+#    name: camera2_latest
+#    file_path: /home/camera2/latest.jpg
   - platform: generic
     name: weather
     # Fetch only one time per minute
     still_image_url: "https://www.yr.no/place/Sweden/Stockholm/Stockholm/meteogram.svg?dummy={{as_timestamp(now())|timestamp_custom('%Y-%m-%d_%H%M') }}"
     content_type: "image/svg+xml"
     limit_refetch_to_url_change: true
-  - platform: onvif
-    name: camera1
-    host: 10.10.0.113
-    port: 49152
-    username: view
-    password: view
-    profile: 2
-  - platform: onvif
-    name: camera2
-    host: 10.10.0.102
-    port: 49152
-    username: view
-    password: view
-    profile: 2
-  - platform: ffmpeg
-    name: camera1_live
-    input: rtsp://view:view@10.10.0.113:554/live/ch2
-  - platform: ffmpeg
-    name: camera2_live
-    input: rtsp://view:view@10.10.0.102:554/live/ch2
+#  - platform: onvif
+#    name: camera1
+#    host: 10.10.0.113
+#    port: 49152
+#    username: view
+#    password: view
+#    profile: 2
+#  - platform: onvif
+#    name: camera2
+#    host: 10.10.0.102
+#    port: 49152
+#    username: view
+#    password: view
+#    profile: 2
+#  - platform: ffmpeg
+#    name: camera1_live
+#    input: rtsp://view:view@10.10.0.113:554/live/ch2
+#  - platform: ffmpeg
+#    name: camera2_live
+#    input: rtsp://view:view@10.10.0.102:554/live/ch2
 
 heos:
   host: heos_livingroom
@@ -401,39 +368,12 @@ zwave:
 
 group: !include_dir_merge_named group
 
-light:
-  - platform: rfxtrx
-    signal_repetitions: 3
-    devices:
-      0b11000f0085feb602010f70:
-        name: livingroom_dimmers
-      0b11000f0085feb609010f70:
-        name: livingroom_plugs
-  - platform: twinkly
-    host: Twinkly_D57321
-    name: twinkly_lights
+#light:
+#   - platform: twinkly
+#     host: Twinkly_D57321
+#     name: twinkly_lights
 
 automation: !include_dir_merge_list automation
-
-#binary_sensor:
-#  - platform: rfxtrx
-#    automatic_add: False
-#    devices:
-#      0b110005007abc960a010f60:
-#        name: guestroom
-
-switch:
-  - platform: rfxtrx
-    automatic_add: False
-    devices:
-      0b11000f0000957a01010f60:
-        name: hall
-        fire_event: True
-  - platform: command_line
-    switches:
-      dummy:
-        command_on: cat /dev/null
-        command_off: cat /dev/null
 
 script: !include_dir_merge_named script
 

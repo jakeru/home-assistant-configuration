@@ -1,8 +1,12 @@
+rfxtrx:
+  devices:
+    0b11000d0085feb605010f70:
+        # name: outdoor_back_and_plugin
+
 light:
-  - platform: rfxtrx
-    devices:
-      0b11000d0085feb605010f70:
-        name: outdoor_back_and_plugin
+  - platform: switch
+    name: outdoor_back_and_plugin
+    entity_id: switch.outdoor_back_and_plugin
   - platform: template
     lights:
       outdoor_front:
@@ -124,7 +128,7 @@ group:
       - light.hue_white_lamp_1
       - light.hue_white_lamp_2
       - light.outdoor_ledstrip
-      - light.twinkly_lights
+      #- light.twinkly_lights
   outdoor_sensors:
     entities:
       - sensor.outdoor_driveway_luminance

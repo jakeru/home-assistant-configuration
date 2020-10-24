@@ -1,8 +1,7 @@
-binary_sensor:
-  - platform: rfxtrx
-    devices:
-      0b11002a0023034e0a000070:
-        name: laundry_door
+rfxtrx:
+  devices:
+    0b11002a0023034e0a000070:
+      # name: laundry_door
 
 sensor:
   - platform: template

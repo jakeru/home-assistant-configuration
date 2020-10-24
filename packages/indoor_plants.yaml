@@ -1,8 +1,7 @@
-switch:
-  - platform: rfxtrx
-    devices:
-      0b11000f0085feb60a010f70:
-        name: plant_lights
+rfxtrx:
+  devices:
+    0b11000f0085feb60a010f70:
+      # name: plant_lights
 
 sensor:
   - platform: mqtt

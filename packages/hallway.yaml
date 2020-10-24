@@ -1,0 +1,13 @@
+rfxtrx:
+  devices:
+    0b11000f0000957a01010f60:
+      # name: hall
+      # added as: switch.ac_000957a_1 
+      fire_event: True
+
+switch:
+  - platform: command_line
+    switches:
+      dummy:
+        command_on: cat /dev/null
+        command_off: cat /dev/null
