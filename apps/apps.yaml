@@ -12,6 +12,10 @@ guestroom:
   module: guestroom
   class: Guestroom
 
+halloween:
+  module: halloween
+  class: Halloween
+
 # lawnmower:
 #     module: lawnmower
 #     class: LawnMower
