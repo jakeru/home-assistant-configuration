@@ -224,7 +224,6 @@ ifttt:
 
 sensor:
   - platform: arlo
-  - platform: yr
   - platform: systemmonitor
     resources:
       - type: disk_use_percent
