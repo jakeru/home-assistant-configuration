@@ -340,11 +340,6 @@ camera:
 heos:
   host: heos_livingroom
 
-#media_player:
-#  - platform: heos
-#    hostname: heos_livingroom
-#    name: HEOS Sound System
-
 panel_iframe:
   grafana:
     title: 'Grafer'
@@ -366,10 +361,10 @@ zwave:
 
 group: !include_dir_merge_named group
 
-#light:
-#   - platform: twinkly
-#     host: Twinkly_D57321
-#     name: twinkly_lights
+light:
+   - platform: twinkly
+     host: Twinkly_D57321
+     name: twinkly_lights
 
 automation: !include_dir_merge_list automation
 
