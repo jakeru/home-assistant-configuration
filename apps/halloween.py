@@ -30,9 +30,17 @@ class Halloween(hass.Hass):
         self.have_visitors = False
         self.listen_state(self.on_motion_change, MOTION)
 
-    def on_motion_change(self, entity, attribute, old, new, kwargs):
-        self.log("on_motion_change entity {} attribute {} old {} new {}".format(entity, attribute, old, new))
+    def is_enabled(self):
+        today = self.date()
+        return today.month == 10 and today.day == 31
 
+    def on_motion_change(self, entity, attribute, old, new, kwargs):
+        self.log(
+            "on_motion_change entity {} attribute {} old {} new {}".format(
+                    entity, attribute, old, new))
+        if not self.is_enabled():
+            self.log("Halloween automation not enabled. No action taken")
+            return
         if self.have_visitors:
             self.log("Already have visitors. No action taken")
             return
