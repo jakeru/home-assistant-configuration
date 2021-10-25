@@ -1,12 +1,12 @@
 - alias: Close cover in bedrooms at evening
   trigger:
     platform: time
-    at: '20:15:00'
+    at: '19:45:00'
   action:
     service: cover.close_cover
     entity_id:
-      - cover.qubino_zmnhod1_flush_shutter_dc_switch
-      - cover.qubino_zmnhod1_flush_shutter_dc_switch_2
+      - cover.master_bedroom
+      - cover.bedroom2
 - alias: Open cover in bedrooms at weekdays morning
   trigger:
     platform: time
@@ -22,8 +22,8 @@
   action:
     service: cover.open_cover
     entity_id:
-      - cover.qubino_zmnhod1_flush_shutter_dc_switch
-      - cover.qubino_zmnhod1_flush_shutter_dc_switch_2
+      - cover.master_bedroom
+      - cover.bedroom2
 - alias: Open cover in bedrooms on Saturday and Sunday mornings
   trigger:
     platform: time
@@ -36,5 +36,5 @@
   action:
     service: cover.open_cover
     entity_id:
-      - cover.qubino_zmnhod1_flush_shutter_dc_switch
-      - cover.qubino_zmnhod1_flush_shutter_dc_switch_2
+      - cover.master_bedroom
+      - cover.bedroom2

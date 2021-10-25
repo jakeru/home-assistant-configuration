@@ -2,7 +2,7 @@ import appdaemon.plugins.hass.hassapi as hass
 import datetime
 
 BINARY_SENSOR="binary_sensor.guestroom_motion"
-LIGHT="light.guest_toilet"
+LIGHT="light.guest_room"
 
 class Guestroom(hass.Hass):
     def initialize(self):

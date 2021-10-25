@@ -1,10 +1,6 @@
 mysensors:
-  persistence: true
   version: 2.2
   gateways:
     - device: '/dev/mysensors-gw'
       # Must use an absolute path here unfortunately.
       persistence_file: '/config/mysensors.json'
-      nodes:
-        1:
-          name: 'emeter_main'

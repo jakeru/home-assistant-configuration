@@ -43,9 +43,6 @@ discovery:
   # ignore:
   #   - philips_hue
 
-# Enable python scripts from directory python_scripts
-python_script:
-
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
@@ -130,7 +127,6 @@ influxdb:
       - binary_sensor.garage1_door
       # garage 2
       - binary_sensor.garage2_door
-      - switch.plant_lights
       # laundry
       - sensor.laundry_door
       - sensor.laundry_humidity
@@ -187,7 +183,7 @@ influxdb:
       - switch.pool
 
 logger:
-  default: info
+  default: warning
   logs:
     # homeassistant.components.rfxtrx: debug
     # homeassistant.components.rfxtrx.binary_sensor: debug
@@ -197,8 +193,11 @@ logger:
     # homeassistant.components.rfxtrx.switch: debug
     # homeassistant.components.heos: debug
     # homeassistant.components.mysensors: debug
-    # openzwave: debug
+    homeassistant.components.twinkly.light: warning
+    custom_components.twinkly.light: warning
+    #openzwave: debug
     pyarlo: debug
+    homeassistant.components.apple_tv.media_player: error
 
 rfxtrx:
   device: /dev/rfxtrx
@@ -206,24 +205,24 @@ rfxtrx:
 
 # hue:
 #   bridges:
-#     - host: 10.10.0.41
+#     - host: 10.10.0.20
 #       allow_unreachable: false
 #       allow_hue_groups: true
 
-arlo:
-  username: !secret arlo_username
-  password: !secret arlo_password
+# arlo:
+#   username: !secret arlo_username
+#   password: !secret arlo_password
 
-alarm_control_panel:
-  - platform: arlo
-    home_mode_name: Avaktiverat
-    away_mode_name: Aktiverat
+# alarm_control_panel:
+#   - platform: arlo
+#     home_mode_name: Avaktiverat
+#     away_mode_name: Aktiverat
 
 ifttt:
   key: !secret ifttt_key
 
 sensor:
-  - platform: arlo
+  #- platform: arlo
   - platform: systemmonitor
     resources:
       - type: disk_use_percent
@@ -354,10 +353,10 @@ verisure:
   password: !secret verisure_password
   code_digits: 6
 
-zwave:
-  usb_path: /dev/zstick
-  polling_interval: 60000
-  debug: False
+# zwave:
+#   usb_path: /dev/zstick
+#   polling_interval: 60000
+#   debug: False
 
 group: !include_dir_merge_named group
 

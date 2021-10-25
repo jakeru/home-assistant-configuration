@@ -6,18 +6,18 @@ rfxtrx:
 sensor:
   - platform: template
     sensors:
-      laundry_dehumidifier_power:
-        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_power") }}'
-        unit_of_measurement: 'W'
-      laundry_dehumidifier_energy:
-        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_energy") }}'
-        unit_of_measurement: 'kWh'
-      laundry_washing_machine_power:
-        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2") }}'
-        unit_of_measurement: 'W'
-      laundry_washing_machine_energy:
-        value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2") }}'
-        unit_of_measurement: 'kWh'
+      # laundry_dehumidifier_power:
+      #   value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_power") }}'
+      #   unit_of_measurement: 'W'
+      # laundry_dehumidifier_energy:
+      #   value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_energy") }}'
+      #   unit_of_measurement: 'kWh'
+      # laundry_washing_machine_power:
+      #   value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2") }}'
+      #   unit_of_measurement: 'W'
+      # laundry_washing_machine_energy:
+      #   value_template: '{{ states("sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2") }}'
+      #   unit_of_measurement: 'kWh'
       laundry_door_ui:
         value_template: >-
           {% if is_state("binary_sensor.laundry_door", "on") %}
@@ -36,19 +36,19 @@ sensor:
             mdi:dots-horizontal
           {% endif %}
 
-switch:
-  - platform: template
-    switches:
-      laundry_dehumidifier:
-        value_template: '{{ is_state("switch.fibaro_system_fgwpef_wall_plug_gen5_switch", "on") }}'
-        turn_on:
-          service: switch.turn_on
-          data:
-            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
-        turn_off:
-          service: switch.turn_off
-          data:
-            entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+# switch:
+#   - platform: template
+#     switches:
+#       laundry_dehumidifier:
+#         value_template: '{{ is_state("switch.fibaro_system_fgwpef_wall_plug_gen5_switch", "on") }}'
+#         turn_on:
+#           service: switch.turn_on
+#           data:
+#             entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
+#         turn_off:
+#           service: switch.turn_off
+#           data:
+#             entity_id: switch.fibaro_system_fgwpef_wall_plug_gen5_switch
 
 automation:
   - alias: Disable dehumidifier in the evening

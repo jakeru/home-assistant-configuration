@@ -1,0 +1,25 @@
+sensor:
+  - platform: template
+    sensors:
+      washing_machine_ui:
+        friendly_name: "Tvättmaskinen"
+        value_template: >-
+          {% if is_state('sensor.washing_machine', 'off') %}
+            av
+          {% elif is_state('sensor.washing_machine', 'washing') %}
+            tvättar
+          {% elif is_state('sensor.washing_machine', 'not-emptied') %}
+            behöver tömmas
+          {% else %}
+            okänt
+          {% endif %}
+        icon_template: >-
+          {% if is_state('sensor.washing_machine', 'off') %}
+            mdi:washing_machine-off
+          {% elif is_state('sensor.washing_machine', 'washing') %}
+            mdi:washing_machine
+          {% elif is_state('sensor.washing_machine', 'not-emptied') %}
+            mdi:washing_machine-alert
+          {% else %}
+            mdi:alert
+          {% endif %}

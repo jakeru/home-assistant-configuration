@@ -81,10 +81,10 @@ sensor.aeotec_zw074_multisensor_gen5_temperature:
   friendly_name: Temperatur garageuppfart
 sensor.aeotec_zw074_multisensor_gen5_burglar:
   friendly_name: Närvaro garageuppfart
-light.aeotec_zw098_led_bulb_level:
+light.aeon_labs_zw098_led_bulb_level:
   friendly_name: Hörnlampan
   icon: mdi:lamp
-light.hue_color_candle_1:
+light.crystal_lamp:
   friendly_name: Kristallkronan
 light.hue_ambiance_lamp_1:
   friendly_name: Hörnlampan i hallen

@@ -16,7 +16,7 @@ hall:
 
 livingroom:
   entities:
-    - light.aeotec_zw098_led_bulb_level
+    - light.aeon_labs_zw098_led_bulb_level
     - light.livingroom_plugs
     - light.livingroom_dimmers
     - sensor.balcony_door

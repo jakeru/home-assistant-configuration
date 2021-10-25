@@ -1,15 +1,15 @@
-sensor:
-  - platform: mqtt
-    state_topic: "watermeter/volume"
-    name: watermeter_volume
-    unit_of_measurement: "dl"
-    value_template: "{{ value_json.value }}"
-    json_attributes_topic: "watermeter/volume"
-  - platform: template
-    sensors:
-      watermeter_volume_time:
-        entity_id: sensor.watermeter_volume
-        value_template: "{{ as_timestamp(state_attr('sensor.watermeter_volume', 'time')) | timestamp_local }}"
+# sensor:
+#   - platform: mqtt
+#     state_topic: "watermeter/volume"
+#     name: watermeter_volume
+#     unit_of_measurement: "dl"
+#     value_template: "{{ value_json.value }}"
+#     json_attributes_topic: "watermeter/volume"
+#   - platform: template
+#     sensors:
+#       watermeter_volume_time:
+#         entity_id: sensor.watermeter_volume
+#         value_template: "{{ as_timestamp(state_attr('sensor.watermeter_volume', 'time')) | timestamp_local }}"
 
 utility_meter:
   watermeter_hourly:

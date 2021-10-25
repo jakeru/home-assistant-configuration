@@ -80,10 +80,10 @@ class Scenes(hass.Hass):
         self.entities = [
             Entity(self, 'switch.livingroom_plugs'),
             EntityDim(self, 'light.livingroom_dimmers'),
-            # EntityDimAtEveningFixedColor(self, 'light.aeotec_zw098_led_bulb_level'),
-            EntityDimAtEveningFixedColor(self, 'light.hue_color_candle_1'),
+            Entity(self, 'light.livingroom_tv_corner'),
+            EntityDimAtEveningFixedColor(self, 'light.crystal_lamp'),
             EntityDimAtEvening(self, 'light.hue_ambiance_lamp_1'),
-            # EntityOffAtNight(self, 'light.ida'),
+            EntityOffAtNight(self, 'light.ida'),
         ]
         self.listen_event(self.on_call_service, "call_service")
         self.listen_event(self.on_rfxtrx_event, "rfxtrx_event")
@@ -107,10 +107,8 @@ class Scenes(hass.Hass):
         self.last_button_pressed = time.time()
         if data["values"]["Command"] == "Off":
             scene = "night"
-        elif self.current_scene == "evening":
+        elif self.current_scene not in ("morning", "afternoon"):
             scene = "afternoon"
-        elif self.current_scene == "afternoon":
-            scene = "morning"
         else:
             scene = "evening"
         self.activate(scene)

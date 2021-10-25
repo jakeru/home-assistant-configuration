@@ -1,10 +1,10 @@
-rfxtrx:
-  devices:
-    0b11000f0085feb608010f70:
-      # name: children_bedroom_lavalamp_plugin
+# rfxtrx:
+#   devices:
+#     0b11000f0085feb608010f70:
+#       # name: children_bedroom_lavalamp_plugin
 
-homeassistant:
-  customize:
-    cover.qubino_zmnhod1_flush_shutter_dc_switch_2:
-      friendly_name: Rullgardin
-      device_class: window
+# homeassistant:
+#   customize:
+#     cover.qubino_zmnhod1_flush_shutter_dc_switch_2:
+#       friendly_name: Rullgardin
+#       device_class: window

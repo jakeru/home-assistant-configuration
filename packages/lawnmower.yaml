@@ -4,54 +4,54 @@
 #    still_image_url: http://pimower:8080/stream/snapshot.jpeg?delay_s=0
 #    stream_source: http://pimower:8080/stream/video.h264
 
-gardena:
-  email: !secret gardena_username
-  password: !secret gardena_password
-  client_id:  !secret gardena_app_key
+# gardena:
+#   email: !secret gardena_username
+#   password: !secret gardena_password
+#   client_id:  !secret gardena_app_key
 
-binary_sensor:
-  - platform: template
-    sensors:
-      lawnmower_ok:
-        value_template: >-
-          {{ is_state('vacuum.sileno', 'cleaning')
-             or is_state('vacuum.sileno', 'returning')
-             or is_state('vacuum.sileno', 'paused')
-             or is_state('vacuum.sileno', 'docked') }}
+# binary_sensor:
+#   - platform: template
+#     sensors:
+#       lawnmower_ok:
+#         value_template: >-
+#           {{ is_state('vacuum.sileno', 'cleaning')
+#              or is_state('vacuum.sileno', 'returning')
+#              or is_state('vacuum.sileno', 'paused')
+#              or is_state('vacuum.sileno', 'docked') }}
 
-#device_tracker:
-#  - platform: mqtt_json
-#    devices:
-#      lawnmower: location/lawnmower
+# #device_tracker:
+# #  - platform: mqtt_json
+# #    devices:
+# #      lawnmower: location/lawnmower
 
-group:
-  lawnmower:
-    entities:
-#      - camera.lawnmower
-#      - device_tracker.lawnmower
-      - vacuum.sileno
+# group:
+#   lawnmower:
+#     entities:
+# #      - camera.lawnmower
+# #      - device_tracker.lawnmower
+#       - vacuum.sileno
 
-alert:
-  lawnmower:
-    name: Lawnmower
-    entity_id: binary_sensor.lawnmower_ok
-    state: false
-    repeat:
-      - 3
-      - 60
-    skip_first: true
-    message: Gräsklipparen har fastnad och behöver hjälp
-    done_message: Gräsklipparen är igång igen
-    notifiers:
-      - family
+# alert:
+#   lawnmower:
+#     name: Lawnmower
+#     entity_id: binary_sensor.lawnmower_ok
+#     state: false
+#     repeat:
+#       - 3
+#       - 60
+#     skip_first: true
+#     message: Gräsklipparen har fastnad och behöver hjälp
+#     done_message: Gräsklipparen är igång igen
+#     notifiers:
+#       - family
 
-homeassistant:
-  customize:
-    group.lawnmower:
-      friendly_name: Robotgräsklipparen
-    device_tracker.lawnmower:
-      friendly_name: Robotgräsklipparen
-    camera.lawnmower:
-      friendly_name: Medföljande kamera
-    vacuum.sileno:
-      friendly_name: Robotgräsklipparen
+# homeassistant:
+#   customize:
+#     group.lawnmower:
+#       friendly_name: Robotgräsklipparen
+#     device_tracker.lawnmower:
+#       friendly_name: Robotgräsklipparen
+#     camera.lawnmower:
+#       friendly_name: Medföljande kamera
+#     vacuum.sileno:
+#       friendly_name: Robotgräsklipparen
